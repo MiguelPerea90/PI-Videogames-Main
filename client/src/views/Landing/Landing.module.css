@@ -24,3 +24,81 @@ body {
     align-items: center;
     justify-content: center;
 }
+.title {
+    font-size: 2.6rem;
+    color: #FF8C00;
+    margin-bottom: 0;
+    
+}
+@media (min-width: 480px) {
+    .title {
+        font-size: 3rem;
+    }
+}
+@media (min-width: 600px) {
+    .title {
+        font-size: 3.4rem;
+    }
+}
+@media (min-width: 768px) { 
+    .title {
+        font-size: 3.8rem;
+    }
+ }
+@media (min-width: 1024px) { 
+    .title {
+        font-size: 4.2rem;
+    }
+ }
+@media (min-width: 1200px) { 
+    .title {
+        font-size: 4.6rem;
+    }
+ }
+.buttonHome {
+    background-color: #FF8C00 ; 
+    color: #000000;
+    font-size: 1.8rem;
+    font-weight: 700;
+    border: none;
+    border-radius: .4rem;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: all 800ms;
+    box-shadow: 20px 20px 20px 0px rgba(0,0,0,0.75);
+}
+@media (min-width: 480px) {
+    .buttonHome {
+        font-size: 2rem;
+        padding: 7px 15px;
+    }
+}
+@media (min-width: 600px) {
+    .buttonHome {
+        font-size: 2.1rem;
+        padding: 8px 16px;
+    }
+}
+@media (min-width: 768px) { 
+    .buttonHome {
+        font-size: 2.2rem;
+        padding: 8px 16px;
+    }
+ }
+@media (min-width: 1024px) { 
+    .buttonHome {
+        font-size: 2.3rem;
+        padding: 9px 18px;
+    }
+ }
+@media (min-width: 1200px) { 
+    .buttonHome {
+        font-size: 2.4rem;
+        padding: 10px 20px;
+    }
+ }
+.buttonHome:hover {
+    transform: scale(1.1);
+    background-color: #2F4F4F;     
+    color: #FF8C00;
+  } 
