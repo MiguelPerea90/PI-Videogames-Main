@@ -1,4 +1,4 @@
-/**Este modulo tiene la responsabilidad de CREAR EL SERVIDOR (SERVER) */
+/**ESTE MÓDULO TIENE LA RESPONSABILIDAD DE CREAR EL SERVIDOR (SERVER) */
 const express = require('express');
 const server = express();
 

@@ -18,12 +18,12 @@
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-/**Este modulo tiene la responsabilidad de INICIAR LA APLICACIÓN */
+/**ESTE MÓDULO TIENE LA RESPONSABILIDAD DE INICIAR LA APLICACIÓN Y SINCRONIZAR LAS TABLAS*/
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
 
 // Syncing all the models at once.
-conn.sync({ force: false }).then(() => {
+conn.sync({ force: true }).then(() => {
   server.listen(3001, () => {
     console.log('%s listening at 3001'); // eslint-disable-line no-console
   });
