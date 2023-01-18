@@ -7,7 +7,6 @@ module.exports = (sequelize) => {
     id: {
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV4,
-      allowNull: false,
       primaryKey: true,
     },
     name: {
@@ -32,8 +31,6 @@ module.exports = (sequelize) => {
       allowNull: false,
     },
   },
-    {
-      timestamps: false
-    }
+    { timestamps: false }
   );
 };

@@ -1,3 +1,6 @@
+// EN ESTE MÓDULO SE CREA LA CONEXIÓN CON LA BASE DE DATOS.
+// SE RELACIONAN LOS MODELOS
+
 require('dotenv').config();
 const { Sequelize } = require('sequelize');
 const fs = require('fs');
