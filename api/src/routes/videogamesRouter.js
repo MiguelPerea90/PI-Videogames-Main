@@ -1,7 +1,7 @@
 const {Router} = require ('express');
 
-const { getVideogamesHandler,
-        getVideogamesIdHandeler,
+const { getAllVideogamesHandler,
+        getVideogameIdHandeler,
         createVideogameHandeler 
 } = require('../handlers/videogamesHandlers');
 
@@ -10,14 +10,14 @@ const videogamesRouter = Router();
 // GET /videogames
 // Obtener un listado de los videojuegos.
 // Debe devolver solo los datos necesarios para la ruta principal.
-videogamesRouter.get("/", getVideogamesHandler);
+videogamesRouter.get("/", getAllVideogamesHandler);
 
 
 // GET /videogame/{idVideogame}
 // Obtener el detalle de un videojuego en particular.
 // Debe traer solo los datos pedidos en la ruta de detalle de videojuego.
 // Incluir los géneros asociados.
-videogamesRouter.get("/:id", getVideogamesIdHandeler);
+videogamesRouter.get("/:id", getVideogameIdHandeler);
 
 
 // // POST /videogames
