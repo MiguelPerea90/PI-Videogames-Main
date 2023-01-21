@@ -5,7 +5,7 @@ module.exports = (sequelize) => {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
-            // autoIncrement: true, hace que el id sea serial autoincremental
+            autoIncrement: true, 
         },
         name: {
             type: DataTypes.STRING,

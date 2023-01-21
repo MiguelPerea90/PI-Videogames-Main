@@ -1,6 +1,5 @@
 const axios = require("axios");
-const { Videogame } = require("../db");
-const { Op } = require("sequelize");
+const { Videogame, Genre } = require("../db");
 
 const { API_KEY, API_URL} = process.env;
 
@@ -11,11 +10,22 @@ const { API_KEY, API_URL} = process.env;
  const cleanArray = (arr) => {
     return arr.map( element => {
         return {
+            id: element.id,
             name: element.name,
             description: element.description,
             released: element.released,
             rating: element.rating,
-            platforms: element.platforms,
+            platforms: element.platforms.map(element => {
+                return {
+                    name: element.platform.name
+                }
+            }),
+            genres: element.genres.map(element => {
+                return {
+                    id: element.id,
+                    name: element.name,
+                }
+            }),
             created: false,
         };
     });
@@ -26,7 +36,13 @@ const { API_KEY, API_URL} = process.env;
  const getAllVideogames = async () => {
 
     // Aqui trae todos los videogames de la db.
-    const databaseVideogames = await Videogame.findAll(); 
+    const databaseVideogames = await Videogame.findAll({
+        include: {
+            model: Genre,
+            attributes: ["name"],
+            through: {attributes: []}
+        }
+    }); 
 
     // Todo lo de la api cómo viene
     const apiVideogamesRaw = (
@@ -43,11 +59,12 @@ const { API_KEY, API_URL} = process.env;
 
 
  // eSTE CONTROLLER BUSCA POR QUERY NAME
- const searchVideogameByName = async (name) => {
+ const searchVideogamesByName = async (name) => {
 
     let allVideogames = await getAllVideogames();
 
-    let videogamesByName = allVideogames.filter(element => element.name.toLowerCase().includes(name.toString().toLowerCase()));
+    let videogamesByName = allVideogames.filter(element => 
+    element.name.toLowerCase().includes(name.toString().toLowerCase()));
 
     return videogamesByName.slice(0, 15);
 
@@ -55,20 +72,57 @@ const { API_KEY, API_URL} = process.env;
 
 
 // ESTE CONTROLLER BUSCA UN VIDEOGAME POR ID
-const getVideogameById = async (id, source) => {
-    const videogame = 
-    source === "api"
-            ? (await axios.get(`${API_URL}/${id}?key=${API_KEY}`)).data
-            : await Videogame.findByPk(id);
+const getVideogameById = async (id,source) => {
+    
+            if(source === "api") {
+                const dataApi = (await axios.get(`${API_URL}/${id}?key=${API_KEY}`)).data
+                const dataDb = {
+                    id: dataApi.id,
+                    name: dataApi.name,
+                    description: dataApi.description,
+                    released: dataApi.released,
+                    rating: dataApi.rating,
+                    platforms: dataApi.platforms.map(dataApi => {
+                        return {
+                            name: dataApi.platform.name
+                        }
+                    }),
+                    genres: dataApi.genres.map(dataApi => {
+                        return {
+                            id: dataApi.id,
+                            name: dataApi.name,
+                        }
+                    }),
+                    created: false,
+                }
+                return dataDb;
+            }else {
+                const dataDb = await Videogame.findByPk(id, {
+                    include: {
+                        model: Genre,
+                        attributes: ["name"],
+                        through: {attributes: []}
+                    }
 
-    return videogame;
+                });
+                return dataDb;
 
+            }
+    
 };
 
 
 // ESTE CONTROLLER CREA UN NUEVO VIDEOGAME
-const createVideogame  = async (id, name, description, released, rating, platforms) => {
-    const newVideogame = await Videogame.create({id, name, description, released, rating, platforms});
+const createVideogame  = async (name, description, released, rating, platforms, genres) => {
+    const newVideogame = await Videogame.create({name, description, released, rating, platforms});
+    const genresGames = await Genre.findAll({
+        where: {
+            name: genres
+        }
+    });
+
+    newVideogame.addGenre(genresGames);
+
     return newVideogame;
 };
 
@@ -77,5 +131,5 @@ module.exports = {
     createVideogame,
     getVideogameById, 
     getAllVideogames,
-    searchVideogameByName 
+    searchVideogamesByName 
 };

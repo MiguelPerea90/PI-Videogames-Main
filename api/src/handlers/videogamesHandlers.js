@@ -4,7 +4,7 @@ const {
     createVideogame,
     getVideogameById, 
     getAllVideogames,
-    searchVideogameByName 
+    searchVideogamesByName 
 } = require("../controllers/videogamesController");
 
 
@@ -17,15 +17,35 @@ const {
 // Debe devolver solo los datos necesarios para la ruta principal. OK
 // GET /videogames?name="...":
 // Obtener un listado de los primeros 15 videojuegos que contengan la palabra ingresada como query parameter. Ok
-// Si no existe ningún videojuego mostrar un mensaje adecuado.
+// Si no existe ningún videojuego mostrar un mensaje adecuado.  ------ PENDIENTE
 const getAllVideogamesHandler = async (req, res) => {
     const {name} = req.query;
+
+    // try {
+    //     const results = name ? await searchVideogameByName(name) : await getAllVideogames();
+    //     res.status(200).json(results);
+    // } catch (error) {
+    //     res.status(400).json({error: error.message});
+    // }
+
     try {
-        const results = name ? await searchVideogameByName(name) : await getAllVideogames();
-        res.status(200).json(results);
+        if(name){
+
+            const videogamesByname = await searchVideogamesByName(name)
+
+            if(videogamesByname.length){
+                return res.status(200).json(videogamesByname);
+            }
+
+            return res.status(400).json("No existe un videogame con dicho nombre");
+        }else{
+            const allVideogames = await getAllVideogames();
+
+            return res.status(200).json(allVideogames);
+        }
     } catch (error) {
-        res.status(400).json({error: error.message});
-    }
+       return res.status(400).json({error: error.message});
+    };  
 
 };
 
@@ -53,9 +73,9 @@ const getVideogameIdHandeler = async (req, res) => {
 // videojuego por body.
 // Crea un videojuego en la base de datos, relacionado a sus géneros. 
 const createVideogameHandeler = async (req, res) => {
-    const {id, name, description, released, rating, platforms} = req.body;
+    const {name, description, released, rating, platforms, genres} = req.body;
    try {
-    const newVideogame = await createVideogame(id, name, description, released, rating, platforms);
+    const newVideogame = await createVideogame(name, description, released, rating, platforms, genres);
     res.status(201).json(newVideogame);
    } catch (error) {
     res.status(400).json({ error: error.message });
