@@ -1,6 +1,6 @@
 const axios = require("axios");
 
-const { getAllGenres } = require("../controllers/genresController")
+const { getAllGenres } = require("../controllers/genresControllers")
 
 
 

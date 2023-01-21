@@ -1,11 +1,12 @@
 const axios = require("axios");
 
-const { 
-    createVideogame,
-    getVideogameById, 
+const {  
     getAllVideogames,
-    searchVideogamesByName 
-} = require("../controllers/videogamesController");
+    searchVideogamesByName,
+    getDbById,
+    getApiById,
+    createVideogame,
+} = require("../controllers/videogamesControllers");
 
 
 // ------------------------------------------- HANDLERS: ---------------------------------------- // 
@@ -21,13 +22,6 @@ const {
 const getAllVideogamesHandler = async (req, res) => {
     const {name} = req.query;
 
-    // try {
-    //     const results = name ? await searchVideogameByName(name) : await getAllVideogames();
-    //     res.status(200).json(results);
-    // } catch (error) {
-    //     res.status(400).json({error: error.message});
-    // }
-
     try {
         if(name){
 
@@ -35,10 +29,12 @@ const getAllVideogamesHandler = async (req, res) => {
 
             if(videogamesByname.length){
                 return res.status(200).json(videogamesByname);
+            }else{
+                return res.status(400).json("Sorry, videogame not foundS");
             }
 
-            return res.status(400).json("No existe un videogame con dicho nombre");
         }else{
+
             const allVideogames = await getAllVideogames();
 
             return res.status(200).json(allVideogames);
@@ -57,14 +53,24 @@ const getAllVideogamesHandler = async (req, res) => {
 // Incluir los géneros asociados. 
 const getVideogameIdHandeler = async (req, res) => {
     const { id } = req.params;
-    const source = isNaN(id) ? "bdd" : "api";
+
     try {
-        const videogame = await getVideogameById(id, source);
-        res.status(200).json(videogame);
+        
+        if(/^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test(id)){
+            const dbVideogamesById = await getDbById(id);
+            return res.status(200).json(dbVideogamesById);
+        } else{
+            const apiVideogameById = await getApiById(id)
+            return res.status(200).json(apiVideogameById);
+        }
     } catch (error) {
-        res.status(400).json({error: error.message})
+        return res.status(400).json({error: error.message});
     }
 };
+
+
+
+
 
 
 // ----------------------------- ESTE HANDLER CREA UN NUEVO VIDEOGAME -------------------------- //
@@ -74,6 +80,7 @@ const getVideogameIdHandeler = async (req, res) => {
 // Crea un videojuego en la base de datos, relacionado a sus géneros. 
 const createVideogameHandeler = async (req, res) => {
     const {name, description, released, rating, platforms, genres} = req.body;
+    
    try {
     const newVideogame = await createVideogame(name, description, released, rating, platforms, genres);
     res.status(201).json(newVideogame);
@@ -89,3 +96,21 @@ module.exports = {
     getVideogameIdHandeler,
     createVideogameHandeler
 };
+
+
+
+
+
+
+
+
+
+
+
+  // const source = isNaN(id) ? "bdd" : "api";
+    // try {
+    //     const videogame = await getVideogameById(id, source);
+    //     res.status(200).json(videogame);
+    // } catch (error) {
+    //     res.status(400).json({error: error.message})
+    // }
