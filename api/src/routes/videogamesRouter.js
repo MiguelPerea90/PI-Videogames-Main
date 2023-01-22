@@ -5,7 +5,10 @@ const { getAllVideogamesHandler,
         createVideogameHandeler 
 } = require('../handlers/videogamesHandlers');
 
+const validate  =  require("../middleware/videogameRouterMiddleware")
+
 const videogamesRouter = Router();
+
 
 // GET /videogames
 // Obtener un listado de los videojuegos.
@@ -23,7 +26,7 @@ videogamesRouter.get("/:id", getVideogameIdHandeler);
 // // POST /videogames
 // // Recibe los datos recolectados desde el formulario controlado de la ruta de creación de videojuego por body.
 // // Crea un videojuego en la base de datos, relacionado a sus géneros.
-videogamesRouter.post("/", createVideogameHandeler);
+videogamesRouter.post("/", validate , createVideogameHandeler);
 
 
 module.exports = videogamesRouter;
