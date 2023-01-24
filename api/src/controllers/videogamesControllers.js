@@ -40,7 +40,9 @@ const { API_KEY, API_URL} = process.env;
         include: {
             model: Genre,
             attributes: ["name"],
-            through: {attributes: []},
+            through: {
+                attributes: []
+            },
         },
     }); 
 
@@ -71,50 +73,6 @@ const { API_KEY, API_URL} = process.env;
  };
 
 
-// ESTE CONTROLLER OBTIENE LA INFO DE LA API POR ID
-const getApiById = async (id) => {
-    const infoApi = (await axios.get(`${API_URL}/${id}?key=${API_KEY}`)).data; 
-
-        const infoApiClean = {
-            id: infoApi.id,
-            name: infoApi.name,
-            description: infoApi.description,
-            released: infoApi.released,
-            rating: infoApi.rating,
-            platforms: infoApi.platforms.map(infoApi => {
-                return {
-                    name: infoApi.platform.name
-                }
-            }),
-            genres: infoApi.genres.map(infoApi => {
-                return {
-                    id: infoApi.id,
-                    name: infoApi.name,
-                }
-            }),
-            created: false,
-        }
-
-
-    return infoApiClean;
-       
-};
-
-
-// ESTE CONTROLLER OBTIENE LA INFO DE LA DB POR ID
-const getDbById = async (id) => {
-    return await Videogame.findByPk(id, {
-        include: {
-            model: Genre,
-            attributes: ["name"],
-            through: {
-                attributes: []
-            },
-        },
-    });
-};
-
-
 // ESTE CONTROLLER CREA UN NUEVO VIDEOGAME
 const createVideogame  = async (name, description, released, rating, platforms, genres) => {
 
@@ -135,8 +93,8 @@ const createVideogame  = async (name, description, released, rating, platforms, 
 module.exports = {
     getAllVideogames,
     searchVideogamesByName,
-    getApiById,
-    getDbById,
+    // getVideogameApiById,
+    // getVideogameDbById,
     createVideogame, 
 };
 
@@ -156,59 +114,45 @@ module.exports = {
 
 
 
+// // ESTE CONTROLLER OBTIENE LA INFO DE LA API POR ID
+// const getVideogameApiById = async (id) => {
+//     const infoApi = (await axios.get(`${API_URL}/${id}?key=${API_KEY}`)).data; 
+
+//         const infoApiClean = {
+//             id: infoApi.id,
+//             name: infoApi.name,
+//             description: infoApi.description,
+//             released: infoApi.released,
+//             rating: infoApi.rating,
+//             platforms: infoApi.platforms.map(infoApi => {
+//                 return {
+//                     name: infoApi.platform.name
+//                 }
+//             }),
+//             genres: infoApi.genres.map(infoApi => {
+//                 return {
+//                     id: infoApi.id,
+//                     name: infoApi.name,
+//                 }
+//             }),
+//             created: false,
+//         }
 
 
+//     return infoApiClean;
+       
+// };
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- // if(source === "api") {
-    //     const dataApi = (await axios.get(`${API_URL}/${id}?key=${API_KEY}`)).data
-    //     const dataDb = {
-    //         id: dataApi.id,
-    //         name: dataApi.name,
-    //         description: dataApi.description,
-    //         released: dataApi.released,
-    //         rating: dataApi.rating,
-    //         platforms: dataApi.platforms.map(dataApi => {
-    //             return {
-    //                 name: dataApi.platform.name
-    //             }
-    //         }),
-    //         genres: dataApi.genres.map(dataApi => {
-    //             return {
-    //                 id: dataApi.id,
-    //                 name: dataApi.name,
-    //             }
-    //         }),
-    //         created: false,
-    //     }
-
-    //     return dataDb;
-
-    // }else {
-    //     const dataDb = await Videogame.findByPk(id, {
-    //         include: {
-    //             model: Genre,
-    //             attributes: ["name"],
-    //             through: {attributes: []}
-    //         }
-
-    //     });
-    //     return dataDb;
-
-    // }
+// // ESTE CONTROLLER OBTIENE LA INFO DE LA DB POR ID
+// const getVideogameDbById = async (id) => {
+//     return await Videogame.findByPk(id, {
+//         include: {
+//             model: Genre,
+//             attributes: ["name"],
+//             through: {
+//                 attributes: []
+//             },
+//         },
+//     });
+// };
