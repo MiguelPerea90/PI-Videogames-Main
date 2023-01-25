@@ -3,7 +3,7 @@ import { Route } from "react-router-dom";
 
 function App() {
   return (
-    <div clasname="App">
+    <div>
       <Route exact path="/" component={Landing} />
       <Route exact path="/home"> <Home /> </Route>
       <Route exact  path="/detail" render={() =>  <Detail />} />

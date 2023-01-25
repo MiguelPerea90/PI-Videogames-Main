@@ -1,6 +1,8 @@
 import React from "react";
+// import { useState } from "react";
 
 const Card = () => {
+
     return (
         <div>
             <p>
@@ -11,3 +13,13 @@ const Card = () => {
 };
 
 export default Card;
+
+
+
+
+
+
+
+
+
+
