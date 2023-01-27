@@ -1,13 +1,16 @@
 import React from "react";
-// import { useState } from "react";
+import styles from "./Card.module.css"
 
-const Card = () => {
+const Card = (props) => {
+
+    
+    // Este componente debe mostrar... la info de cada videogame mapeado, pero ademas, darnos un link para ir al detalle del videogame en cuestion. 
 
     return (
-        <div>
-            <p>
-                Este componente debe mostrar... la info de cada videogame mapeado, pero ademas, darnos un link para ir al detalle del videogame en cuestion. 
-            </p>
+        <div className={styles.card}>
+           <p>Id:{props.id}</p>
+           <p>Name:{props.name}</p>
+           <p>Released:{props.released}</p>
         </div>
     )
 };

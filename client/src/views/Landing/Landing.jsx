@@ -7,7 +7,7 @@ const Landing = () => {
     return (
         <div className={styles.containerLanding}>
             <div>
-                <h1>Welcome, Videogame Page</h1>
+                <h1>Welcome Videogames Page</h1>
             </div>
             <div>
                 <Link to="/home"> 

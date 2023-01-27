@@ -5,8 +5,8 @@ import CardsContainer from "../../components/CardsContainer/CardsContainer";
 const Home = () => {
     return (
         <>
-            <h1>Home Page</h1>
             <NavBar />
+            <h1>Home Page</h1>
             <CardsContainer />
         </>
     )
