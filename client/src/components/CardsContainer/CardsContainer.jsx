@@ -16,7 +16,8 @@ const CardsContainer = () => {
                 return <Card 
                     id={videogame.id}
                     name={videogame.name}
-                    released={videogame.released}
+                    email={videogame.email}
+                    phone={videogame.phone}
                 />
             })}
         </div>

@@ -10,7 +10,8 @@ const Card = (props) => {
         <div className={styles.card}>
            <p>Id:{props.id}</p>
            <p>Name:{props.name}</p>
-           <p>Released:{props.released}</p>
+           <p>email:{props.email}</p>
+           <p>phone:{props.phone}</p>
         </div>
     )
 };
