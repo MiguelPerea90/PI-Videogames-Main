@@ -1,26 +1,38 @@
-.containerLanding {
-    background-image: url("../../img/LandingPiVideogames.jpg");
+body {
+    margin: 0;
+    background-image: url("../../img/Videogames-Pi-Landing.webp");
     background-size: cover;
-    background-position: center;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
     height: 100vh;
     width: 100vw;
-    display: flex; 
+}
+.containerLanding {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: -8px;
-    color:  #FFA500;
-    font-size:  32px;
+    color:  #FF8C00;
+    font-size: 36px;
     font-weight: bold;
     font-family: 'Courier New', Courier, monospace;
     word-spacing: normal;
+}
+
+.container {
+    display: flex; 
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    margin-top: 300px;
 }
 
 .buttonStart {
     background-color: #708090;
     color: #2F4F4F;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 600;
     border: none;
     border-radius: 5px;

@@ -6,10 +6,8 @@ import styles from './Landing.module.css';
 const Landing = () => {
     return (
         <div className={styles.containerLanding}>
-            <div>
-                <h1>Welcome Videogames Page</h1>
-            </div>
-            <div>
+            <div className={styles.container}>
+                <h1>Henry Videogames</h1>
                 <Link to="/home"> 
                     <button className={styles.buttonStart}>Go Home</button>;
                 </Link>

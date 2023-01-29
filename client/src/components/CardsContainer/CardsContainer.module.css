@@ -5,4 +5,12 @@
     border-radius: 10px;
     flex-wrap: wrap;
     gap: 2em;
+
+}
+
+.container img {
+    height: auto;
+    width: auto;
+    max-height: 210px;
+    max-width: 420px;
 }

@@ -3,8 +3,8 @@ const axios = require("axios");
 const {  
     getAllVideogames,
     searchVideogamesByName,
-    // getVideogameDbById,
-    // getVideogameApiById,
+    getVideogameDbById,
+    getVideogameApiById,
     createVideogame,
 } = require("../controllers/videogamesControllers");
 
@@ -18,7 +18,7 @@ const {
 // Debe devolver solo los datos necesarios para la ruta principal. OK
 // GET /videogames?name="...":
 // Obtener un listado de los primeros 15 videojuegos que contengan la palabra ingresada como query parameter. Ok
-// Si no existe ningún videojuego mostrar un mensaje adecuado.  ------ PENDIENTE
+// Si no existe ningún videojuego mostrar un mensaje adecuado.  OK
 const getAllVideogamesHandler = async (req, res) => {
     const {name} = req.query;
 
@@ -26,7 +26,7 @@ const getAllVideogamesHandler = async (req, res) => {
         // Existe un name
         if(name){
 
-            // Ejecuto la función controller que me está haciendo el filter por name.
+            // Ejecuto la función controller
             const videogamesByname = await searchVideogamesByName(name)
 
             // Encontraste algo ?                
@@ -45,17 +45,23 @@ const getAllVideogamesHandler = async (req, res) => {
 
 // ------------------ ESTE HANDLER MUESTRA EL DETALLE DE UN VIDEOJUEGO POR ID -------------------- //
 //  GET /videogame/{idVideogame}:
-// Obtener el detalle de un videojuego en particular.
+// Obtener el detalle de un videojuego en particular. OK
 // Debe traer solo los datos pedidos en la ruta de detalle de videojuego.
-// Incluir los géneros asociados. 
+// Incluir los géneros asociados. OK
 const getVideogameIdHandeler = async (req, res) => {
     const { id } = req.params;
 
-    const totalVideogames = await getAllVideogames();
-
-    if(id) {
-        const videogamesById = totalVideogames.filter(element => element.id == id)
-        videogamesById.length ? res.status(200).json(videogamesById) : res.status(404).send("Sorry, invalid ID");
+     try {
+        
+        if(/^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test(id)){
+            const dbVideogamesById = await getVideogameDbById(id);
+            return res.status(200).json(dbVideogamesById);
+        } else{
+            const apiVideogameById = await getVideogameApiById(id)
+            return res.status(200).json(apiVideogameById);
+        }
+    } catch (error) {
+        return res.status(400).json({error: error.message});
     }
 };
 
@@ -63,8 +69,8 @@ const getVideogameIdHandeler = async (req, res) => {
 // ----------------------------- ESTE HANDLER CREA UN NUEVO VIDEOGAME -------------------------- //
 // POST /videogames:
 // Recibe los datos recolectados desde el formulario controlado de la ruta de creación de 
-// videojuego por body.
-// Crea un videojuego en la base de datos, relacionado a sus géneros. 
+// videojuego por body. OK
+// Crea un videojuego en la base de datos, relacionado a sus géneros. OK
 const createVideogameHandeler = async (req, res) => {
     const {name, description, released, rating, platforms, genres} = req.body;
     
@@ -95,7 +101,12 @@ module.exports = {
 
 
 
+ // const totalVideogames = await getAllVideogames();
 
+    // if(id) {
+    //     const videogamesById = totalVideogames.filter(element => element.id == id)
+    //     videogamesById.length ? res.status(200).json(videogamesById) : res.status(404).send("Sorry, invalid ID");
+    // }
 
 
 

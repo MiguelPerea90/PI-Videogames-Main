@@ -6,19 +6,20 @@ import { useSelector } from "react-redux";
 const CardsContainer = () => {
 
     const videogames = useSelector(state => state.videogames);
-    
-    // Este componente debe tomar un array de videogames y por cada videogame,
-    // renderizar un componente Card. Que se muestre en Home.
 
     return (
         <div className={styles.container}>
-            {videogames.map(videogame => {
-                return <Card 
-                    id={videogame.id}
-                    name={videogame.name}
-                    email={videogame.email}
-                    phone={videogame.phone}
-                />
+            {videogames?.map(videogame => {
+                // console.log("Console.log - videogame.Genres", videogame.Genres)
+                return (
+                    <div key={videogame.id}>
+                        <Card 
+                            image={videogame.image}
+                            name={videogame.name}
+                            genres={videogame.Genres}
+                        />
+                    </div>
+                )
             })}
         </div>
     )
