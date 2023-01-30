@@ -1,9 +1,18 @@
 .containerNavBar {
-    background-color: #008080;
+    background-color: #4682B4;
+    color: #000000;
+    position: fixed;
+    top:  0;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    height: 50px;
-    border-radius: 10px;
+    height: 100px;
+    width: 100%;
+    font-size: 24px;
+    font-family: 'Courier New', Courier, monospace;
 };
+
+.createButton {
+    padding: 5px 10px;
+}

@@ -5,16 +5,16 @@ import { useSelector } from "react-redux";
 
 const CardsContainer = () => {
 
-    const videogames = useSelector(state => state.videogames);
+    const allVideogames = useSelector(state => state.videogames);
 
     return (
-        <div className={styles.container}>
-            {videogames?.map(videogame => {
-                // console.log("Console.log - videogame.Genres", videogame.Genres)
+        <div className={styles.cardsContainer}>
+            {allVideogames?.map(videogame => {
                 return (
                     <div key={videogame.id}>
                         <Card 
                             image={videogame.image}
+                            rating={videogame.rating}
                             name={videogame.name}
                             genres={videogame.Genres}
                         />

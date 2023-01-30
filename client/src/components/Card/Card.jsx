@@ -1,36 +1,30 @@
 import React from "react";
 import styles from "./Card.module.css"
-// import Genre from "../Genre/Genre";
-import image from "../../img/default-Image-Cards.jpeg"
+import imagen from "../../img/default-Image-Cards.jpeg"
 
 const Card = (props) => {
     return (
         <div className={styles.card} >
 
-           {props.image ? <img src={props.image} alt="Videogame Image" /> :
-           < img src={image} alt="Default Videogame Image"/>}
+           {props.image ? <img src={props.image} alt="Videogame Image" width="300px" height="350px"/> :
+           < img src={imagen} alt="Default Videogame Image" width="300px" height="350px" />}
 
-           <p>Name:{props.name}</p>
+           <h3>Rating:{props.rating}</h3>
 
-           {props.genres?.map(element => {
+           <h3>Name:{props.name}</h3>
+
+           <h4>{props.genres?.map(element => {
                 return (
-                    <div key={element.id}> 
+                    <div key={element.id} > 
                         {element.name} 
                     </div>
                 )
-            })}
+            })}</h4>
               
         </div>
     )
 };
 
-
-// {props.genres?.map(element => {
-//     return <div key={element.id}>
-
-//         <Genre  genres={element.name}/>
-//     </div>
-// })}
 
 export default Card;
 

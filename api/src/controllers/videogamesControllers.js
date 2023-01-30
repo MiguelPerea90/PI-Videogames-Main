@@ -14,7 +14,7 @@ const { API_KEY, API_URL} = process.env;
             name: element.name,
             // description: element.description,
             // released: element.released,
-            // rating: element.rating,
+            rating: element.rating,
             // platforms: element.platforms.map(element => {
             //     return {
             //         name: element.platform.name
@@ -49,7 +49,7 @@ const { API_KEY, API_URL} = process.env;
 
     // Todo lo de la api cómo viene
     const apiVideogamesRaw = (
-        await axios.get(`${API_URL}?key=${API_KEY}&page_size=10`)
+        await axios.get(`${API_URL}?key=${API_KEY}&page_size=3`)
     ).data.results;
 
     // Todo lo de la api mapeado
