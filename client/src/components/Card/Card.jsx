@@ -6,17 +6,16 @@ const Card = (props) => {
     return (
         <div className={styles.card} >
 
-           {props.image ? <img src={props.image} alt="Videogame Image" width="300px" height="350px"/> :
-           < img src={imagen} alt="Default Videogame Image" width="300px" height="350px" />}
+            { props.image ? <img src={props.image} alt="img not found" width="250px" height="300px" />:
+            < img src={imagen} alt="img default not found" width="250px" height="300px" /> }
 
-           <h3>Rating:{props.rating}</h3>
+            <h3>{props.rating}</h3>
+            <h3>{props.name}</h3>
 
-           <h3>Name:{props.name}</h3>
-
-           <h4>{props.genres?.map(element => {
+            <h4>{ props.genres?.map(element => {
                 return (
                     <div key={element.id} > 
-                        {element.name} 
+                        {element} 
                     </div>
                 )
             })}</h4>

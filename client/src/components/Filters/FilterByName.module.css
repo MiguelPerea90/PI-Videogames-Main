@@ -1,0 +1,16 @@
+.searchBarBtn {
+    background-color: #F5F5DC;
+    font-size: 18px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    padding:  6px 12px;
+    border: none;
+    border-radius: 8px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.searchBarInput {
+    font-size: 16px;
+    padding: 4px 8px;
+}

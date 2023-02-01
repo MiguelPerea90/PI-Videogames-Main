@@ -49,14 +49,31 @@ const { API_KEY, API_URL} = process.env;
 
     // Todo lo de la api cómo viene
     const apiVideogamesRaw = (
-        await axios.get(`${API_URL}?key=${API_KEY}&page_size=3`)
+        await axios.get(`${API_URL}?key=${API_KEY}&page_size=100`)
     ).data.results;
 
     // Todo lo de la api mapeado
     const apiVideogames = cleanArray(apiVideogamesRaw);
 
+    const infoTotal = [...apiVideogames, ...databaseVideogames];
+
+    const newData = infoTotal.map(element => {
+        return {
+            id: element.id,
+            name: element.name,
+            rating: element.rating,
+            Genres: element.Genres.map(e => e.name),
+            image: element.image,
+            created: false,
+        }
+    });
+
+
+    return newData;
+
+
     // Retorno un copia de toda la info de la db + la api.
-    return [...apiVideogames, ...databaseVideogames]; 
+    // return [...apiVideogames, ...databaseVideogames]; 
 
  };
 

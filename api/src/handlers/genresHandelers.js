@@ -2,6 +2,8 @@ const axios = require("axios");
 
 const { getAllGenres } = require("../controllers/genresControllers")
 
+const {Genre} = require("../db")
+
 
 
 
@@ -14,9 +16,14 @@ const { getAllGenres } = require("../controllers/genresControllers")
 const  getAllGenresHandler = async (req, res) => {
 
     try {
-        const genres = await getAllGenres();
-
-        res.status(200).json(genres);
+        const allGenres = await Genre.findAll() 
+        if(allGenres.length) {
+            return res.status(200).json(allGenres)
+        }else{
+            const dbGenres = await getAllGenres();
+            return res.status(200).json(dbGenres)
+        }
+        
     } catch (error) {
         res.status(400).json({error: error.message});
     }

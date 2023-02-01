@@ -1,0 +1,11 @@
+.container {
+   height: 80px;
+   width: auto;
+   position: absolute;
+   top: 20px;
+}
+
+.paginatedButton {
+   font-size: 20px;
+   margin: 0 3px;
+}

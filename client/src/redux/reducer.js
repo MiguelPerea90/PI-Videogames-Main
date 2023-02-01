@@ -1,29 +1,44 @@
-import { GET_VIDEOGAMES, GET_VIDEOGAME } from "../actionTypes";
+import { GET_VIDEOGAMES, GET_GENRES, FILTER_BY_GENRE, GET_VIDEOGAME_BY_NAME } from "./actionTypes";
 
 const initialState = {
   videogames: [],
+  allVideogames: [],
+  genres: [],
 };
-
-
-
 
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_VIDEOGAMES:
-      return { 
+      return {
         ...state,
-        videogames: action.payload
+        videogames: action.payload,
+        allVideogames: action.payload,
       };
-      case GET_VIDEOGAME:
+    case GET_GENRES:
+      return {
+        ...state,
+        genres: action.payload,
+      };
+    case FILTER_BY_GENRE:
+      const videogamesByName = state.allVideogames.filter((element) =>
+        element.Genres?.some(
+          (e) => e.toLowerCase() === action.payload.toLowerCase()
+        )
+      );
+      return {
+        ...state,
+        videogames: videogamesByName
+      };
+      case GET_VIDEOGAME_BY_NAME:
         return {
           ...state,
-          videogame: action.payload
-        }
+          videogames: action.payload
+        } 
     default:
-      return { 
-        ...state
+      return {
+        ...state,
       };
-  };
+  }
 };
 
 export default rootReducer;

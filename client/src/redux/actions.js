@@ -1,48 +1,52 @@
 import axios from "axios";
 
-import { GET_VIDEOGAMES, GET_VIDEOGAME } from "../actionTypes";
+import { GET_VIDEOGAMES, GET_GENRES, FILTER_BY_GENRE, GET_VIDEOGAME_BY_NAME } from "./actionTypes";
 
 export const getVideogames = () => {
     return async function(dispatch) {
-        const apiData = await axios.get(
+        const apiVideogames = await axios.get(
             "http://localhost:3001/videogames"
         );
-            
-        // const videogames = apiData.data;
-        const videogames = apiData.data;
+        const allVideogames = apiVideogames.data;
 
-        console.log(videogames)
-        
-        return dispatch({ type: GET_VIDEOGAMES, payload: videogames });
+        return dispatch({ 
+            type: GET_VIDEOGAMES, 
+            payload: allVideogames 
+        });
+    };
+};
+
+export const getGenres = () => {
+    return async function(dispatch) {
+        const apiGenres = await axios.get(
+            "http://localhost:3001/genres"
+        );
+        const allGenres = apiGenres.data;
+
+        return dispatch({ 
+            type: GET_GENRES, 
+            payload: allGenres 
+        });
     };
 };
 
 
-export const getVideogame = (id) => {
-    return async function(dispatch){
-        const apiData = await axios.get(
-            `https://jsonplaceholder.typicode.com/users/${id}`
-        );
-        const videogame = apiData.data;
-        return dispatch({ type: GET_VIDEOGAME, payload: videogame });
+export const filterVideogamesByGenre = (payload) => {
+    return {
+        type: FILTER_BY_GENRE,
+        payload
     }
 };
 
-
-// export const platformFilter=(platform)=>{
-//     return dispatch({
-//         type: PLATFORM_FILTER, payload:platform
-//     });
-// }
-
-// http://localhost:3001/videogames
-
-// https://jsonplaceholder.typicode.com/users
-
-// https://api.rawg.io/api/games?key=54df824b7baf43cc93b1f374b0f19a21
-
-// https://rickandmortyapi.com/api/character/1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16
-
-// // const BASE_URL = "http://localhost:3001";
-// const VIDEOGAMES_URL = BASE_URL + "/videogames";
-// const GENRES_URL = BASE_URL + "/genres";
+export const videogamesByName = (name) => {
+   return async function (dispatch) {
+    const dataByName = await axios.get(
+        `http://localhost:3001/videogames?name=${name}`
+    )
+    const videogamesByName = dataByName.data
+    dispatch({
+        type: GET_VIDEOGAME_BY_NAME,
+        payload: videogamesByName
+    })
+   }
+};

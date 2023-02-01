@@ -1,26 +1,30 @@
-import React from "react";
-import NavBar from "../../components/NavBar/NavBar";
-import SearchBar from "../../components/SearchBar/SearchBar";
-import CardsContainer from "../../components/CardsContainer/CardsContainer";
-import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { getVideogames } from "../../redux/actions";
+import { useEffect } from "react";
+import { getVideogames, getGenres } from "../../redux/actions";
+import NavBar from "../../components/NavBar/NavBar";
+import CardsContainer from "../../components/CardsContainer/CardsContainer";
 import styles from "./Home.module.css"
+
 
 const Home = () => {
 
-    const dispatch = useDispatch();  // Nos permite hacer dispatch
+    // Nos permite hacer dispatch de las actions creators,
+    // usando la constatnte dispatch. 
+    const dispatch = useDispatch();
 
+    
+
+    // useEffect() lo utilizo en este caso para ejecutar una función 
+    // solo cuando se monta el componente. 
     useEffect(()=>{
         dispatch(getVideogames());
+        dispatch(getGenres());
     }, [dispatch]);
 
-    // Cuando se monta, que haga el dispatch
-    //    useEffect()  -   useDispatch()
+
     return (
         <div className={styles.containerHome}>
             <NavBar />
-            <h1>Home Page</h1>
             <CardsContainer />
         </div>
     )
