@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { videogamesByName, getVideogames } from "../../redux/actions";
+import { videogamesByName, getVideogames } from "../../../redux/actions";
 import styles from "./FilterByName.module.css"
 
 
@@ -28,7 +28,7 @@ const FilterByName = () => {
 
     return (
         <div>
-            <input type="text" className={styles.searchBarInput}  value={name} onChange={handlerChange} placeholder="Search Videogame"/>
+            <input type="text" className={styles.searchBarInput}  onChange={handlerChange} placeholder="Search Videogame"/>
             <button className={styles.searchBarBtn} onClick={handlerFindByName}>By Name</button>
             <button className={styles.searchBarBtn} onClick={handlerFindAll}>Find All</button>
         </div>

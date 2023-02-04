@@ -1,7 +1,6 @@
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getVideogames, getGenres } from "../../redux/actions";
-import NavBar from "../../components/NavBar/NavBar";
 import CardsContainer from "../../components/CardsContainer/CardsContainer";
 import styles from "./Home.module.css"
 
@@ -24,7 +23,6 @@ const Home = () => {
 
     return (
         <div className={styles.containerHome}>
-            <NavBar />
             <CardsContainer />
         </div>
     )

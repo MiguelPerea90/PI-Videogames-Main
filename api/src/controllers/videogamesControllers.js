@@ -27,7 +27,8 @@ const { API_KEY, API_URL} = process.env;
                 }
             }),
             image: element.background_image,
-            created: false,
+            created: true,
+            
         };
     });
 };
@@ -64,7 +65,7 @@ const { API_KEY, API_URL} = process.env;
             rating: element.rating,
             Genres: element.Genres.map(e => e.name),
             image: element.image,
-            created: false,
+            created: typeof element.id == "number" ? false : true,
         }
     });
 
@@ -112,7 +113,7 @@ const { API_KEY, API_URL} = process.env;
 const getVideogameApiById = async (id) => {
     const apivideogameById = (await axios.get(`${API_URL}/${id}?key=${API_KEY}`)).data; 
 
-    // console.log(apivideogameById)
+    console.log("videogameById", apivideogameById)
 
         const videogameById = {
             id: apivideogameById.id,
@@ -125,7 +126,7 @@ const getVideogameApiById = async (id) => {
                     name: apivideogameById.platform.name
                 }
             }),
-            genres: apivideogameById.genres.map(apivideogameById => {
+            Genres: apivideogameById.genres.map(apivideogameById => {
                 return {
                     id: apivideogameById.id,
                     name: apivideogameById.name,
@@ -133,10 +134,12 @@ const getVideogameApiById = async (id) => {
             }),
             image: apivideogameById.background_image,
             created: false,
+            optionDefault: apivideogameById.optionDefault,
         }
 
 
     return videogameById;
+    
        
 };
 
@@ -146,7 +149,7 @@ const getVideogameDbById = async (id) => {
     return await Videogame.findByPk(id, {
         include: {
             model: Genre,
-            attributes: ["name"],
+            attributes: ["id", "name"],
             through: {
                 attributes: []
             },

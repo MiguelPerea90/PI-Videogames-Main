@@ -1,3 +1,53 @@
+.container {
+    background-color: #000000;
+    text-align: center;
+    font-display: flex;
+    flex-direction: column;
+    width: 40VW;
+    height: 90vh;
+    margin: 0 auto;
+    border-radius: 10px;
+    font-size: 24px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #FFFFFF;
+    padding: 10px;
+    width: 50%;
+    height: 90vh;
+}
+
 .containerForm {
-    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.title {
+    color: #FFA500;
+    font-size: 46px;
+}
+
+.labelImputDiv {
+    margin: 15px 0;
+}
+
+.submitHome {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.inputEnter {
+    font-size: 18px;
+    border-radius: 6px;
+}
+
+.spanText {
+    font-size: 16px;
+    color: #FFA500;
+}
+
+.genresText, .platformsText, .labelImputDiv {
+    margin-top: 15px;
+    margin-bottom: 15px;
 }

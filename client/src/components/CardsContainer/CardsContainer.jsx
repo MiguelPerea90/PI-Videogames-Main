@@ -30,7 +30,7 @@ const CardsContainer = () => {
     };
 
 
-
+// console.log("currentVideogames", currentVideogames)
     return (
             <div className={styles.cardsContainer}>
 
@@ -38,6 +38,7 @@ const CardsContainer = () => {
                     return (
                         <div key={videogame.id}>
                             <Card 
+                                id={videogame.id}
                                 image={videogame.image}
                                 rating={videogame.rating}
                                 name={videogame.name}

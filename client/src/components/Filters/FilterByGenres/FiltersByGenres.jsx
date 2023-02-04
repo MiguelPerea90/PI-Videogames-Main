@@ -1,12 +1,16 @@
 import React from "react";
 import Select from 'react-select';
 import { useSelector, useDispatch } from "react-redux";
+import { filterVideogamesByGenre } from "../../../redux/actions";
 
 
 const FilterByGenres = () => {
-    const allGenres = useSelector(state => state.genres);
+
 
     const dispatch = useDispatch();
+
+    const allGenres = useSelector(state => state.genres);
+
     const infoGenres = allGenres.map(element => {
         return {
             value: element.name,
@@ -14,9 +18,14 @@ const FilterByGenres = () => {
         }
     });
 
+    const handlerChange = (event) => {
+        dispatch(filterVideogamesByGenre(event.value))
+    }
+
+
     return (
         <div>
-            <label><select options={infoGenres}></select></label>
+            <Select options={infoGenres} onChange={handlerChange} placeholder="By Genres"></Select>
         </div>
     )
   

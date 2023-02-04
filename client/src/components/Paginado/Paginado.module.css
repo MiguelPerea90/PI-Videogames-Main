@@ -2,10 +2,10 @@
    height: 80px;
    width: auto;
    position: absolute;
-   top: 20px;
+   top: 10px;
 }
 
 .paginatedButton {
-   font-size: 20px;
-   margin: 0 3px;
+   font-size: 24px;
+   margin: 0 4px;
 }

@@ -1,0 +1,18 @@
+
+.container {
+    background-color: #F5F5DC;
+    width: 50VW;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 22px;
+    border-radius: 10px;
+}
+.info {
+    list-style: none;
+    text-align: center;
+    margin: 4px auto;
+ }
