@@ -2,6 +2,7 @@ import React from "react";
 import { filterByCreated } from "../../../redux/actions";
 import { useDispatch } from "react-redux";
 import Select from "react-select";
+import styles from "./FilterByCreated.module.css"
 
 
 const FilterByCreated = () => {
@@ -24,7 +25,7 @@ const FilterByCreated = () => {
     }
 
     return (
-        <div>
+        <div className={styles.divSelect}>
              <Select options={myOptions} onChange={handlerChange} placeholder="By Created"></Select>
         </div>
     )

@@ -30,10 +30,6 @@ module.exports = (sequelize) => {
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    optionDefault: {
-      type: DataTypes.STRING,
-      defaultValue: "made in colombia",
-    },
     created: {
       type: DataTypes.BOOLEAN,
       defaultValue: true,

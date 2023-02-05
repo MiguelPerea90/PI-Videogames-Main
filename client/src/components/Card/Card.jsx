@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Card.module.css"
-import imagen from "../../img/default-Image-Cards.jpeg"
+import imagen from "../../img/default-Videogames.jpg"
 import { Link } from "react-router-dom";
 
 const Card = (props) => {

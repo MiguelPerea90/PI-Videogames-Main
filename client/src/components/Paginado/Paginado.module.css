@@ -6,6 +6,20 @@
 }
 
 .paginatedButton {
-   font-size: 24px;
-   margin: 0 4px;
+   background-color: #FFFFFF;   
+   font-family: 'Courier New', Courier, monospace;
+   font-size: 28px;
+   font-weight: 600;
+   height: 40px;
+   width: 40px;
+   border: none;
+   border-radius: 6px;
+   margin: 190px 5px;
+   cursor: pointer;
 }
+
+.paginatedButton:hover {
+   transform: scale(1.2);    
+   color: #FF8C00;
+   background-color: #F5F5DC;
+ }

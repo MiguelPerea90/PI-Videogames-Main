@@ -3,58 +3,60 @@ import { useState } from "react";
 import React from "react";
 import Card from "../Card/Card";
 import Paginado from "../Paginado/Paginado";
-import styles from "./CardsContainer.module.css"
+import styles from "./CardsContainer.module.css";
 
 const CardsContainer = () => {
+  // Hace una función similar a la de mapStateToProps, en la constatnte
+  // allVideogames me traigo todo lo que está en el estado videogames.
+  const allVideogames = useSelector((state) => state.videogames);
 
+  // PAGINADO
+  const [currentPage, setCurrentPage] = useState(1);
 
-    // Hace una función similar a la de mapStateToProps, en la constatnte  
-    // allVideogames me traigo todo lo que está en el estado videogames.
-    const allVideogames = useSelector(state => state.videogames);
+  const [videogamesPerPage] = useState(15); // setVideogamesPerPage INCLUIR
 
+  const indexOfLastVideogame = currentPage * videogamesPerPage; // 15
 
-    // PAGINADO
-    const [currentPage, setCurrentPage] = useState(1);
+  const indexOfFirstVideogame = indexOfLastVideogame - videogamesPerPage; //0
 
-    const [videogamesPerPage] = useState(15);  // setVideogamesPerPage INCLUIR
+  const currentVideogames = allVideogames.slice(
+    indexOfFirstVideogame,
+    indexOfLastVideogame
+  );
 
-    const indexOfLastVideogame = currentPage * videogamesPerPage; // 15
+  const paginado = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
 
-    const indexOfFirstVideogame = indexOfLastVideogame - videogamesPerPage; //0
+  return (
+    <div className={styles.cardsContainer}>
+        <div className={styles.divCurrentPage}>
+            <p className={styles.pCurrentPage}>{currentPage}</p>
+        </div>
 
-    const currentVideogames = allVideogames.slice(indexOfFirstVideogame, indexOfLastVideogame);
-
-
-    const paginado = (pageNumber) => {
-        setCurrentPage(pageNumber);
-    };
-
-
-// console.log("currentVideogames", currentVideogames)
-    return (
-            <div className={styles.cardsContainer}>
-
-                {currentVideogames?.map(videogame => {
-                    return (
-                        <div key={videogame.id}>
-                            <Card 
-                                id={videogame.id}
-                                image={videogame.image}
-                                rating={videogame.rating}
-                                name={videogame.name}
-                                genres={videogame.Genres}
-                            />
-                        </div>
-                        
-                    )
-                })}
-                <Paginado 
-                    videogamesPerPage={videogamesPerPage}
-                    allVideogames={allVideogames.length}
-                    paginado={paginado}
+        <div className={styles.divCards}>
+            {currentVideogames?.map((videogame) => {
+            return (
+                <div key={videogame.id}>
+                <Card
+                    id={videogame.id}
+                    image={videogame.image}
+                    rating={videogame.rating}
+                    name={videogame.name}
+                    genres={videogame.Genres}
                 />
-            </div>
-    )
+                </div>
+            );
+            })}
+        </div>
+
+        <Paginado
+          videogamesPerPage={videogamesPerPage}
+          allVideogames={allVideogames.length}
+          paginado={paginado}
+        />
+    </div>
+  );
 };
 
 export default CardsContainer;

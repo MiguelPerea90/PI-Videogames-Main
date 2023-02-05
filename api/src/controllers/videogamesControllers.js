@@ -3,6 +3,10 @@ const { Videogame, Genre } = require("../db");
 
 const { API_KEY, API_URL} = process.env;
 
+const gamesUrl = `${API_URL}?key=${API_KEY}&page_size=35`;
+const gamesUrl2 = `${API_URL}?key=${API_KEY}&page_size=35&page=2`;
+const gamesUrl3 = `${API_URL}?key=${API_KEY}&page_size=35&page=3`;
+
 
 // CONTROLLERS:
 
@@ -12,14 +16,7 @@ const { API_KEY, API_URL} = process.env;
         return {
             id: element.id,
             name: element.name,
-            // description: element.description,
-            // released: element.released,
             rating: element.rating,
-            // platforms: element.platforms.map(element => {
-            //     return {
-            //         name: element.platform.name
-            //     }
-            // }),
             Genres: element.genres.map(element => {
                 return {
                     id: element.id,
@@ -28,7 +25,6 @@ const { API_KEY, API_URL} = process.env;
             }),
             image: element.background_image,
             created: true,
-            
         };
     });
 };
@@ -48,16 +44,25 @@ const { API_KEY, API_URL} = process.env;
         },
     }); 
 
-    // Todo lo de la api cómo viene
-    const apiVideogamesRaw = (
-        await axios.get(`${API_URL}?key=${API_KEY}&page_size=100`)
-    ).data.results;
+    // Traigo todo lo de la api cómo viene
+    const apiVideogamesRaw = (await axios.get(gamesUrl)).data.results;
+    const apiVideogamesRaw2 = (await axios.get(gamesUrl2)).data.results;
+    const apiVideogamesRaw3 = (await axios.get(gamesUrl3)).data.results;
 
-    // Todo lo de la api mapeado
-    const apiVideogames = cleanArray(apiVideogamesRaw);
+    // Concateno los resultados.
+    const apiVideogamesRawConcat = [
+        ...apiVideogamesRaw,
+        ...apiVideogamesRaw2,
+        ...apiVideogamesRaw3
+    ];
 
-    const infoTotal = [...apiVideogames, ...databaseVideogames];
+    //mapeo los resultados.
+    const apiVideogamesClean = cleanArray(apiVideogamesRawConcat);
 
+    // Me traigo una co´pia de todo lo de la api + lo de la db
+    const infoTotal = [...apiVideogamesClean, ...databaseVideogames];
+
+    // mapeo todo de nuevo para dejarle el created en true o false
     const newData = infoTotal.map(element => {
         return {
             id: element.id,
@@ -69,42 +74,24 @@ const { API_KEY, API_URL} = process.env;
         }
     });
 
-
+    // retorno la data completa
     return newData;
-
-
-    // Retorno un copia de toda la info de la db + la api.
-    // return [...apiVideogames, ...databaseVideogames]; 
 
  };
 
 
- // eSTE CONTROLLER BUSCA POR QUERY NAME
+ // ESTE CONTROLLER BUSCA POR QUERY NAME
  const searchVideogamesByName = async (name) => {
 
-
+    // Ejecuto la función que me trae toda la info de la db y la api
     let allVideogames = await getAllVideogames();
 
+    // Filtro los que inclullan un string de el nombre pasado cómo query
     let videogamesByName = allVideogames.filter(element => 
     element.name.toLowerCase().includes(name.toString().toLowerCase()));
-
+    
+    // Retorno los resultados y me quedo con los primeros 15
     return videogamesByName.slice(0, 15);
-
-    // const apiVideogames = (
-    //     await axios.get(`${API_URL}?key=${API_KEY}&search=${name}`)
-    // ).data.results;
-
-    // const apiResults = apiVideogames.map(game => {
-    //     return {
-    //         id:game.id,
-    //         name:game.name,
-    //         imagen:game.background_image,
-    //         genre:game.genres.map(gen=>gen.name),
-    //         rating:game.rating
-    //     }
-    // });
-
-    // return apiResults.slice(0, 15);
     
  };
 
@@ -112,8 +99,6 @@ const { API_KEY, API_URL} = process.env;
  // // ESTE CONTROLLER OBTIENE LA INFO DE LA API POR ID
 const getVideogameApiById = async (id) => {
     const apivideogameById = (await axios.get(`${API_URL}/${id}?key=${API_KEY}`)).data; 
-
-    console.log("videogameById", apivideogameById)
 
         const videogameById = {
             id: apivideogameById.id,
@@ -134,7 +119,6 @@ const getVideogameApiById = async (id) => {
             }),
             image: apivideogameById.background_image,
             created: false,
-            optionDefault: apivideogameById.optionDefault,
         }
 
 
@@ -189,3 +173,34 @@ module.exports = {
     getVideogameDbById,
     createVideogame, 
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let apiVideogamesTotal = [];
+
+    // for(let i=0; i<3; i++) {
+    //     const apiVideogamesRaw = (
+    //         await axios.get(`${API_URL}?key=${API_KEY}&page_size=30${i}`)
+    //     ).data.results;
+
+    //     // Todo lo de la api mapeado
+    //     let apiVideogames = cleanArray(apiVideogamesRaw);
+
+    //     apiVideogamesTotal = apiVideogamesTotal.concat(apiVideogames);
+    // }
+    
+
+    // const infoTotal = [...apiVideogamesTotal, ...databaseVideogames];

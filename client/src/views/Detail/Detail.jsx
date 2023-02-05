@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom";
 import { getVideogameById } from "../../redux/actions";
 import styles from "./Detail.module.css"
 import Genres from "../../components/Genres/Genres";
-import imagen from "../../img/default-Image-Cards.jpeg"
+import imagen from "../../img/default-Videogames.jpg"
 import { Link } from "react-router-dom";
 
 
@@ -44,8 +44,6 @@ const Detail = () => {
                     <li className={styles.info}><h3>Description:</h3> {videogamesId?.description} </li>
                     <li className={styles.info}><h3>Released:</h3> {videogamesId?.released} </li>
                     <li className={styles.info}><h3>Rating:</h3> {videogamesId?.rating} </li>
-                    <li className={styles.info}><h3>OptionDefault:</h3> {videogamesId?.optionDefault}</li>
-
                 </ul>
 
                 {videogamesId?.Genres.map(ele => {

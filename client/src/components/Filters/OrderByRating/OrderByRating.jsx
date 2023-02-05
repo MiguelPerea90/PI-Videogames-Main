@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import Select from "react-select";
 import { orderByRating } from "../../../redux/actions";
+import styles from "./OrderByRating.module.css"
 
 
 const OrderByRating = () => {
@@ -26,7 +27,7 @@ const OrderByRating = () => {
 
 
     return (
-        <div>
+        <div className={styles.divSelect}>
             <Select options={myOptions} onChange={handlerChange} placeholder="By Rating"></Select>
         </div>
     )

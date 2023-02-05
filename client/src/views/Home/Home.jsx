@@ -7,6 +7,7 @@ import styles from "./Home.module.css"
 
 const Home = () => {
 
+    
     // Nos permite hacer dispatch de las actions creators,
     // usando la constatnte dispatch. 
     const dispatch = useDispatch();
@@ -19,7 +20,6 @@ const Home = () => {
         dispatch(getVideogames());
         dispatch(getGenres());
     }, [dispatch]);
-
 
     return (
         <div className={styles.containerHome}>

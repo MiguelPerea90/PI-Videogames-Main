@@ -2,6 +2,7 @@ import React from "react";
 import Select from 'react-select';
 import { useSelector, useDispatch } from "react-redux";
 import { filterVideogamesByGenre } from "../../../redux/actions";
+import styles from "./FiltersByGenres.module.css"
 
 
 const FilterByGenres = () => {
@@ -24,7 +25,7 @@ const FilterByGenres = () => {
 
 
     return (
-        <div>
+        <div className={styles.divSelect}>
             <Select options={infoGenres} onChange={handlerChange} placeholder="By Genres"></Select>
         </div>
     )

@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import Select from "react-select";
 import { filterAlfabetic } from "../../../redux/actions";
-
+import styles from "./FilterByAlfabetic.module.css"
 
 
 const FilterByAlfabetic = () => {
@@ -27,7 +27,7 @@ const FilterByAlfabetic = () => {
 
 
     return (
-        <div>
+        <div className={styles.divSelect}>
             <Select options={myOptions} onChange={handlerChange} placeholder="Alfabetic"></Select>
         </div>
     )

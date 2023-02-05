@@ -11,7 +11,7 @@ import FilterByCreated from "../Filters/FilterByCreated/FilterByCreated";
 const NavBar = () => {
 
       const homeButton = {
-        backgroundColor: "#F5F5DC",
+        backgroundColor: "#FF8C00",
         color: "black",
         fontSize: "28px",
         padding: "10px 20px",
@@ -23,7 +23,7 @@ const NavBar = () => {
       };
 
       const createButton = {
-        backgroundColor: "#F5F5DC",
+        backgroundColor: "#FF8C00",
         color: "black",
         fontSize: "20px",
         padding: "10px 20px",
