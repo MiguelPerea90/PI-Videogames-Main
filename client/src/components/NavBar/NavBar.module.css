@@ -1,4 +1,5 @@
 .containerNavBar {
+    position: fixed;
     background-color: #FFFFFF;
     color: #000000;
     display: flex;
@@ -9,4 +10,24 @@
     width: 100%;
     font-size: 24px;
     font-family: 'Courier New', Courier, monospace;
-};
+}
+
+.createButton button{
+    background-color: #F5F5DC;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 28px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    height: 45px;
+    width: auto;
+}
+
+.createButton button:hover{
+    transform: scale(1.1);
+    background-color: #2F4F4F;     
+    color: #FF8C00;
+}

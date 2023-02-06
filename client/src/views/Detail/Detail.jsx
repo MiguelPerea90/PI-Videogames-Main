@@ -55,8 +55,8 @@ const Detail = () => {
                     )
 
                 } )}
-               <Link to="/home">
-                    <button style={homeButton} type="button">HOME</button>
+               <Link to="/home" className={styles.homeButton}>
+                    <button type="button">home</button>
                 </Link>
             </div>
     )

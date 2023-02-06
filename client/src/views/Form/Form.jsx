@@ -98,19 +98,6 @@ const Form = () => {
         { label: "Nintendo DS", value: "Nintendo DS"},
     ]
 
-    const homeButton = {
-        backgroundColor: "#FFA500",
-        color: "black",
-        fontSize: "20px",
-        padding: "10px 20px",
-        fontFamily:  "Courier New",
-        borderRadius: "8px",
-        border: "none",
-        cursor: "pointer",
-        fontWeight: "bold"
-      };
-
-
     return (
         <div>
             <div className={styles.container}>
@@ -156,10 +143,10 @@ const Form = () => {
                         {(error.platforms) && <span className={styles.spanText} >{error.platforms}</span>}
 
                         <div className={styles.submitHome}>
-                            <button style={homeButton} type="Submit" >SUBMIT</button>
+                            <button className={styles.submitButton} type="Submit" >SUBMIT</button>
 
-                            <Link to="/home">
-                                <button style={homeButton} type="button">HOME</button>
+                            <Link to="/home" className={styles.homeButton}>
+                                <button type="button">home</button>
                             </Link>
                         </div>
 

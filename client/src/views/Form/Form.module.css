@@ -51,3 +51,30 @@
     margin-top: 15px;
     margin-bottom: 15px;
 }
+
+.homeButton button, 
+.submitButton {
+    background-color: #FF8C00;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 28px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    height: 45px;
+    width: auto;
+}
+
+.homeButton button:hover{
+    transform: scale(1.1);
+    background-color: #2F4F4F;     
+    color: #FF8C00;
+}
+
+.submitButton:hover{
+    transform: scale(1.1);
+    background-color: #2F4F4F;     
+    color: #FF8C00;
+}

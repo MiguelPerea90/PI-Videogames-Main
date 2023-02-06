@@ -13,7 +13,7 @@ const Card = (props) => {
                 < img src={imagen} alt="img default not found" width="250px" height="300px" /> }
             </Link>
 
-            <h3>{props.rating}</h3>
+            <h3 className={styles.rating}>{props.rating}</h3>
             <h3>{props.name}</h3>
 
             <h4>{ props.genres?.map(element => {

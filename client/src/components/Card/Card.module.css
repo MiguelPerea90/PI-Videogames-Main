@@ -1,12 +1,14 @@
 .card {
     background-color: #FFFFFF;
-    margin-top: 90px;
     width: 250px;
     height: 440px;
     color: #000000;
     text-align: center;
 }
 
+.rating {
+    color: #FF8C00;
+}
 h3, h4 {
     font-family: 'Courier New', Courier, monospace;
     margin: 3px;

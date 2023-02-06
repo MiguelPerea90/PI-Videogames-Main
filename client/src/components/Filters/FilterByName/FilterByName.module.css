@@ -1,13 +1,23 @@
-.searchBarBtn {
+.byNameButton,
+.findAllButton{
     background-color: #F5F5DC;
-    font-size: 22px;
+    color: #000000;
     font-family: 'Courier New', Courier, monospace;
+    font-size: 22px;
     font-weight: 600;
-    padding:  8px 16px;
-    border: none;
-    border-radius: 8px;
-    margin: 0 5px;
     cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    height: 42px;
+    width: auto;
+    margin: 0 5px;
+}
+
+.byNameButton:hover,
+.findAllButton:hover{
+    transform: scale(1.1);
+    background-color: #2F4F4F;     
+    color: #FF8C00;
 }
 
 .searchBarInput {

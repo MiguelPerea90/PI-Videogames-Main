@@ -29,8 +29,8 @@ const FilterByName = () => {
     return (
         <div>
             <input type="text" className={styles.searchBarInput}  onChange={handlerChange} placeholder="Search Videogame"/>
-            <button className={styles.searchBarBtn} onClick={handlerFindByName}>By Name</button>
-            <button className={styles.searchBarBtn} onClick={handlerFindAll}>Find All</button>
+            <button className={styles.byNameButton} onClick={handlerFindByName}>By Name</button>
+            <button className={styles.findAllButton} onClick={handlerFindAll}>Find All</button>
         </div>
     )
 };

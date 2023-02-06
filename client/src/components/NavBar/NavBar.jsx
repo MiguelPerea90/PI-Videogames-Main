@@ -10,43 +10,27 @@ import FilterByCreated from "../Filters/FilterByCreated/FilterByCreated";
 
 const NavBar = () => {
 
-      const homeButton = {
-        backgroundColor: "#FF8C00",
-        color: "black",
-        fontSize: "28px",
-        padding: "10px 20px",
-        fontFamily:  "Courier New",
-        borderRadius: "8px",
-        border: "none",
-        fontWeight: "bold",
-        cursor: "pointer"
-      };
-
-      const createButton = {
-        backgroundColor: "#FF8C00",
-        color: "black",
-        fontSize: "20px",
-        padding: "10px 20px",
-        fontFamily:  "Courier New",
-        borderRadius: "8px",
-        border: "none",
-        cursor: "pointer",
-        fontWeight: "bold"
-      };
+      // const createButton = {
+      //   backgroundColor: "#FF8C00",
+      //   color: "black",
+      //   fontSize: "20px",
+      //   padding: "10px 20px",
+      //   fontFamily:  "Courier New",
+      //   borderRadius: "8px",
+      //   border: "none",
+      //   cursor: "pointer",
+      //   fontWeight: "bold"
+      // };
 
     return (
         <div className={styles.containerNavBar}>
-
-            <Link to="/home">
-                <button style={homeButton}>HOME</button>
-            </Link>
             <FilterByName />
             <FilterByAlfabetic />
             <OrderByRating />
             <FilterByGenres />
             <FilterByCreated />
-            <Link to="/create">
-                <button style={createButton}>CREATE VIDEO GAME</button>
+            <Link to="/create" className={styles.createButton}>
+                <button >create videogame</button>
             </Link>
 
         </div>
