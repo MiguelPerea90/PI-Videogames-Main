@@ -1,10 +1,10 @@
 import React from "react";
+// import styles from "Platforms.module.css"
 
-const Platforms = (props) => {
-    console.log("props", props)
+const Platforms = ({name}) => {
     return (
         <div>
-            <p>Platforms: {props.name}</p>
+            <h4>Platform: {name}</h4>
         </div>
     )
 }

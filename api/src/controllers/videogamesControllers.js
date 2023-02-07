@@ -1,5 +1,5 @@
 const axios = require("axios");
-const { Videogame, Genre } = require("../db");
+const { Videogame, Genre, Platform } = require("../db");
 
 const { API_KEY, API_URL} = process.env;
 
@@ -35,13 +35,19 @@ const gamesUrl3 = `${API_URL}?key=${API_KEY}&page_size=35&page=3`;
 
     // Aqui trae todos los videogames de la db.
     const databaseVideogames = await Videogame.findAll({
-        include: {
+        include: [{
             model: Genre,
-            attributes: ["name", "id"],
+            attributes: ["id", "name"],
             through: {
                 attributes: []
             },
-        },
+        },{
+            model: Platform,
+            attributes: ['name'],
+            through: {
+                attributes: [],
+            }
+        }],
     }); 
 
     // Traigo todo lo de la api cómo viene
@@ -49,7 +55,7 @@ const gamesUrl3 = `${API_URL}?key=${API_KEY}&page_size=35&page=3`;
     const apiVideogamesRaw2 = (await axios.get(gamesUrl2)).data.results;
     const apiVideogamesRaw3 = (await axios.get(gamesUrl3)).data.results;
 
-    // Concateno los resultados.
+    // Me quedo con una copia de los resultados.
     const apiVideogamesRawConcat = [
         ...apiVideogamesRaw,
         ...apiVideogamesRaw2,
@@ -106,15 +112,15 @@ const getVideogameApiById = async (id) => {
             description: apivideogameById.description,
             released: apivideogameById.released,
             rating: apivideogameById.rating,
-            platforms: apivideogameById.platforms.map(apivideogameById => {
+            platforms: apivideogameById.platforms.map(element => {
                 return {
-                    name: apivideogameById.platform.name
+                    name: element.platform.name
                 }
             }),
-            Genres: apivideogameById.genres.map(apivideogameById => {
+            Genres: apivideogameById.genres.map(element => {
                 return {
-                    id: apivideogameById.id,
-                    name: apivideogameById.name,
+                    id: element.id,
+                    name: element.name,
                 }
             }),
             image: apivideogameById.background_image,
@@ -131,13 +137,19 @@ const getVideogameApiById = async (id) => {
 // ESTE CONTROLLER OBTIENE LA INFO DE LA DB POR ID
 const getVideogameDbById = async (id) => {
     return await Videogame.findByPk(id, {
-        include: {
+        include: [{
             model: Genre,
             attributes: ["id", "name"],
             through: {
                 attributes: []
             },
-        },
+        },{
+            model: Platform,
+            attributes: ['name'],
+            through: {
+                attributes: [],
+            }
+        }],
     });
 };
 
@@ -151,16 +163,19 @@ const createVideogame  = async (name, description, released, rating, platforms, 
         released, 
         rating, 
         platforms, 
-        genres
+        // genres
     });
 
-    const genresGames = await Genre.findAll({
-        where: {
-            name: genres
-        }
+    const genresDb = await Genre.findAll({
+        where: { name: genres }
     });
 
-    newVideogame.addGenre(genresGames);
+    const platformsDb = await Platform.findAll({
+        where: { name: platforms }
+    });
+
+    newVideogame.addGenres(genresDb);
+    newVideogame.addPlatforms(platformsDb);
 
     return newVideogame;
 };
@@ -174,33 +189,3 @@ module.exports = {
     createVideogame, 
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let apiVideogamesTotal = [];
-
-    // for(let i=0; i<3; i++) {
-    //     const apiVideogamesRaw = (
-    //         await axios.get(`${API_URL}?key=${API_KEY}&page_size=30${i}`)
-    //     ).data.results;
-
-    //     // Todo lo de la api mapeado
-    //     let apiVideogames = cleanArray(apiVideogamesRaw);
-
-    //     apiVideogamesTotal = apiVideogamesTotal.concat(apiVideogames);
-    // }
-    
-
-    // const infoTotal = [...apiVideogamesTotal, ...databaseVideogames];

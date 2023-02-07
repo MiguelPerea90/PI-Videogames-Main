@@ -6,6 +6,11 @@
     text-align: center;
 }
 
+.card img {
+    width: 250px;
+    height: 300px;
+}
+
 .rating {
     color: #FF8C00;
 }

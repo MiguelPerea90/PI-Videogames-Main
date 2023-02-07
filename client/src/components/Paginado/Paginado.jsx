@@ -7,13 +7,13 @@ const Paginado = ({videogamesPerPage, allVideogames, paginado}) => {
     for(let i=0; i<Math.ceil(allVideogames / videogamesPerPage); i++){
         pageNumbers.push(i+1)
     };
-
+    
     return (
         <nav className={styles.container}>
             <ul>
                 { pageNumbers && 
                     pageNumbers.map(number => (
-                        <button className={styles.paginateButton} key={number} onClick={() => paginado(number)}>{number}</button>
+                        <a href="#inicio" className={styles.aPaginate} key={number} onClick={() => paginado(number)}>{number}</a>
                     ))}
             </ul>
         </nav>

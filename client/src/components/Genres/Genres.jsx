@@ -1,9 +1,9 @@
 import React from "react";
 
-const Genres = (props) => {
+const Genres = ({name}) => {
     return (
         <div>
-            <p>Genres: {props.name}</p>
+            <h4>Genre: {name}</h4>
         </div>
     )
 }

@@ -7,59 +7,83 @@ import styles from "./Detail.module.css"
 import Genres from "../../components/Genres/Genres";
 import imagen from "../../img/default-Videogames.jpg"
 import { Link } from "react-router-dom";
+import Platforms from "../../components/Platforms/Platforms";
 
 
 const Detail = () => {
-    const location = useLocation();
-    const dispatch = useDispatch();
-    const videogamesId = useSelector(state => state.videogame)
+  const location = useLocation();
+  const dispatch = useDispatch();
+  const videogamesId = useSelector((state) => state.videogame);
 
-    useEffect(() => {
-        dispatch(getVideogameById(location.state))
-    },[dispatch, location])
+  useEffect(() => {
+    dispatch(getVideogameById(location.state));
+  }, [dispatch, location]);
 
+  return (
+    <div className={styles.bigContainer}>
 
-    const homeButton = {
-        backgroundColor: "#FFA500",
-        color: "black",
-        fontSize: "20px",
-        padding: "10px 20px",
-        fontFamily:  "Courier New",
-        borderRadius: "8px",
-        border: "none",
-        cursor: "pointer",
-        fontWeight: "bold"
-      };
+        <div className={styles.containerDivs}>
+            
+            <div className={styles.imageName}>
+                {videogamesId?.image ? (
+                    <img
+                    src={videogamesId.image}
+                    alt="img not found"
+                    />
+                ) : (
+                    <img
+                    src={imagen}
+                    alt="img default not found"
+                    />
+                )}
 
-
-    return (
-            <div className={styles.container}>  
-
-
-                {videogamesId?.image ?  <img src={videogamesId.image} alt="img not found" width="250px" height="300px" />:
-                    < img src={imagen} alt="img default not found" width="250px" height="300px" /> }
-
-                <ul>
-                    <li className={styles.info}><h3>Name:</h3> {videogamesId?.name} </li>
-                    <li className={styles.info}><h3>Description:</h3> {videogamesId?.description} </li>
-                    <li className={styles.info}><h3>Released:</h3> {videogamesId?.released} </li>
-                    <li className={styles.info}><h3>Rating:</h3> {videogamesId?.rating} </li>
-                </ul>
-
-                {videogamesId?.Genres.map(ele => {
-
-                    return (
-                        <div key={ele.id}>
-                            <Genres name={ele.name} />
-                        </div>
-                    )
-
-                } )}
-               <Link to="/home" className={styles.homeButton}>
-                    <button type="button">home</button>
-                </Link>
+                <li className={styles.info}>
+                    <h3>Name:</h3> {videogamesId?.name}{" "}
+                </li>
             </div>
-    )
+
+            <div className={styles.desRelRat}>
+                <li className={styles.info}>
+                    <h3>Description:</h3> {videogamesId?.description}{" "}
+                </li>
+
+                <li className={styles.info}>
+                    <h3>Released:</h3> {videogamesId?.released}{" "}
+                </li>
+
+                <li className={styles.info}>
+                    <h3>Rating:</h3> {videogamesId?.rating}{" "}
+                </li>
+            </div>
+
+            <div className={styles.genresPlatforms}>
+                {videogamesId?.Genres.map((ele) => {
+                    return (
+                    <div key={ele.id}>
+                        <Genres name={ele.name} />
+                    </div>
+                    );
+                })}
+
+                {videogamesId?.platforms.map((ele) => {
+                    return (
+                    <div key={ele.name}>
+                        <Platforms name={ele.name} />
+                    </div>
+                    );
+                })}
+            </div>
+
+        </div>
+            
+        <div className={styles.containerLink}>
+            <Link to="/home" className={styles.homeButton}>
+                <button type="button">home</button>
+            </Link>
+        </div>
+
+    </div>
+  );
 };
 
 export default Detail;

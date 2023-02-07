@@ -1,23 +1,24 @@
 .container {
    width: fit-content;
-   height: 250px;
+   height: 38px;
+   margin: 45px 0;
 }
 
-.paginateButton {
-   background-color: #FFFFFF;   
+.aPaginate {
+   background-color: #FFFFFF;
+   color: #000000;   
    font-family: 'Courier New', Courier, monospace;
    font-size: 28px;
+   padding: 5px 10px;
    font-weight: 600;
-   height: 40px;
-   width: 40px;
+   margin: 5px;
    border: none;
    border-radius: 6px;
-   margin: 150px 5px;
    cursor: pointer;
+   text-decoration: none;
 }
 
-.paginateButton:hover {
-   transform: scale(1.2);    
+.aPaginate:hover {   
    color: #FF8C00;
    background-color: #F5F5DC;
  }

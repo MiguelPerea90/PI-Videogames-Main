@@ -31,29 +31,23 @@ const CardsContainer = () => {
   return (
     <div className={styles.bigCardsContainer}>
 
-      <div className={styles.divPaginado}>
-        <Paginado
-          videogamesPerPage={videogamesPerPage}
-          allVideogames={allVideogames.length}
-          paginado={paginado}
-        />
-      </div>
-
-      <div className={styles.cardsContainer}>
-        {currentVideogames?.map((videogame) => {
-          return (
-            <div key={videogame.id}>
-              <Card
-                id={videogame.id}
-                image={videogame.image}
-                rating={videogame.rating}
-                name={videogame.name}
-                genres={videogame.Genres}
-              />
-            </div>
-          );
-        })}
-      </div>
+      <section id="inicio">
+        <div className={styles.cardsContainer}>
+          {currentVideogames?.map((videogame) => {
+            return (
+              <div key={videogame.id}>
+                <Card
+                  id={videogame.id}
+                  image={videogame.image}
+                  rating={videogame.rating}
+                  name={videogame.name}
+                  genres={videogame.Genres}
+                />
+              </div>
+            );
+          })}
+        </div>
+      </section>
 
       <div >
         <Paginado

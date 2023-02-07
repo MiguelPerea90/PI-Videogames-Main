@@ -1,16 +1,56 @@
-
-.container {
-    background-color: #F5F5DC;
-    width: 50VW;
-    height: 90vh;
+.bigContainer {
+    width: 100VW;
+    height: 98vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    margin: auto;
-    padding: 22px;
-    border-radius: 10px;
 }
+
+.containerDivs {
+    display: flex;
+    gap: 2.5em;
+    align-items: center;
+    justify-content: center;
+    margin-top: 160px;
+}
+
+.imageName {
+    background-color: #F5F5DC;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    height: auto;
+    padding: 30px 0;
+    border-radius: 6px;
+}
+.imageName img {
+    width: 96%;
+    height: auto;
+    border-radius: 3px;
+}
+
+.desRelRat {
+    background-color: #F5F5DC;
+    width: 30%;
+    height: auto;
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 8px;
+}
+
+.genresPlatforms {
+    background-color: #F5F5DC;
+    width: 30%;
+    height: auto;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.containerLink {
+    margin-top: 20px;
+}
+
 .info {
     list-style: none;
     text-align: center;
@@ -35,4 +75,9 @@
     transform: scale(1.1);
     background-color: #2F4F4F;     
     color: #FF8C00;
+}
+
+h3, h4 {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 3px;
 }
