@@ -22,10 +22,6 @@ module.exports = (sequelize) => {
         isFloat: true,
       },
     },
-    platforms: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     description: {
       type: DataTypes.TEXT,
       allowNull: false,

@@ -65,7 +65,7 @@ const Detail = () => {
                     );
                 })}
 
-                {videogamesId?.platforms.map((ele) => {
+                {videogamesId?.Platforms.map((ele) => {
                     return (
                     <div key={ele.name}>
                         <Platforms name={ele.name} />

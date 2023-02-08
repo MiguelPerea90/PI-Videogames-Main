@@ -43,7 +43,7 @@ const gamesUrl3 = `${API_URL}?key=${API_KEY}&page_size=35&page=3`;
             },
         },{
             model: Platform,
-            attributes: ['name'],
+            attributes: ["id", "name"],
             through: {
                 attributes: [],
             }
@@ -112,7 +112,7 @@ const getVideogameApiById = async (id) => {
             description: apivideogameById.description,
             released: apivideogameById.released,
             rating: apivideogameById.rating,
-            platforms: apivideogameById.platforms.map(element => {
+            Platforms: apivideogameById.platforms.map(element => {
                 return {
                     name: element.platform.name
                 }
@@ -145,7 +145,7 @@ const getVideogameDbById = async (id) => {
             },
         },{
             model: Platform,
-            attributes: ['name'],
+            attributes: ["id", "name"],
             through: {
                 attributes: [],
             }
@@ -161,9 +161,7 @@ const createVideogame  = async (name, description, released, rating, platforms, 
         name,
         description,
         released, 
-        rating, 
-        platforms, 
-        // genres
+        rating,
     });
 
     const genresDb = await Genre.findAll({
