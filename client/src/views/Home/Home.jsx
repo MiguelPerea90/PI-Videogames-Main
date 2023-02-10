@@ -77,14 +77,7 @@ const Home = () => {
                         </div>
                     </div>
                 
-                    <div className={styles.containerGenreCreated}>
-                        <div className={styles.genres}>
-                            <FilterByGenres />
-                        </div>
-                        <div className={styles.creatediv}>
-                            <FilterByCreated />
-                        </div>
-                    </div>
+                    
 
                 </div>
 
@@ -96,3 +89,19 @@ const Home = () => {
 };
 
 export default Home;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
