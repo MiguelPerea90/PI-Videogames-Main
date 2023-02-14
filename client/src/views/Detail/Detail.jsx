@@ -23,7 +23,7 @@ const Detail = () => {
     <div className={styles.bigContainer}>
 
         <div className={styles.containerDivs}>
-            
+
             <div className={styles.imageName}>
                 {videogamesId?.image ? (
                     <img
@@ -38,21 +38,30 @@ const Detail = () => {
                 )}
 
                 <li className={styles.info}>
-                    <h3>Name:</h3> {videogamesId?.name}{" "}
+                    <h3>Name:</h3> <span className={styles.Span}> {videogamesId?.name} </span>{" "}
                 </li>
             </div>
 
             <div className={styles.desRelRat}>
                 <li className={styles.info}>
-                    <h3>Description:</h3> {videogamesId?.description}{" "}
+                    <h3>Description:</h3> 
+                    <span className={styles.Span2}> 
+                        {videogamesId?.description} 
+                    </span>{" "}
                 </li>
 
                 <li className={styles.info}>
-                    <h3>Released:</h3> {videogamesId?.released}{" "}
+                    <h3>Released:</h3> 
+                    <span className={styles.Span}> 
+                        {videogamesId?.released} 
+                    </span>{" "}
                 </li>
 
                 <li className={styles.info}>
-                    <h3>Rating:</h3> {videogamesId?.rating}{" "}
+                    <h3>Rating:</h3> 
+                    <span className={styles.Span}> 
+                        {videogamesId?.rating} 
+                    </span>{" "}
                 </li>
             </div>
 

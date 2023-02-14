@@ -1,9 +1,10 @@
 import React from "react";
+import styles from "./Genres.module.css"
 
 const Genres = ({name}) => {
     return (
-        <div>
-            <h4>Genre: {name}</h4>
+        <div className={styles.container}>
+            <h3> Genre: <span  className={styles.Span}> { name } </span> </h3>
         </div>
     )
 }
