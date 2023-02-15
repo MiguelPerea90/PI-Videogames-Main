@@ -46,7 +46,11 @@ const Detail = () => {
                 <li className={styles.info}>
                     <h3>Description:</h3> 
                     <span className={styles.Span2}> 
-                        {videogamesId?.description} 
+                        {videogamesId?.description
+                        .slice(0,601)
+                        .replaceAll("<p>", " ")
+                        .replaceAll("</p>", " ")
+                        .replaceAll("<br />", " ")}
                     </span>{" "}
                 </li>
 

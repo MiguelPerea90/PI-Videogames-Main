@@ -2,7 +2,8 @@ import axios from "axios";
 
 import { 
     GET_VIDEOGAMES, 
-    GET_GENRES, 
+    GET_GENRES,
+    GET_PLATFORMS,
     FILTER_BY_GENRE, 
     GET_VIDEOGAME_BY_NAME,
     FILTER_BY_ALFABETIC,
@@ -35,6 +36,20 @@ export const getGenres = () => {
         return dispatch({ 
             type: GET_GENRES, 
             payload: allGenres 
+        });
+    };
+};
+
+export const getPlatforms = () => {
+    return async function(dispatch) {
+        const apiPlatforms = await axios.get(
+            "http://localhost:3001/platforms"
+        );
+        const allPlatforms = apiPlatforms.data;
+
+        return dispatch({ 
+            type: GET_PLATFORMS, 
+            payload: allPlatforms
         });
     };
 };

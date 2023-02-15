@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import Select from 'react-select';
 import { Link, useHistory } from "react-router-dom";
-import { getGenres } from "../../redux/actions";
+import { getGenres, getPlatforms } from "../../redux/actions";
 import axios from "axios";
 
 const validate = (form) => {
@@ -25,12 +25,14 @@ const Form = () => {
     const history = useHistory()
 
     const allGenres = useSelector(state => state.genres);
+    //const allPlatforms = useSelector(state => state.platforms);
 
     const [form, setForm] = useState({
         name: "",
         description: "",
         released: "",
         rating: 0,
+        //platforms: [],
         platforms: "",
         genres: [],
     });
@@ -41,6 +43,7 @@ const Form = () => {
         const validations = validate(form)
         setError(validations)
         dispatch(getGenres());
+        dispatch(getPlatforms());
     }, [dispatch, form]);
 
     const infoGenres = allGenres.map(element => {
@@ -82,8 +85,6 @@ const Form = () => {
             alert("Videogame Created")
         }
     }
-
-    console.log("form", form)
 
     const optionsPlatforms = [
         { label: "PC", value: "PC"},

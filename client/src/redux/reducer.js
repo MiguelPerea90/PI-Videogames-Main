@@ -1,6 +1,7 @@
 import {
   GET_VIDEOGAMES,
   GET_GENRES,
+  GET_PLATFORMS,
   FILTER_BY_GENRE,
   GET_VIDEOGAME_BY_NAME,
   FILTER_BY_ALFABETIC,
@@ -13,6 +14,7 @@ const initialState = {
   videogames: [],
   allVideogames: [],
   genres: [],
+  platforms: []
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -27,6 +29,11 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         genres: action.payload,
+      };
+    case GET_PLATFORMS:
+      return {
+        ...state,
+        platforms: action.payload,
       };
     case FILTER_BY_GENRE:
       const videogamesByName = state.allVideogames.filter((element) =>
@@ -83,7 +90,7 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         videogames: orderByRating,
       };
-      case FILTER_BY_CREATED:
+    case FILTER_BY_CREATED:
         const filterCreated = action.payload === "api" ?  
         state.allVideogames.filter(e => e.created === false) : 
         state.allVideogames.filter(e => e.created === true)
@@ -91,7 +98,7 @@ const rootReducer = (state = initialState, action) => {
             ...state,
             videogames: filterCreated
         }
-    default:
+      default:
       return {
         ...state,
       };
