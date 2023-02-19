@@ -49,7 +49,13 @@ const CardsContainer = () => {
               })}
           </div>
 
-        
+          <div  className={styles.containerPaginado}>
+          <Paginado
+            videogamesPerPage={videogamesPerPage}
+            allVideogames={allVideogames.length}
+            paginado={paginado}
+          />
+          </div>
       
       </div>
   );
