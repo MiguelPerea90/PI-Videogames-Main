@@ -3,6 +3,7 @@ import axios from "axios";
 import { 
     GET_VIDEOGAMES, 
     GET_GENRES,
+    GET_GENRES_FORM,
     GET_PLATFORMS,
     FILTER_BY_GENRE, 
     GET_VIDEOGAME_BY_NAME,
@@ -40,12 +41,26 @@ export const getGenres = () => {
     };
 };
 
+export const getGenresForm = () => {
+    return async function(dispatch) {
+        const apiGenresForm = await axios.get(
+            "http://localhost:3001/genres"
+        );
+        const allGenresForm = apiGenresForm.data.map(element => element.name);
+
+        return dispatch({ 
+            type: GET_GENRES_FORM, 
+            payload: allGenresForm 
+        });
+    };
+};
+
 export const getPlatforms = () => {
     return async function(dispatch) {
         const apiPlatforms = await axios.get(
             "http://localhost:3001/platforms"
         );
-        const allPlatforms = apiPlatforms.data;
+        const allPlatforms = apiPlatforms.data.map(element => element.name);
 
         return dispatch({ 
             type: GET_PLATFORMS, 
@@ -53,7 +68,6 @@ export const getPlatforms = () => {
         });
     };
 };
-
 
 export const filterVideogamesByGenre = (payload) => {
     return {
@@ -74,7 +88,6 @@ export const videogamesByName = (name) => {
     })
    }
 };
-
 
 export const filterAlfabetic = (payload) => {
     return {

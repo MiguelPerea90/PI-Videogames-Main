@@ -1,6 +1,7 @@
 import {
   GET_VIDEOGAMES,
   GET_GENRES,
+  GET_GENRES_FORM,
   GET_PLATFORMS,
   FILTER_BY_GENRE,
   GET_VIDEOGAME_BY_NAME,
@@ -14,6 +15,7 @@ const initialState = {
   videogames: [],
   allVideogames: [],
   genres: [],
+  genresForm: [],
   platforms: []
 };
 
@@ -29,6 +31,11 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         genres: action.payload,
+      };
+    case GET_GENRES_FORM:
+      return {
+        ...state,
+        genresForm: action.payload,
       };
     case GET_PLATFORMS:
       return {
