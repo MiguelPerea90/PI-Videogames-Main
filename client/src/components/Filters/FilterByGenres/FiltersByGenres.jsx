@@ -26,7 +26,11 @@ const FilterByGenres = () => {
 
     return (
         <div className={styles.divSelect}>
-            <Select options={infoGenres} onChange={handlerChange} placeholder="By Genres"></Select>
+            <Select 
+                options={infoGenres} 
+                onChange={handlerChange} 
+                placeholder="By Genres">
+            </Select>
         </div>
     )
   

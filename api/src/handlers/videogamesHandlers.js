@@ -72,10 +72,10 @@ const getVideogameIdHandeler = async (req, res) => {
 // videojuego por body. OK
 // Crea un videojuego en la base de datos, relacionado a sus géneros. OK
 const createVideogameHandeler = async (req, res) => {
-    const {name, description, released, rating, platforms, genres} = req.body;
+    const {name, description, released, rating, image, platforms, genres} = req.body;
     
    try {
-    const newVideogame = await createVideogame(name, description, released, rating, platforms, genres);
+    const newVideogame = await createVideogame(name, description, released, rating, image, platforms, genres);
     res.status(201).json(newVideogame);
    } catch (error) {
     res.status(400).json({ error: error.message });

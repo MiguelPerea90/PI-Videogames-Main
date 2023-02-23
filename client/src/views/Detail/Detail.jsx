@@ -38,7 +38,7 @@ const Detail = () => {
                 )}
 
                 <li className={styles.info}>
-                    <h3>Name:</h3> <span className={styles.Span}> {videogamesId?.name} </span>{" "}
+                    <h3>Name:</h3> <span className={styles.Span}> {videogamesId?.name} </span>
                 </li>
             </div>
 
@@ -51,38 +51,44 @@ const Detail = () => {
                         .replaceAll("<p>", " ")
                         .replaceAll("</p>", " ")
                         .replaceAll("<br />", " ")}
-                    </span>{" "}
+                    </span>
                 </li>
 
                 <li className={styles.info}>
                     <h3>Released:</h3> 
                     <span className={styles.Span}> 
                         {videogamesId?.released} 
-                    </span>{" "}
+                    </span>
                 </li>
 
                 <li className={styles.info}>
                     <h3>Rating:</h3> 
                     <span className={styles.Span}> 
                         {videogamesId?.rating} 
-                    </span>{" "}
+                    </span>
                 </li>
             </div>
 
             <div className={styles.genresPlatforms}>
                 {videogamesId?.Genres.map((ele) => {
                     return (
-                    <div key={ele.id}>
-                        <Genres name={ele.name} />
-                    </div>
+                    // <div key={ele.id}>
+                        <Genres 
+                            key={ele.name}  
+                            name={ele.name} 
+                        />
+                    // </div>
                     );
                 })}
 
                 {videogamesId?.Platforms.map((ele) => {
                     return (
-                    <div key={ele.name}>
-                        <Platforms name={ele.name} />
-                    </div>
+                    // <div key={ele.name}>
+                        <Platforms 
+                            key={ele.name} 
+                            name={ele.name} 
+                        />
+                    // </div> *
                     );
                 })}
             </div>

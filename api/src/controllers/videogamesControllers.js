@@ -3,10 +3,6 @@ const { Videogame, Genre, Platform } = require("../db");
 
 const { API_KEY, API_URL} = process.env;
 
-const gamesUrl = `${API_URL}?key=${API_KEY}&page_size=35`;
-const gamesUrl2 = `${API_URL}?key=${API_KEY}&page_size=35&page=2`;
-const gamesUrl3 = `${API_URL}?key=${API_KEY}&page_size=35&page=3`;
-
 
 // CONTROLLERS:
 
@@ -23,8 +19,13 @@ const gamesUrl3 = `${API_URL}?key=${API_KEY}&page_size=35&page=3`;
                     name: element.name,
                 }
             }),
+            Platforms: element.platforms.map(element => {
+                return {
+                    id: element.platform.id,
+                    name: element.platform.name
+                }
+            }),
             image: element.background_image,
-            created: true,
         };
     });
 };
@@ -51,9 +52,15 @@ const gamesUrl3 = `${API_URL}?key=${API_KEY}&page_size=35&page=3`;
     }); 
 
     // Traigo todo lo de la api cómo viene
-    const apiVideogamesRaw = (await axios.get(gamesUrl)).data.results;
-    const apiVideogamesRaw2 = (await axios.get(gamesUrl2)).data.results;
-    const apiVideogamesRaw3 = (await axios.get(gamesUrl3)).data.results;
+    const apiVideogamesRaw = (
+        await axios.get(`${API_URL}?key=${API_KEY}&page_size=35page=1`)
+    ).data.results;
+    const apiVideogamesRaw2 = (
+        await axios.get(`${API_URL}?key=${API_KEY}&page_size=35&page=2`)
+    ).data.results;
+    const apiVideogamesRaw3 = (
+        await axios.get(`${API_URL}?key=${API_KEY}&page_size=35&page=3`)
+    ).data.results;
 
     // Me quedo con una copia de los resultados.
     const apiVideogamesRawConcat = [
@@ -68,20 +75,8 @@ const gamesUrl3 = `${API_URL}?key=${API_KEY}&page_size=35&page=3`;
     // Me traigo una co´pia de todo lo de la api + lo de la db
     const infoTotal = [...apiVideogamesClean, ...databaseVideogames];
 
-    // mapeo todo de nuevo para dejarle el created en true o false
-    const newData = infoTotal.map(element => {
-        return {
-            id: element.id,
-            name: element.name,
-            rating: element.rating,
-            Genres: element.Genres.map(e => e.name),
-            image: element.image,
-            created: typeof element.id == "number" ? false : true,
-        }
-    });
-
     // retorno la data completa
-    return newData;
+    return infoTotal;
 
  };
 
@@ -104,33 +99,31 @@ const gamesUrl3 = `${API_URL}?key=${API_KEY}&page_size=35&page=3`;
 
  // // ESTE CONTROLLER OBTIENE LA INFO DE LA API POR ID
 const getVideogameApiById = async (id) => {
-    const apivideogameById = (await axios.get(`${API_URL}/${id}?key=${API_KEY}`)).data; 
+    const apiVideogameById = (await axios.get(`${API_URL}/${id}?key=${API_KEY}`)).data; 
 
         const videogameById = {
-            id: apivideogameById.id,
-            name: apivideogameById.name,
-            description: apivideogameById.description,
-            released: apivideogameById.released,
-            rating: apivideogameById.rating,
-            Platforms: apivideogameById.platforms.map(element => {
-                return {
-                    name: element.platform.name
-                }
-            }),
-            Genres: apivideogameById.genres.map(element => {
+            id: apiVideogameById.id,
+            name: apiVideogameById.name,
+            description: apiVideogameById.description,
+            released: apiVideogameById.released,
+            rating: apiVideogameById.rating,
+            Genres: apiVideogameById.genres.map(element => {
                 return {
                     id: element.id,
                     name: element.name,
                 }
             }),
-            image: apivideogameById.background_image,
-            created: false,
+            Platforms: apiVideogameById.platforms.map(element => {
+                return {
+                    id: element.platform.id,
+                    name: element.platform.name
+                }
+            }),
+            image: apiVideogameById.background_image,
         }
 
-
     return videogameById;
-    
-       
+        
 };
 
 
@@ -155,13 +148,14 @@ const getVideogameDbById = async (id) => {
 
 
 // ESTE CONTROLLER CREA UN NUEVO VIDEOGAME
-const createVideogame  = async (name, description, released, rating, platforms, genres) => {
+const createVideogame  = async (name, description, released, rating, image, platforms, genres) => {
 
     const newVideogame = await Videogame.create({
         name,
         description,
         released, 
         rating,
+        image
     });
 
     const genresDb = await Genre.findAll({

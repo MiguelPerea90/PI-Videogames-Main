@@ -13,7 +13,12 @@ const Paginado = ({videogamesPerPage, allVideogames, paginado}) => {
             <ul>
                 { pageNumbers && 
                     pageNumbers.map(number => (
-                        <a href="#inicio" className={styles.aPaginate} key={number} onClick={() => paginado(number)}>{number}</a>
+                        <a href="#inicio" 
+                            className={styles.aPaginate} 
+                            key={number} 
+                            onClick={() => paginado(number)}>
+                            {number}
+                        </a>
                     ))}
             </ul>
         </nav>

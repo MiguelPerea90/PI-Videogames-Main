@@ -1,15 +1,3 @@
-.bigCardsContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.divPaginado {
-    display: flex;
-    justify-content: center;
-}
-
-
 .cardsContainer {
     font-family: 'Courier New', Courier, monospace;
     width: 80vw;

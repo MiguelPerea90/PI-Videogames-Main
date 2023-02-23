@@ -1,49 +1,59 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /* 1rem = 10px */
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+}
 body {
-    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.6rem;
+    line-height: 2;
+    overflow: hidden;
+}
+.title {
+    font-size: 3rem;
+    color: #FF8C00;
+}
+@media (min-width : 480px) { 
+    .title {
+        font-size: 4rem;
+    }
+}
+@media (min-width: 768px) {
+    .title {
+        font-size: 4.5rem;
+    }
+}
+@media (min-width: 1200px) {
+    .title {
+        font-size: 5rem;
+    }
+}
+.containerLanding {
     background-image: url("../../img/Videogames-Pi-Landing.webp");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
+    background-position: center;
+    margin: -22px;
     height: 100vh;
-    width: 100vw;
-}
-.containerLanding {
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
-    align-items: center;
-    color:  #FF8C00;
-    font-size: 36px;
-    font-weight: bold;
-    font-family: 'Courier New', Courier, monospace;
-    word-spacing: normal;
 }
-
-
-.container {
-    display: flex; 
-    flex-direction: column;
-    justify-content:center;
-    align-items: center;
-    margin-top: 300px;
-}
-
-.buttonStart {
-    background-color: #708090;
-    color: #2F4F4F;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 28px;
-    font-weight: 600;
+.buttonHome {
+    background-color:  #FF8C00;
+    font-size: 1.6rem;
+    font-weight: 700;
     border: none;
-    border-radius: 5px;
-    padding: 12px 24px;
+    border-radius: .4rem;
+    padding: 6px 12px;
     transition: background-color .5s;
     cursor: pointer;
 }
-
-.buttonStart:hover {
+.buttonHome:hover {
     transform: scale(1.1);
     background-color: #2F4F4F;     
     color: #FF8C00;
-  }
+  } 

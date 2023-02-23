@@ -5,10 +5,6 @@ const { getAllPlatforms } = require("../controllers/platformsControllers")
 const { Platform } = require("../db")
 
 
-
-
-
-
 // GET /platforms:
 // Obtener todos los tipos de plataformas de videojuegos posibles.
 // En una primera instancia deberán traerlos desde rawg y guardarlos en su propia base de datos

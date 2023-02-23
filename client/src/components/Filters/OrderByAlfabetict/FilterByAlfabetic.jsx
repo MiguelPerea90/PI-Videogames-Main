@@ -28,7 +28,11 @@ const FilterByAlfabetic = () => {
 
     return (
         <div className={styles.divSelect}>
-            <Select options={myOptions} onChange={handlerChange} placeholder="Alfabetic"></Select>
+            <Select 
+                options={myOptions} 
+                onChange={handlerChange} 
+                placeholder="Alfabetic">
+            </Select>
         </div>
     )
     

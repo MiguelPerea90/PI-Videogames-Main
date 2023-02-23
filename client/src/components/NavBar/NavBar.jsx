@@ -10,18 +10,6 @@ import FilterByCreated from "../Filters/FilterByCreated/FilterByCreated";
 
 const NavBar = () => {
 
-      // const createButton = {
-      //   backgroundColor: "#FF8C00",
-      //   color: "black",
-      //   fontSize: "20px",
-      //   padding: "10px 20px",
-      //   fontFamily:  "Courier New",
-      //   borderRadius: "8px",
-      //   border: "none",
-      //   cursor: "pointer",
-      //   fontWeight: "bold"
-      // };
-
     return (
         <div className={styles.containerNavBar}>
             <FilterByName />

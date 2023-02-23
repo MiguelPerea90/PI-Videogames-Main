@@ -29,35 +29,28 @@ const CardsContainer = () => {
   };
 
   return (
-    <div className={styles.bigCardsContainer}>
+      <div className={styles.cardsContainer}>
 
-      <section id="inicio">
-        <div className={styles.cardsContainer}>
-          {currentVideogames?.map((videogame) => {
-            return (
-              <div key={videogame.id}>
-                <Card
-                  id={videogame.id}
-                  image={videogame.image}
-                  rating={videogame.rating}
-                  name={videogame.name}
-                  genres={videogame.Genres}
-                />
-              </div>
-            );
-          })}
-        </div>
-      </section>
+        {currentVideogames?.map((videogame) => {
+          return (
+              <Card key={videogame.id}
+                id={videogame.id}
+                image={videogame.image}
+                rating={videogame.rating}
+                name={videogame.name}
+                genres={videogame.Genres}
+                platforms={videogame.Platforms}
+              />
+          );
+        })}
 
-      <div >
         <Paginado
           videogamesPerPage={videogamesPerPage}
           allVideogames={allVideogames.length}
           paginado={paginado}
         />
-      </div>
 
-    </div>
+      </div>
   );
 };
 
