@@ -27,7 +27,7 @@ const FilterByName = () => {
     }
 
     return (
-        <div>
+        <div className={styles.containerNavBar}>
             <input type="text" 
             className={styles.searchBarInput}  
             onChange={handlerChange} 
@@ -35,12 +35,12 @@ const FilterByName = () => {
 
             <button 
             className={styles.byNameButton} 
-            onClick={handlerFindByName}>By Name
+            onClick={handlerFindByName}>Search Name
             </button>
 
             <button 
             className={styles.findAllButton} 
-            onClick={handlerFindAll}>Find All
+            onClick={handlerFindAll}>All Videogames
             </button>
         </div>
     )

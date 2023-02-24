@@ -5,9 +5,9 @@ import {
     GET_GENRES,
     GET_GENRES_FORM,
     GET_PLATFORMS,
-    FILTER_BY_GENRE, 
+    FILTER_BY_GENRE,
     GET_VIDEOGAME_BY_NAME,
-    FILTER_BY_ALFABETIC,
+    ORDER_BY_ALFABETIC,
     GET_VIDEOGAME_BY_ID,
     ORDER_BY_RATING,
     FILTER_BY_CREATED
@@ -69,29 +69,43 @@ export const getPlatforms = () => {
     };
 };
 
-export const filterVideogamesByGenre = (payload) => {
+export const videogamesByName = (name) => {
+    return async function (dispatch) {
+     const dataByName = await axios.get(
+         `http://localhost:3001/videogames?name=${name}`
+     )
+     const videogamesByName = dataByName.data
+     dispatch({
+         type: GET_VIDEOGAME_BY_NAME,
+         payload: videogamesByName
+     })
+    }
+ };
+
+export const  filterByGenre = (payload) => {
     return {
         type: FILTER_BY_GENRE,
         payload
     }
 };
 
-export const videogamesByName = (name) => {
-   return async function (dispatch) {
-    const dataByName = await axios.get(
-        `http://localhost:3001/videogames?name=${name}`
-    )
-    const videogamesByName = dataByName.data
-    dispatch({
-        type: GET_VIDEOGAME_BY_NAME,
-        payload: videogamesByName
-    })
-   }
+export const filterByCreated = (payload) => {
+    return {
+        type: FILTER_BY_CREATED,
+        payload
+    }
 };
 
-export const filterAlfabetic = (payload) => {
+export const orderByRating = (payload) => {
     return {
-        type: FILTER_BY_ALFABETIC,
+        type: ORDER_BY_RATING,
+        payload
+    }
+};
+
+export const orderByAlfabetic = (payload) => {
+    return {
+        type: ORDER_BY_ALFABETIC,
         payload
     }
 };
@@ -109,16 +123,5 @@ export const getVideogameById = (props) => {
     };
 };
 
-export const orderByRating = (payload) => {
-    return {
-        type: ORDER_BY_RATING,
-        payload
-    }
-};
 
-export const filterByCreated = (payload) => {
-    return {
-        type: FILTER_BY_CREATED,
-        payload
-    }
-};
+

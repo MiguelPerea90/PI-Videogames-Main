@@ -27,11 +27,11 @@ const OrderByRating = () => {
 
 
     return (
-        <div className={styles.divSelect}>
+        <div className={styles.containerRating}>
             <Select 
                 options={myOptions} 
                 onChange={handlerChange} 
-                placeholder="By Rating">
+                placeholder="Order By Rating">
             </Select>
         </div>
     )
@@ -41,5 +41,3 @@ const OrderByRating = () => {
 };
 
 export default OrderByRating;
-
-// className={styles.divSelect}

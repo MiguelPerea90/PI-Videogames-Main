@@ -10,7 +10,7 @@ const CardsContainer = () => {
   // allVideogames me traigo todo lo que está en el estado videogames.
   const allVideogames = useSelector((state) => state.videogames);
 
-  // PAGINADO
+  // // PAGINADO
   const [currentPage, setCurrentPage] = useState(1);
 
   const [videogamesPerPage] = useState(15); // setVideogamesPerPage INCLUIR
@@ -29,27 +29,31 @@ const CardsContainer = () => {
   };
 
   return (
-      <div className={styles.cardsContainer}>
+      <div className={styles.cardsContainerHome}>
 
-        {currentVideogames?.map((videogame) => {
-          return (
-              <Card key={videogame.id}
-                id={videogame.id}
-                image={videogame.image}
-                rating={videogame.rating}
-                name={videogame.name}
-                genres={videogame.Genres}
-                platforms={videogame.Platforms}
-              />
-          );
-        })}
+          <div className={styles.cardsContainer}>
+            {currentVideogames?.map((videogame) => {
+              return (
+                  <Card key={videogame.id}
+                    id={videogame.id}
+                    image={videogame.image}
+                    rating={videogame.rating}
+                    name={videogame.name}
+                    genres={videogame.Genres}
+                      // platforms={videogame.Platforms}
+                  />
+                );
+              })}
+          </div>
 
-        <Paginado
-          videogamesPerPage={videogamesPerPage}
-          allVideogames={allVideogames.length}
-          paginado={paginado}
-        />
-
+          <div  className={styles.containerPaginado}>
+          <Paginado
+            videogamesPerPage={videogamesPerPage}
+            allVideogames={allVideogames.length}
+            paginado={paginado}
+          />
+          </div>
+      
       </div>
   );
 };

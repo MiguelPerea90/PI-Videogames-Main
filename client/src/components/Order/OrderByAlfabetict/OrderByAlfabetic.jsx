@@ -1,11 +1,11 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import Select from "react-select";
-import { filterAlfabetic } from "../../../redux/actions";
-import styles from "./FilterByAlfabetic.module.css"
+import { orderByAlfabetic } from "../../../redux/actions";
+import styles from "./OrderByAlfabetic.module.css"
 
 
-const FilterByAlfabetic = () => {
+const OrederByAlfabetic = () => {
 
     const dispatch = useDispatch()
 
@@ -21,17 +21,15 @@ const FilterByAlfabetic = () => {
     ]
 
     const handlerChange = (event) => {
-        dispatch(filterAlfabetic(event.value))
+        dispatch(orderByAlfabetic(event.value))
     }
 
-
-
     return (
-        <div className={styles.divSelect}>
+        <div className={styles.containerAlfabetic}>
             <Select 
                 options={myOptions} 
                 onChange={handlerChange} 
-                placeholder="Alfabetic">
+                placeholder="Order Alfabetic">
             </Select>
         </div>
     )
@@ -40,4 +38,4 @@ const FilterByAlfabetic = () => {
 
 };
 
-export default FilterByAlfabetic;
+export default  OrederByAlfabetic;

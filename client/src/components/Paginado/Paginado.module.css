@@ -6,7 +6,7 @@
 
 .aPaginate {
    background-color: #FFFFFF;
-   color: #000000;   
+   color: #FF8C00;   
    font-family: 'Courier New', Courier, monospace;
    font-size: 28px;
    padding: 5px 10px;
@@ -19,6 +19,7 @@
 }
 
 .aPaginate:hover {   
-   color: #FF8C00;
-   background-color: #F5F5DC;
+   color: #ffffff;
+   background-color: #2F4F4F;
+   transform: scale(1.1);
  }

@@ -11,28 +11,29 @@ const Card = (props) => {
                 props.image ? 
                 <img src={props.image} 
                 alt="img not found" 
-                width="250px" 
-                height="300px" 
                 />:
                 <img src={imagen} 
-                alt="img default not found" 
-                width="250px" 
-                height="300px" 
+                alt="img default not found"  
                 />
                  }
             </Link>
-            {props.name}
-            {props.rating}
-            {props.genres?.map(element => {
+            <div className={styles.naRa}>
+                {props.name}<br />
+                <div className={styles.rating}>
+                    {props.rating}
+                </div>
+                {props.genres?.map(element => {
+                        return (
+                            <div key={element.id}> {element.name} </div>
+                        )
+                })} 
+            </div>
+            
+            {/* {props.platforms?.map(element => {
                 return (
                     <div key={element.id}> {element.name} </div>
                 )
-            })} 
-            {props.platforms?.map(element => {
-                return (
-                    <div key={element.id}> {element.name} </div>
-                )
-            })} 
+            })}  */}
         </div>
     )
 };

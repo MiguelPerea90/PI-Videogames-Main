@@ -5,7 +5,7 @@ import {
   GET_PLATFORMS,
   FILTER_BY_GENRE,
   GET_VIDEOGAME_BY_NAME,
-  FILTER_BY_ALFABETIC,
+  ORDER_BY_ALFABETIC,
   GET_VIDEOGAME_BY_ID,
   ORDER_BY_RATING,
   FILTER_BY_CREATED
@@ -43,21 +43,21 @@ const rootReducer = (state = initialState, action) => {
         platforms: action.payload,
       };
     case FILTER_BY_GENRE:
-      const videogamesByName = state.allVideogames.filter((element) =>
-        element.Genres?.some(
-          (e) => e.toLowerCase() === action.payload.toLowerCase()
-        )
+      const filterByGenre = state.allVideogames.filter((element) =>
+      element.Genres?.some(
+        (e) => e.toLowerCase() === action.payload.toLowerCase()
+      )
       );
       return {
         ...state,
-        videogames: videogamesByName,
+        videogames: filterByGenre,
       };
     case GET_VIDEOGAME_BY_NAME:
       return {
         ...state,
         videogames: action.payload,
       };
-    case FILTER_BY_ALFABETIC:
+    case ORDER_BY_ALFABETIC:
       const alphabetFiltered =
         action.payload === "A-Z"
           ? state.videogames.slice().sort(function (a, b) {
@@ -113,3 +113,6 @@ const rootReducer = (state = initialState, action) => {
 };
 
 export default rootReducer;
+
+
+

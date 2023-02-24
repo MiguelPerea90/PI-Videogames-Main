@@ -109,116 +109,111 @@ const Form = () => {
   }
 
   return (
-    <div className={styles.container}>
-
-      <h1 className={styles.title}>Create Video Game</h1>
-
-      <form onSubmit={handlerSubmit}>
-
+      <div className={styles.containerForm}>
+        <h1 className={styles.title}>Create Video Game</h1>
+        <form onSubmit={handlerSubmit}>
           <div className={styles.labelImputDiv}>
-            <label className={styles.labelEnter}>Name:
-              <input
-                className={styles.inputEnter}
-                onChange={(e) => handlerChangeInput(e)}
-                type="text"
-                placeholder="Enter Name"
-                name="name"
-              />
-            </label>
+              <label className={styles.labelEnter}>Name:
+                <input
+                  className={styles.inputEnter}
+                  onChange={(e) => handlerChangeInput(e)}
+                  type="text"
+                  placeholder="Enter Name"
+                  name="name"
+                />
+              </label>
           </div>
           {error.name && <span>{error.name}</span> }
-          
+
           <div className={styles.labelImputDiv}>
-            <label className={styles.labelEnter}>Description:
-              <input
-                className={styles.inputEnter}
-                onChange={(e) => handlerChangeInput(e)}
-                type="text"
-                placeholder="Description"
-                name="description"
-              />
-            </label>
+              <label className={styles.labelEnter}>Description:
+                <input
+                  className={styles.inputEnter}
+                  onChange={(e) => handlerChangeInput(e)}
+                  type="text"
+                  placeholder="Description"
+                  name="description"
+                />
+              </label>
           </div>
           {error.description && <span>{error.description}</span>}
-          
+
           <div className={styles.labelImputDiv}>
-            <label className={styles.labelEnter}>Realeased Date:
-              <input
-                className={styles.inputEnter}
-                onChange={(e) => handlerChangeInput(e)}
-                type="date"
-                name="released"
-              />
-            </label>
+              <label className={styles.labelEnter}>Realeased Date:
+                <input
+                  className={styles.inputEnter}
+                  onChange={(e) => handlerChangeInput(e)}
+                  type="date"
+                  name="released"
+                />
+              </label>
           </div>
           {error.released && <span className={styles.spanText}>{error.released}</span>}
-          
+
           <div className={styles.genresText}>
-            <label className={styles.labelEnter}>Rating:
-              <Select
-                className={styles.inputEnter}
-                options={optionsRating}
-                onChange={handlerChangeRating}>
-              </Select>
-            </label>
+              <label className={styles.labelEnter}>Rating:
+                <Select
+                  className={styles.inputEnter}
+                  options={optionsRating}
+                  onChange={handlerChangeRating}>
+                </Select>
+              </label>
           </div>
           {error.rating && <span>{error.rating}</span>}
-          
+
           <div className={styles.GenresDiv}>
-              <label>Choose The Genres:
-                <p>
-                    {allGenresForm.map((element) => (
+                <label>Choose The Genres:
+                  <p>
+                      {allGenresForm.map((element) => (
+                        <label className="checksInputs" key={element}>
+                          <input
+                            type="checkbox"
+                            name="genres"
+                            id="genres"
+                            value={element}
+                            onClick={(event) => handlerGenresCheck(event)}
+                            key={element.id}
+                          />
+                          {element}
+                        </label>
+                      ))}
+                    </p>
+                </label>
+          </div>
+          {error.genres && <span>{error.genres}</span>}
+              
+          <div className={styles.platformDiv}>
+                <label>Choose The Platform:
+                  <p className="platformsInput">
+                    {allPlatforms.map((element) => (
                       <label className="checksInputs" key={element}>
                         <input
                           type="checkbox"
-                          name="genres"
-                          id="genres"
+                          name="platforms"
+                          id="platforms"
                           value={element}
-                          onClick={(event) => handlerGenresCheck(event)}
+                          onClick={(event) => handlerPlatformsCheck(event)}
                           key={element.id}
                         />
                         {element}
                       </label>
                     ))}
                   </p>
-              </label>
-          </div>
-          {error.genres && <span>{error.genres}</span>}
-            
-          <div className={styles.platformDiv}>
-              <label>Choose The Platform:
-                <p className="platformsInput">
-                  {allPlatforms.map((element) => (
-                    <label className="checksInputs" key={element}>
-                      <input
-                        type="checkbox"
-                        name="platforms"
-                        id="platforms"
-                        value={element}
-                        onClick={(event) => handlerPlatformsCheck(event)}
-                        key={element.id}
-                      />
-                      {element}
-                    </label>
-                  ))}
-                </p>
-              </label>
+                </label>
           </div>
           {error.platforms && <span>{error.platforms}</span>}
 
           <div className={styles.submitHome}>
-            <button className={styles.submitButton} type="Submit">
-              SUBMIT
-            </button>
+              <button className={styles.submitButton} type="Submit">
+                SUBMIT
+              </button>
 
-            <Link to="/home" className={styles.homeButton}>
-              <button type="button">home</button>
-            </Link>
+              <Link to="/home" className={styles.homeButton}>
+                <button type="button">home</button>
+              </Link>
           </div>
-
-      </form>
-
-    </div>
+        </form>
+      </div>
   );
 };
 

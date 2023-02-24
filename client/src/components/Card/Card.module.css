@@ -1,20 +1,26 @@
 .card {
     background-color: #FFFFFF;
-    width: 250px;
+    width: 260px;
     height: 440px;
-    color: #000000;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: 600;
 }
 
 .card img {
-    width: 250px;
-    height: 300px;
+    width: 260px;
+    height: 260px;
 }
 
-.rating {
+.naRa {
+   text-align: center; 
+   margin: 0 auto;
+  
+}
+
+.naRa .rating {
     color: #FF8C00;
-}
-h3, h4 {
-    font-family: 'Courier New', Courier, monospace;
-    margin: 3px;
-}
+ }
+

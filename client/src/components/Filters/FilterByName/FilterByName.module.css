@@ -1,9 +1,16 @@
+.containerNavBar {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+    gap: 1rem;
+}
+
 .byNameButton,
 .findAllButton{
-    background-color: #F5F5DC;
-    color: #000000;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 22px;
+    background-color: #ffffff;
+    color: #FF8C00;
+    font-size: 18px;
     font-weight: 600;
     cursor: pointer;
     border: none;
@@ -17,7 +24,7 @@
 .findAllButton:hover{
     transform: scale(1.1);
     background-color: #2F4F4F;     
-    color: #FF8C00;
+    color: #ffffff;
 }
 
 .searchBarInput {

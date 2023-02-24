@@ -1,7 +1,7 @@
 import React from "react";
 import Select from 'react-select';
 import { useSelector, useDispatch } from "react-redux";
-import { filterVideogamesByGenre } from "../../../redux/actions";
+import { filterByGenre } from "../../../redux/actions";
 import styles from "./FiltersByGenres.module.css"
 
 
@@ -20,16 +20,16 @@ const FilterByGenres = () => {
     });
 
     const handlerChange = (event) => {
-        dispatch(filterVideogamesByGenre(event.value))
+        dispatch(filterByGenre(event.value))
     }
 
 
     return (
-        <div className={styles.divSelect}>
+        <div className={styles.containerGenre}>
             <Select 
                 options={infoGenres} 
                 onChange={handlerChange} 
-                placeholder="By Genres">
+                placeholder="Filter By Genres">
             </Select>
         </div>
     )

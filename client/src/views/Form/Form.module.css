@@ -1,32 +1,18 @@
-.container {
-    background-color: #000000;
-    text-align: center;
-    font-display: flex;
-    flex-direction: column;
-    width: 40VW;
-    height: 90vh;
-    margin: 0 auto;
-    border-radius: 10px;
-    font-size: 24px;
-    font-family: 'Courier New', Courier, monospace;
-    color: #FFFFFF;
-    padding: 10px;
-    width: 50%;
-    height: 90vh;
-}
-
 .containerForm {
+    background-color: #F5F5DC;
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 60%;
+    height: auto;
     margin: 0 auto;
+    padding: 40px;
 }
 
 .title {
     color: #FFA500;
-    font-size: 46px;
+    font-size: 6rem;
+    text-align: center;
 }
-
 .labelImputDiv {
     margin: 15px 0;
 }
@@ -77,4 +63,4 @@
     transform: scale(1.1);
     background-color: #2F4F4F;     
     color: #FF8C00;
-}
+} 
