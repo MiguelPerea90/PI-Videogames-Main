@@ -19,6 +19,7 @@ const Form = () => {
     name: "",
     description: "",
     released: "",
+    image: "",
     rating: 0,
     genres: [],
     platforms: [],
@@ -26,13 +27,13 @@ const Form = () => {
 
   const validate = (form) => {
     const errors = {};
-    if (!form.name) errors.name = "Enter your name";
-    if (!form.description) errors.description = "you need a description";
+    if (!form.name) errors.name = "Enter a Name";
+    if (!form.description) errors.description = "Your Description";
     if (!form.released) errors.released = "Enter a date";
     if (form.rating > 5 || form.rating < 1)
-      errors.rating = "Ingresa un ratig valido entre 1 y 5";
-    if (!form.genres.length) errors.genres = "select your genres";
-    if (!form.platforms) errors.platforms = "choose a platform";
+      errors.rating = "Select a Rating";
+    if (!form.genres.length) errors.genres = "Choose Your Genres";
+    if (!form.platforms) errors.platforms = "Choose Your Platform";
     return errors;
   };
 
@@ -109,110 +110,129 @@ const Form = () => {
   }
 
   return (
-      <div className={styles.containerForm}>
-        <h1 className={styles.title}>Create Video Game</h1>
+      <div className={styles.container}>
+
+        <div className={styles.headers}>
+          <h1 className={styles.title}>Create Video Game</h1>
+          <p>Los campos marcados con <span className={styles.parragraf}>*</span> son obligatorios</p>
+        </div>
+
         <form onSubmit={handlerSubmit}>
-          <div className={styles.labelImputDiv}>
-              <label className={styles.labelEnter}>Name:
-                <input
-                  className={styles.inputEnter}
-                  onChange={(e) => handlerChangeInput(e)}
-                  type="text"
-                  placeholder="Enter Name"
-                  name="name"
-                />
-              </label>
-          </div>
-          {error.name && <span>{error.name}</span> }
 
-          <div className={styles.labelImputDiv}>
-              <label className={styles.labelEnter}>Description:
-                <input
-                  className={styles.inputEnter}
-                  onChange={(e) => handlerChangeInput(e)}
-                  type="text"
-                  placeholder="Description"
-                  name="description"
-                />
-              </label>
-          </div>
-          {error.description && <span>{error.description}</span>}
+          <div className={styles.containerForm}>
 
-          <div className={styles.labelImputDiv}>
-              <label className={styles.labelEnter}>Realeased Date:
+            <div className={styles.labelDiv}>
+                <label className={styles.label}>Name <span>*</span></label>
                 <input
-                  className={styles.inputEnter}
-                  onChange={(e) => handlerChangeInput(e)}
-                  type="date"
-                  name="released"
+                    className={styles.input}
+                    onChange={(e) => handlerChangeInput(e)}
+                    type="text"
+                    placeholder="Name"
+                    name="name"
                 />
-              </label>
-          </div>
-          {error.released && <span className={styles.spanText}>{error.released}</span>}
+                {error.name && <span>{error.name}</span> }
+            </div>
 
-          <div className={styles.genresText}>
-              <label className={styles.labelEnter}>Rating:
+            <div className={styles.labelDiv}>
+                <label className={styles.label}>Description <span>*</span></label>
+                <input
+                    className={styles.input}
+                    onChange={(e) => handlerChangeInput(e)}
+                    type="text"
+                    placeholder="Description"
+                    name="description"
+                />
+                {error.description && <span>{error.description}</span>}
+            </div>
+
+            <div className={styles.labelDiv}>
+                <label className={styles.label}>Realeased Date</label>
+                <input
+                    className={styles.input}
+                    onChange={(e) => handlerChangeInput(e)}
+                    type="date"
+                    name="released"
+                />
+                {error.released && <span>{error.released}</span>}
+            </div>
+
+            <div className={styles.labelDiv}>
+                <label className={styles.label}>Image</label>
+                <input
+                    className={styles.input}
+                    onChange={(e) => handlerChangeInput(e)}
+                    type="text"
+                    placeholder="Url:"
+                    name="image"
+                />
+            </div>
+
+            <div className={styles.labelDiv}>
+                <label className={styles.label}>Rating</label>
                 <Select
-                  className={styles.inputEnter}
-                  options={optionsRating}
-                  onChange={handlerChangeRating}>
+                    placeholder="Rating"
+                    className={styles.select}
+                    options={optionsRating}
+                    onChange={handlerChangeRating}>
                 </Select>
-              </label>
-          </div>
-          {error.rating && <span>{error.rating}</span>}
+                {error.rating && <span>{error.rating}</span>}
+            </div>
 
-          <div className={styles.GenresDiv}>
-                <label>Choose The Genres:
-                  <p>
-                      {allGenresForm.map((element) => (
-                        <label className="checksInputs" key={element}>
+            <div className={styles.labelDiv}>
+                  <label> <p className={styles.labelGenPlat}>Genres</p>
+                    <p className={styles.labelGenPlatP}>
+                        {allGenresForm.map((element) => (
+                          <label key={element}>
+                            <input
+                              type="checkbox"
+                              name="genres"
+                              id="genres"
+                              value={element}
+                              onClick={(event) => handlerGenresCheck(event)}
+                              key={element.id}
+                            />
+                            {element + " "}
+                          </label>
+                        ))}
+                      </p>
+                  </label>
+                  {error.genres && <span className={styles.spanGenPlat}>{error.genres}</span>}
+            </div>
+                
+            <div className={styles.labelDiv}>
+                  <label> <p className={styles.labelGenPlat}>Platforms</p>
+                    <p className={styles.labelGenPlatP}>
+                      {allPlatforms.map((element) => (
+                        <label key={element}>
                           <input
                             type="checkbox"
-                            name="genres"
-                            id="genres"
+                            name="platforms"
+                            id="platforms"
                             value={element}
-                            onClick={(event) => handlerGenresCheck(event)}
+                            onClick={(event) => handlerPlatformsCheck(event)}
                             key={element.id}
                           />
-                          {element}
+                           {element + " "}
                         </label>
                       ))}
                     </p>
-                </label>
-          </div>
-          {error.genres && <span>{error.genres}</span>}
-              
-          <div className={styles.platformDiv}>
-                <label>Choose The Platform:
-                  <p className="platformsInput">
-                    {allPlatforms.map((element) => (
-                      <label className="checksInputs" key={element}>
-                        <input
-                          type="checkbox"
-                          name="platforms"
-                          id="platforms"
-                          value={element}
-                          onClick={(event) => handlerPlatformsCheck(event)}
-                          key={element.id}
-                        />
-                        {element}
-                      </label>
-                    ))}
-                  </p>
-                </label>
-          </div>
-          {error.platforms && <span>{error.platforms}</span>}
+                  </label>
+                  {error.platforms && <span className={styles.spanGenPlat}>{error.platforms}</span>}
+            </div>
 
-          <div className={styles.submitHome}>
-              <button className={styles.submitButton} type="Submit">
-                SUBMIT
-              </button>
+            <div className={styles.submitHome}>
+                <button className={styles.submitButton} type="Submit">
+                  SUBMIT
+                </button>
 
-              <Link to="/home" className={styles.homeButton}>
-                <button type="button">home</button>
-              </Link>
+                <Link to="/home" className={styles.homeButton}>
+                  <button type="button">home</button>
+                </Link>
+            </div>
           </div>
+
         </form>
+
       </div>
   );
 };

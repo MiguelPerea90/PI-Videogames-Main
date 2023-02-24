@@ -45,7 +45,7 @@ const rootReducer = (state = initialState, action) => {
     case FILTER_BY_GENRE:
       const filterByGenre = state.allVideogames.filter((element) =>
       element.Genres?.some(
-        (e) => e.toLowerCase() === action.payload.toLowerCase()
+        (e) => e === action.payload.toLowerCase()
       )
       );
       return {

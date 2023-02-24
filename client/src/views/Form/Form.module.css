@@ -1,48 +1,95 @@
-.containerForm {
-    background-color: #F5F5DC;
+.container {
+    background-color: #000000;
     display: flex;
     flex-direction: column;
     width: 60%;
     height: auto;
-    margin: 0 auto;
-    padding: 40px;
+    margin: 0 auto; 
+    padding: 20px;
+    color: #F5F5DC;
+}
+
+.headers{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.headers p{
+  font-size: 1.8rem;
+  font-weight: 600;
 }
 
 .title {
     color: #FFA500;
     font-size: 6rem;
-    text-align: center;
-}
-.labelImputDiv {
-    margin: 15px 0;
+    margin-top: 0;
+    margin-bottom: 25px;
 }
 
-.submitHome {
+.containerForm {
+    width: 80%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    margin: 0 auto;
 }
 
-.inputEnter {
-    font-size: 18px;
-    border-radius: 6px;
+.labelDiv {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 2.6rem;
+    font-weight: 600;
 }
 
-.spanText {
-    font-size: 16px;
+.labelGenPlat{
+    color: #FFA500;
+    text-align: center;
+    font-weight: 600;
+}
+
+.parragraf {
+    color: #FFA500;
+    font-weight: 600;
+}
+
+.input {
+    font-size: 1.8rem;
+    padding: 1rem;
+    font-weight: 600;
+}
+
+.select {
+    font-size: 1.8rem;
+    padding: 1rem;
+    color: #FFA500;
+    text-align: center;
+    font-weight: 600;
+}
+
+.labelDiv span {
+    font-size: 1.8rem;
     color: #FFA500;
 }
 
-.genresText, .platformsText, .labelImputDiv {
-    margin-top: 15px;
-    margin-bottom: 15px;
+.spanGenPlat {
+    text-align: center;
+    font-weight: 600;
 }
+
+.labelGenPlatP {
+    text-align: center;
+}
+
 
 .homeButton button, 
 .submitButton {
-    background-color: #FF8C00;
-    color: #000000;
-    font-family: 'Courier New', Courier, monospace;
+    background-color: #ffffff;
+    color: #FF8C00;
     font-size: 28px;
     font-weight: 600;
     text-transform: uppercase;
@@ -53,14 +100,20 @@
     width: auto;
 }
 
+.submitHome {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
 .homeButton button:hover{
     transform: scale(1.1);
     background-color: #2F4F4F;     
-    color: #FF8C00;
+    color: #ffffff;
 }
 
 .submitButton:hover{
     transform: scale(1.1);
     background-color: #2F4F4F;     
-    color: #FF8C00;
+    color: #ffffff;
 } 

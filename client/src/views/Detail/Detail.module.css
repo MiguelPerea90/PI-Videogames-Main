@@ -30,17 +30,14 @@
 }
 
 h3 {
-    font-family: 'Courier New', Courier, monospace;
     color:  #FF8C00;
     font-weight: 900;
 }
 .Span {
-    font-family: 'Courier New', Courier, monospace;
     font-size: 16px;
     font-weight: 900;
 }
 .Span2 {
-    font-family: 'Courier New', Courier, monospace;
     font-size: 16px;
     font-weight: 900;
 }
@@ -60,9 +57,8 @@ h3 {
  }
 
  .homeButton button{
-    background-color: #FF8C00;
-    color: #000000;
-    font-family: 'Courier New', Courier, monospace;
+    background-color: #ffffff;
+    color: #FF8C00;
     font-size: 28px;
     font-weight: 600;
     text-transform: uppercase;
@@ -76,10 +72,9 @@ h3 {
 .homeButton button:hover{
     transform: scale(1.1);
     background-color: #2F4F4F;     
-    color: #FF8C00;
+    color: #ffffff;
 }
 
 h3, h4 {
-    font-family: 'Courier New', Courier, monospace;
     margin: 3px;
 }
