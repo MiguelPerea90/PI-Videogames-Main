@@ -5,7 +5,11 @@ import {
     GET_GENRES,
     GET_GENRES_FORM,
     GET_PLATFORMS,
-    FILTER_BY_GENRE,
+    // FILTER_BY_GENRE,
+
+    FILTER_GENRE,
+
+
     GET_VIDEOGAME_BY_NAME,
     ORDER_BY_ALFABETIC,
     GET_VIDEOGAME_BY_ID,
@@ -19,7 +23,7 @@ export const getVideogames = () => {
             "http://localhost:3001/videogames"
         );
         const allVideogames = apiVideogames.data;
-
+        
         return dispatch({ 
             type: GET_VIDEOGAMES, 
             payload: allVideogames 
@@ -82,12 +86,19 @@ export const videogamesByName = (name) => {
     }
  };
 
-export const  filterByGenre = (payload) => {
+// export const  filterByGenre = (payload) => {
+//     return {
+//         type: FILTER_BY_GENRE,
+//         payload
+//     }
+// };
+
+export function filterGenre(payload){
     return {
-        type: FILTER_BY_GENRE,
+        type: FILTER_GENRE,
         payload
     }
-};
+}
 
 export const filterByCreated = (payload) => {
     return {

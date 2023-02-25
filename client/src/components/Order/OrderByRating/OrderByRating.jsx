@@ -12,11 +12,11 @@ const OrderByRating = () => {
     const myOptions = [
         {
             value: "asc",
-            label: "Ascendente"
+            label: "Lower Rating"
         },
         {
             value: "dsc",
-            label: "Descendente"
+            label: "Higher Rating"
         }
     ]
 

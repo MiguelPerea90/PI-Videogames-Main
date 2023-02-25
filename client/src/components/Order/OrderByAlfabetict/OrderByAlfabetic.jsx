@@ -12,11 +12,11 @@ const OrederByAlfabetic = () => {
     const myOptions = [
         {
             value: "A-Z",
-            label: "A-Z"
+            label: "From A to Z"
         },
         {
             value: "Z-A",
-            label: "Z-A"
+            label: "From Z to A"
         }
     ]
 

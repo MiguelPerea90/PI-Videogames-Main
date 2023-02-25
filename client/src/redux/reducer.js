@@ -3,7 +3,11 @@ import {
   GET_GENRES,
   GET_GENRES_FORM,
   GET_PLATFORMS,
-  FILTER_BY_GENRE,
+  // FILTER_BY_GENRE,
+
+  FILTER_GENRE,
+
+
   GET_VIDEOGAME_BY_NAME,
   ORDER_BY_ALFABETIC,
   GET_VIDEOGAME_BY_ID,
@@ -12,8 +16,9 @@ import {
 } from "./actionTypes";
 
 const initialState = {
-  videogames: [],
-  allVideogames: [],
+  backup: [], //estado backup con todos los juegos
+  videogames: [], //estado que se va a ir modif en base al FILTRADO
+  allVideogames: [], //estado que SIEMPRE va a tener todos los juegos
   genres: [],
   genresForm: [],
   platforms: []
@@ -24,6 +29,7 @@ const rootReducer = (state = initialState, action) => {
     case GET_VIDEOGAMES:
       return {
         ...state,
+        backup: action.payload,
         videogames: action.payload,
         allVideogames: action.payload,
       };
@@ -42,16 +48,32 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         platforms: action.payload,
       };
-    case FILTER_BY_GENRE:
-      const filterByGenre = state.allVideogames.filter((element) =>
-      element.Genres?.some(
-        (e) => e === action.payload.toLowerCase()
-      )
-      );
-      return {
-        ...state,
-        videogames: filterByGenre,
-      };
+    // case FILTER_BY_GENRE:
+    //   const filterByGenre = state.allVideogames.filter((element) =>
+    //   element.Genres?.some(
+    //     (e) => e === action.payload.toLowerCase()
+    //   )
+    //   );
+    //   return {
+    //     ...state,
+    //     videogames: filterByGenre,
+    //   };
+
+
+      case FILTER_GENRE:
+        const allVideogames = state.backup;
+        const filtered = [];
+  
+        allVideogames.forEach((game) => {
+          game.genres.forEach((genre) => {
+            if (genre.name === action.payload) filtered.push(game);
+          });
+        });
+  
+        return {
+          ...state,
+          videogames: filtered,
+        };
     case GET_VIDEOGAME_BY_NAME:
       return {
         ...state,
@@ -98,12 +120,12 @@ const rootReducer = (state = initialState, action) => {
         videogames: orderByRating,
       };
     case FILTER_BY_CREATED:
-        const filterCreated = action.payload === "api" ?  
-        state.allVideogames.filter(e => e.created === false) : 
-        state.allVideogames.filter(e => e.created === true)
+      const filterCreated = action.payload === "api" ?  
+      state.allVideogames.filter(e => e.created === false) : 
+      state.allVideogames.filter(e => e.created === true) 
         return {
-            ...state,
-            videogames: filterCreated
+          ...state,
+          videogames: filterCreated
         }
       default:
       return {
@@ -112,7 +134,11 @@ const rootReducer = (state = initialState, action) => {
   }
 };
 
-export default rootReducer;
+// created
+// const filterCreated = action.payload === "api" ?  
+//       state.allVideogames.filter(e => e.created === false) : 
+//       state.allVideogames.filter(e => e.created === true) 
 
+export default rootReducer;
 
 

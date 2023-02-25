@@ -12,29 +12,29 @@ const { API_KEY, API_URL} = process.env;
         return {
             id: element.id,
             name: element.name,
+            image: element.background_image,
             rating: element.rating,
-            Genres: element.genres.map(element => {
-                return {
-                    id: element.id,
-                    name: element.name,
-                }
-            }),
             Platforms: element.platforms.map(element => {
                 return {
                     id: element.platform.id,
                     name: element.platform.name
                 }
             }),
-            image: element.background_image,
+            Genres: element.genres.map(element => {
+                return {
+                    id: element.id,
+                    name: element.name,
+                }
+            }),
         };
     });
 };
 
 
- // ESTE CONTROLLER TRAE TODO DE LA DB Y LA API
- const getAllVideogames = async () => {
-
-    // Aqui trae todos los videogames de la db.
+//  // ESTE CONTROLLER TRAE TODO DE LA DB Y LA API
+const getAllVideogames = async () => {
+    
+ //Aqui trae todos los videogames de la db.
     const databaseVideogames = await Videogame.findAll({
         include: [{
             model: Genre,
@@ -77,8 +77,7 @@ const { API_KEY, API_URL} = process.env;
 
     // retorno la data completa
     return infoTotal;
-
- };
+};
 
 
  // ESTE CONTROLLER BUSCA POR QUERY NAME

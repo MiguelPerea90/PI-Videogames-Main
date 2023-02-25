@@ -72,23 +72,19 @@ const Detail = () => {
             <div className={styles.genresPlatforms}>
                 {videogamesId?.Genres.map((ele) => {
                     return (
-                    // <div key={ele.id}>
                         <Genres 
                             key={ele.name}  
                             name={ele.name} 
                         />
-                    // </div>
                     );
                 })}
 
                 {videogamesId?.Platforms.map((ele) => {
                     return (
-                    // <div key={ele.name}>
                         <Platforms 
                             key={ele.name} 
                             name={ele.name} 
                         />
-                    // </div> *
                     );
                 })}
             </div>

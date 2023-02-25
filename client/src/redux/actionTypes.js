@@ -1,5 +1,5 @@
 export const GET_VIDEOGAMES = "GET_VIDEOGAMES";
-export const FILTER_BY_GENRE = 'ORDER_BY_GENRE';
+// export const FILTER_BY_GENRE = 'ORDER_BY_GENRE';
 export const GET_GENRES = 'GET_GENRES';
 export const GET_GENRES_FORM = 'GET_GENRES_FORM';
 export const GET_PLATFORMS = "GET_PLATFORMS";
@@ -8,3 +8,7 @@ export const ORDER_BY_ALFABETIC = "FILTER_BY_ALFABETIC";
 export const GET_VIDEOGAME_BY_ID = "GET_VIDEOGAME_BY_ID";
 export const ORDER_BY_RATING = "ORDER_DSC_ACS";
 export const FILTER_BY_CREATED = "FILTER_BY_CREATED";
+
+
+
+export const FILTER_GENRE = 'FILTER_GENRE';

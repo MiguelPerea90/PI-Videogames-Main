@@ -1,7 +1,8 @@
 import React from "react";
 import Select from 'react-select';
 import { useSelector, useDispatch } from "react-redux";
-import { filterByGenre } from "../../../redux/actions";
+// import { filterByGenre } from "../../../redux/actions";
+import { filterGenre } from "../../../redux/actions";
 import styles from "./FiltersByGenres.module.css"
 
 
@@ -19,8 +20,12 @@ const FilterByGenres = () => {
         }
     });
 
+    // const handlerChange = (event) => {
+    //     dispatch(filterByGenre(event.value))
+    // }
+
     const handlerChange = (event) => {
-        dispatch(filterByGenre(event.value))
+        dispatch(filterGenre(event.value))
     }
 
 
