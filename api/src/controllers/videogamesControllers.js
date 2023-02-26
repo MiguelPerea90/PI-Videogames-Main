@@ -53,20 +53,24 @@ const getAllVideogames = async () => {
 
     // Traigo todo lo de la api cómo viene
     const apiVideogamesRaw = (
-        await axios.get(`${API_URL}?key=${API_KEY}&page_size=35page=1`)
+        await axios.get(`${API_URL}?key=${API_KEY}&page_size=40page=1`)
     ).data.results;
     const apiVideogamesRaw2 = (
-        await axios.get(`${API_URL}?key=${API_KEY}&page_size=35&page=2`)
+        await axios.get(`${API_URL}?key=${API_KEY}&page_size=40&page=2`)
     ).data.results;
     const apiVideogamesRaw3 = (
-        await axios.get(`${API_URL}?key=${API_KEY}&page_size=35&page=3`)
+        await axios.get(`${API_URL}?key=${API_KEY}&page_size=40&page=3`)
+    ).data.results;
+    const apiVideogamesRaw4 = (
+        await axios.get(`${API_URL}?key=${API_KEY}&page_size=5&page=4`)
     ).data.results;
 
     // Me quedo con una copia de los resultados.
     const apiVideogamesRawConcat = [
         ...apiVideogamesRaw,
         ...apiVideogamesRaw2,
-        ...apiVideogamesRaw3
+        ...apiVideogamesRaw3,
+        ...apiVideogamesRaw4
     ];
 
     //mapeo los resultados.

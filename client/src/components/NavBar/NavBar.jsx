@@ -6,9 +6,20 @@ import OrederByAlfabetic from "../Order/OrderByAlfabetict/OrderByAlfabetic";
 import FilterByGenres from "../Filters/FilterByGenres/FiltersByGenres";
 import OrderByRating from "../Order/OrderByRating/OrderByRating";
 import FilterByCreated from "../Filters/FilterByCreated/FilterByCreated";
-
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { getVideogames } from "../../redux/actions";
 
 const NavBar = () => {
+
+    const [ , setNameFilter] = useState()
+
+    const dispatch = useDispatch()
+
+    const handlerFindAll = () => {
+        dispatch(getVideogames())
+        setNameFilter("")
+    }
 
     return (
         <div className={styles.containerNavBar}>
@@ -21,10 +32,17 @@ const NavBar = () => {
                 <FilterByGenres />
                 <FilterByCreated />
             </div>
-            <div className={styles.createButton}>
-            <Link to="/create">
-                <button >create videogame</button>
-            </Link>
+
+            <div className={styles.containerButtons}>
+                <div className={styles.createButton}>
+                <Link to="/create">
+                    <button >Create Videogame</button>
+                </Link>
+                </div>
+                <button 
+                    className={styles.byNameButton} 
+                    onClick={handlerFindAll}>Reload Videogames
+                </button>
             </div>
 
         </div>

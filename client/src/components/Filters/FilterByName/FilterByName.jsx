@@ -1,12 +1,11 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { videogamesByName, getVideogames } from "../../../redux/actions";
+import { videogamesByName } from "../../../redux/actions";
 import styles from "./FilterByName.module.css"
 
 
 const FilterByName = () => {
-
 
     const [name, setNameFilter] = useState()
 
@@ -21,11 +20,13 @@ const FilterByName = () => {
         setNameFilter("")
     }
 
-    const handlerFindAll = () => {
-        dispatch(getVideogames())
-        setNameFilter("")
-    }
+    // const handlerFindAll = () => {
+    //     dispatch(getVideogames())
+    //     setNameFilter("")
+    // }
 
+
+   
     return (
         <div className={styles.containerNavBar}>
             <input type="text" 
@@ -38,10 +39,10 @@ const FilterByName = () => {
             onClick={handlerFindByName}>Search Name
             </button>
 
-            <button 
-            className={styles.findAllButton} 
-            onClick={handlerFindAll}>All Videogames
-            </button>
+            {/* <button 
+            className={styles.byNameButton} 
+            onClick={handlerFindAll}>Reload Videogames
+            </button> */}
         </div>
     )
 };

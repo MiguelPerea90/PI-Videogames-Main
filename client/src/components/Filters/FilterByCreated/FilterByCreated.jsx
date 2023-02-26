@@ -12,12 +12,16 @@ const FilterByCreated = () => {
     const myOptions = [
         {
             value: "api",
-            label: "Not Created"
+            label: "Existent"
         },
         {
-            value: "db",
+            value: "createdInDb",
             label: "Created"
-        }
+        },
+        {
+            value: "All",
+            label: "All"
+        },
     ]
 
     const handlerChange = (event) => {

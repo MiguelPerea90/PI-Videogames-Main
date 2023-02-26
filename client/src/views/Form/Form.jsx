@@ -58,7 +58,7 @@ const Form = () => {
     } else {
       axios.post("http://localhost:3001/videogames", form);
       history.push("/home");
-      alert("Videogame Created");
+      alert("Videogame Created").toUpperCase();
     }
   };
 
@@ -66,7 +66,7 @@ const Form = () => {
     { label: "1.0", value: "1.0" },
     { label: "1.5", value: "1.5" },
     { label: "2.0", value: "2.0" },
-    { label: "2.5", value: "2.5" },
+    { label: "2.5", value: "2." },
     { label: "3.0", value: "3.0" },
     { label: "3.5", value: "3.5" },
     { label: "4.0", value: "4.0" },

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Card = (props) => {
     return (
-        <div className={styles.card}>
+        <div className={styles.card} key={props.id}>
             <Link to={{pathname: "/detail", state:{id: props.id}}} >
                 { 
                 props.image ? 
@@ -28,12 +28,6 @@ const Card = (props) => {
                         )
                 })} 
             </div>
-            
-            {/* {props.platforms?.map(element => {
-                return (
-                    <div key={element.id}> {element.name} </div>
-                )
-            })}  */}
         </div>
     )
 };

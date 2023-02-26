@@ -34,14 +34,15 @@ const CardsContainer = () => {
           <div className={styles.cardsContainer}>
             {currentVideogames?.map((videogame) => {
               return (
-                  <Card key={videogame.id}
-                    id={videogame.id}
-                    image={videogame.image}
-                    rating={videogame.rating}
-                    name={videogame.name}
-                    genres={videogame.Genres}
-                      // platforms={videogame.Platforms}
-                  />
+                    <div key={videogame.id}>
+                      <Card
+                      id={videogame.id}
+                      image={videogame.image}
+                      rating={videogame.rating}
+                      name={videogame.name}
+                      genres={videogame.Genres}
+                      /> 
+                    </div>
                 );
               })}
           </div>

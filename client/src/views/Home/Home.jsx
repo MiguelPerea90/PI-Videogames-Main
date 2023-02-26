@@ -10,11 +10,11 @@ const Home = () => {
 
     useEffect(() => {
         dispatch(getVideogames());
-    },);
+    },[dispatch]);
 
     useEffect(() => {
         dispatch(getGenres());
-    },);
+    },[dispatch]);
 
     return (
         <div className={styles.containerHome}>
