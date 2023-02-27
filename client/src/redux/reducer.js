@@ -115,6 +115,15 @@ const rootReducer = (state = initialState, action) => {
       ? allGames.filter(element => element.createdInDb)
       : allGames.filter(game => !game.createdInDb) 
 
+      if (createdFilter.length === 0) {
+        alert(`NO VIDEOGAMES FOUND FOR ${action.payload.toUpperCase()}  CATEGORY`)
+         
+          return {
+            ...state
+          }
+      }
+
+
       return {
         ...state,
         videogames: action.payload === "All" ? allGames :  createdFilter,
