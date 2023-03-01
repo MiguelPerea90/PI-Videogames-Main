@@ -6,7 +6,6 @@
     flex-direction: column;
     justify-content: space-around;
     flex-wrap: wrap;
-    gap: 3em;
     margin-top: 100px;
 } 
 
@@ -14,12 +13,13 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    gap: 3rem;
+    gap: 4rem;
+    padding: 40px;
 }
 
 .containerPaginado {
     display: flex;
     justify-content: center;
-    margin-top: 0;
+    margin-bottom: 50px;
 }
 

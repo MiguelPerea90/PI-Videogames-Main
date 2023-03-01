@@ -40,7 +40,7 @@ const NavBar = () => {
                 </Link>
                 </div>
                 <button 
-                    className={styles.byNameButton} 
+                    className={styles.findAllButton} 
                     onClick={handlerFindAll}>Reload Videogames
                 </button>
             </div>

@@ -26,7 +26,7 @@ const OrederByAlfabetic = () => {
 
     return (
         <div className={styles.containerAlfabetic}>
-            <Select 
+            <Select className={styles.select}
                 options={myOptions} 
                 onChange={handlerChange} 
                 placeholder="Order Alfabetic">

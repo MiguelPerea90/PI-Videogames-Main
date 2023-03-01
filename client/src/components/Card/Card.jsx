@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 const Card = (props) => {
     return (
         <div className={styles.card} key={props.id}>
+
             <Link to={{pathname: "/detail", state:{id: props.id}}} >
                 { 
                 props.image ? 
@@ -17,17 +18,32 @@ const Card = (props) => {
                 />
                  }
             </Link>
-            <div className={styles.naRa}>
-                {props.name}<br />
-                <div className={styles.rating}>
-                    {props.rating}
-                </div>
-                {props.genres?.map(element => {
-                        return (
-                            <div key={element.id}> {element.name} </div>
-                        )
-                })} 
+
+            <div className={styles.containerDetail}>
+                    <div className={styles.naRa}>
+                        <div>
+                            {props.name.slice(0, 30)}
+                        </div>
+                        <div className={styles.rating}>
+                            {props.rating}
+                        </div>
+                    </div>
+
+                    <div className={styles.containerGenre}>
+                        {props.genres?.map(element => {
+                            return (
+                                <div key={element.id}> {element.name} </div>
+                            )
+                        })} 
+                    </div>
+
+                    <div className={styles.containerButtomSeeMore}>
+                        <Link to={{pathname: "/detail", state:{id: props.id}}} >
+                            <button className={styles.buttomSeeMore}>See More</button>
+                        </Link>
+                    </div>
             </div>
+
         </div>
     )
 };

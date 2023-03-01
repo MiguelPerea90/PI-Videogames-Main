@@ -1,26 +1,67 @@
 .card {
     background-color: #FFFFFF;
-    width: 260px;
-    height: 440px;
+    width: 300px;
+    height: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
     font-size: 1.6rem;
     font-weight: 600;
+    padding-bottom: 10px;
+    box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
 }
 
+.containerDetail {
+    width: 280px;
+    height: 220px;
+    background-color:  #F5F5DC;
+    box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
 .card img {
-    width: 260px;
-    height: 260px;
+    width: 300px;
+    height: 250px;
 }
 
 .naRa {
-   text-align: center; 
-   margin: 0 auto;
-  
+    width: 280px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .naRa .rating {
     color: #FF8C00;
  }
 
+ .containerGenre {
+    width: 280px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ }
+
+ .containerButtomSeeMore {
+    text-align: center;
+ }
+
+ .buttomSeeMore {
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: #2F4F4F;
+    color: #F5F5DC; 
+    cursor: pointer; 
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
+ }
+
+ .buttomSeeMore:hover {
+    transform: scale(1.1);
+    background-color: #FFFFFF;     
+    color: #FF8C00;
+}

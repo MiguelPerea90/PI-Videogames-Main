@@ -6,8 +6,7 @@
     gap: 1rem;
 }
 
-.byNameButton, 
-.findAllButton{
+.byNameButton{
     background-color: #F5F5DC;
     color: #FF8C00;
     font-size: 20px;
@@ -15,10 +14,10 @@
     padding: 10px;
     cursor: pointer;
     border: none;
-    border-radius: 6px;
     height: 42px;
     width: auto;
     margin: 0 5px;
+    box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
 }
 
 .byNameButton:hover,
@@ -31,6 +30,6 @@
 .searchBarInput {
     font-size: 20px;
     padding: 8px 12px;
-    border-radius: 6px;
     border: 1px solid silver;
+    box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
 }

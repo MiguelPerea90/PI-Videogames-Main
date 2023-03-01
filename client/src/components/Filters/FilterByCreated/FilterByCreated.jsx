@@ -30,7 +30,7 @@ const FilterByCreated = () => {
 
     return (
         <div className={styles.containerCreated}>
-             <Select 
+             <Select className={styles.select}
                 options={myOptions} 
                 onChange={handlerChange} 
                 placeholder="Filter By Created">

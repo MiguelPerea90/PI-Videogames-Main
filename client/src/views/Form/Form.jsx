@@ -54,11 +54,11 @@ const Form = () => {
 
   const handlerSubmit = () => {
     if (Object.values(error).length > 0) {
-      alert("Missing Data");
+      alert("MISSING DATA").toUpperCase();
     } else {
       axios.post("http://localhost:3001/videogames", form);
       history.push("/home");
-      alert("Videogame Created").toUpperCase();
+      alert("VIDEOGAME CREATED");
     }
   };
 

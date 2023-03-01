@@ -53,30 +53,22 @@ const getAllVideogames = async () => {
 
     // Traigo todo lo de la api cómo viene
     const apiVideogamesRaw = (
-        await axios.get(`${API_URL}?key=${API_KEY}&page_size=40page=1`)
+        await axios.get(`${API_URL}?key=${API_KEY}&page_size=40&page=1`)
     ).data.results;
     const apiVideogamesRaw2 = (
-        await axios.get(`${API_URL}?key=${API_KEY}&page_size=40&page=2`)
-    ).data.results;
-    const apiVideogamesRaw3 = (
-        await axios.get(`${API_URL}?key=${API_KEY}&page_size=40&page=3`)
-    ).data.results;
-    const apiVideogamesRaw4 = (
-        await axios.get(`${API_URL}?key=${API_KEY}&page_size=5&page=4`)
+        await axios.get(`${API_URL}?key=${API_KEY}&page_size=20&page=2`)
     ).data.results;
 
     // Me quedo con una copia de los resultados.
     const apiVideogamesRawConcat = [
         ...apiVideogamesRaw,
         ...apiVideogamesRaw2,
-        ...apiVideogamesRaw3,
-        ...apiVideogamesRaw4
     ];
 
     //mapeo los resultados.
     const apiVideogamesClean = cleanArray(apiVideogamesRawConcat);
 
-    // Me traigo una co´pia de todo lo de la api + lo de la db
+    // Me traigo una copia de todo lo de la api + lo de la db
     const infoTotal = [...apiVideogamesClean, ...databaseVideogames];
 
     // retorno la data completa
