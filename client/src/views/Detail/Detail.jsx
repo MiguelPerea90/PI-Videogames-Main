@@ -25,6 +25,11 @@ const Detail = () => {
         <div className={styles.containerDivs}>
 
            <div className={styles.containerDivsBoxShadow}>
+                <li className={styles.info}>
+                    <span className={styles.Span}>
+                        <h1 className={styles.title}>{videogamesId?.name}</h1> 
+                    </span>
+                </li>
                 <div className={styles.imageName}>
                     {videogamesId?.image ? (
                         <img
@@ -37,12 +42,6 @@ const Detail = () => {
                         alt="img default not found"
                         />
                     )}
-
-                    <li className={styles.info}>
-                        <span className={styles.Span}>
-                            <h1>{videogamesId?.name}</h1> 
-                        </span>
-                    </li>
                 </div>
 
                 <div className={styles.desRelRat}>

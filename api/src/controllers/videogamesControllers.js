@@ -1,7 +1,6 @@
 const axios = require("axios");
 const data = require("./dataApi")
 const { Videogame, Genre, Platform } = require("../db");
-// const data = require("./dataApi")
 const { API_KEY, API_URL} = process.env;
 
 
@@ -61,7 +60,6 @@ const getAllVideogames = async () => {
     return infoTotal;
 };
 
-
  // ESTE CONTROLLER BUSCA POR QUERY NAME
  const searchVideogamesByName = async (name) => {
 
@@ -75,8 +73,7 @@ const getAllVideogames = async () => {
     // Retorno los resultados y me quedo con los primeros 15
     return videogamesByName.slice(0, 15);
     
- };
-
+};
 
  // // ESTE CONTROLLER OBTIENE LA INFO DE LA API POR ID
 const getVideogameApiById = async (id) => {
@@ -108,7 +105,6 @@ const getVideogameApiById = async (id) => {
         
 };
 
-
 // ESTE CONTROLLER OBTIENE LA INFO DE LA DB POR ID
 const getVideogameDbById = async (id) => {
     return await Videogame.findByPk(id, {
@@ -127,7 +123,6 @@ const getVideogameDbById = async (id) => {
         }],
     });
 };
-
 
 // ESTE CONTROLLER CREA UN NUEVO VIDEOGAME
 const createVideogame  = async (name, description, released, rating, image, platforms, genres) => {
