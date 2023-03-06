@@ -1,4 +1,4 @@
-const arrayAllVideogames = [
+const data = [
   {
     "id": 3498,
     "name": "Grand Theft Auto V",
@@ -4259,4 +4259,4 @@ const arrayAllVideogames = [
   }
 ]
 
-module.exports = {arrayAllVideogames}  
+module.exports = data 

@@ -47,7 +47,7 @@ const rootReducer = (state = initialState, action) => {
       const genresFiltered = action.payload === 'All' ? 
       state.allVideogames:
       allVideogames.filter(el => {
-          return el.Genres.find(el => {
+          return el.Genres?.find(el => {
               return el.name === action.payload;
           })     
       });

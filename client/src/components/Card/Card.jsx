@@ -30,7 +30,7 @@ const Card = (props) => {
                     </div>
 
                     <div className={styles.containerGenre}>
-                        {props.genres?.map(element => {
+                        {props.Genres?.map(element => {
                             return (
                                 <div key={element.id}> {element.name} </div>
                             )

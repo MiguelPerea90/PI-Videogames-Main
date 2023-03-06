@@ -13,9 +13,9 @@ const CardsContainer = () => {
   // // PAGINADO
   const [currentPage, setCurrentPage] = useState(1);
 
-  const [videogamesPerPage] = useState(12); // setVideogamesPerPage INCLUIR
+  const [videogamesPerPage] = useState(15); // setVideogamesPerPage INCLUIR
 
-  const indexOfLastVideogame = currentPage * videogamesPerPage; // 12
+  const indexOfLastVideogame = currentPage * videogamesPerPage; // 15
 
   const indexOfFirstVideogame = indexOfLastVideogame - videogamesPerPage; //0
 
@@ -34,13 +34,13 @@ const CardsContainer = () => {
           <div className={styles.cardsContainer}>
             {currentVideogames?.map((videogame) => {
               return (
-                    <div key={videogame.id}>
-                      <Card
+                    <div key={videogame.name}>
+                      <Card 
                       id={videogame.id}
                       image={videogame.image}
                       rating={videogame.rating}
                       name={videogame.name}
-                      genres={videogame.Genres}
+                      Genres={videogame.Genres}
                       /> 
                     </div>
                 );

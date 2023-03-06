@@ -1,5 +1,5 @@
 .cardsContainerHome {
-    width: 80vw;
+    width: 90vw;
     height: auto;
     margin: 0 auto;
     display: flex;
@@ -13,7 +13,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    gap: 4rem;
+    gap: 2rem;
     padding: 40px;
 }
 

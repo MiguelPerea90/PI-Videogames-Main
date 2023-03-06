@@ -77,7 +77,7 @@ const Detail = () => {
                     {videogamesId?.Genres.map((ele) => {
                         return (
                             <Genres 
-                                key={ele.name}  
+                                key={ele.id}  
                                 name={ele.name} 
                             />
                         );
@@ -86,7 +86,7 @@ const Detail = () => {
                     {videogamesId?.Platforms.map((ele) => {
                         return (
                             <Platforms 
-                                key={ele.name} 
+                                key={ele.id} 
                                 name={ele.name} 
                             />
                         );

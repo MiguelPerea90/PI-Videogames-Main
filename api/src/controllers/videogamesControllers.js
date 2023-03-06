@@ -1,6 +1,7 @@
 const axios = require("axios");
+const data = require("./dataApi")
 const { Videogame, Genre, Platform } = require("../db");
-
+// const data = require("./dataApi")
 const { API_KEY, API_URL} = process.env;
 
 
@@ -10,31 +11,35 @@ const { API_KEY, API_URL} = process.env;
  const cleanArray = (arr) => {
     return arr.map( element => {
         return {
-            id: element.id,
-            name: element.name,
-            image: element.background_image,
-            rating: element.rating,
-            Platforms: element.platforms.map(element => {
-                return {
-                    id: element.platform.id,
-                    name: element.platform.name
-                }
-            }),
-            Genres: element.genres.map(element => {
-                return {
-                    id: element.id,
-                    name: element.name,
-                }
-            }),
+          id: element.id,
+          name: element.name,
+          released: element.released,
+          image: element.image,
+          description: element.description,
+          rating: element.rating,
+          Platforms: element.Platforms.map(element => {
+              return {
+                  id: element.id,
+                  name: element.name
+              }
+          }),
+          Genres: element.Genres.map(element => {
+              return {
+                  id: element.id,
+                  name: element.name
+              }
+          })
         };
     });
 };
-
 
 //  // ESTE CONTROLLER TRAE TODO DE LA DB Y LA API
 const getAllVideogames = async () => {
     
  //Aqui trae todos los videogames de la db.
+
+    const dbVideogames = cleanArray(data)
+
     const databaseVideogames = await Videogame.findAll({
         include: [{
             model: Genre,
@@ -51,27 +56,8 @@ const getAllVideogames = async () => {
         }],
     }); 
 
-    // Traigo todo lo de la api cómo viene
-    const apiVideogamesRaw = (
-        await axios.get(`${API_URL}?key=${API_KEY}&page_size=40&page=1`)
-    ).data.results;
-    const apiVideogamesRaw2 = (
-        await axios.get(`${API_URL}?key=${API_KEY}&page_size=20&page=2`)
-    ).data.results;
+    const infoTotal = [...dbVideogames, ...databaseVideogames];
 
-    // Me quedo con una copia de los resultados.
-    const apiVideogamesRawConcat = [
-        ...apiVideogamesRaw,
-        ...apiVideogamesRaw2,
-    ];
-
-    //mapeo los resultados.
-    const apiVideogamesClean = cleanArray(apiVideogamesRawConcat);
-
-    // Me traigo una copia de todo lo de la api + lo de la db
-    const infoTotal = [...apiVideogamesClean, ...databaseVideogames];
-
-    // retorno la data completa
     return infoTotal;
 };
 
@@ -94,6 +80,7 @@ const getAllVideogames = async () => {
 
  // // ESTE CONTROLLER OBTIENE LA INFO DE LA API POR ID
 const getVideogameApiById = async (id) => {
+
     const apiVideogameById = (await axios.get(`${API_URL}/${id}?key=${API_KEY}`)).data; 
 
         const videogameById = {
