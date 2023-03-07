@@ -72,25 +72,29 @@ const Detail = () => {
                     
                 </div>
 
-                <div className={styles.genresPlatforms}>
-                    {videogamesId?.Genres.map((ele) => {
-                        return (
-                            <Genres 
-                                key={ele.id}  
-                                name={ele.name} 
-                            />
-                        );
-                    })}
-
-                    {videogamesId?.Platforms.map((ele) => {
-                        return (
-                            <Platforms 
-                                key={ele.id} 
-                                name={ele.name} 
-                            />
-                        );
-                    })}
-                </div>
+               <div className={styles.containerGenresPlatforms}>
+                    <div className={styles.genres}>
+                        <h3>Genres:</h3>
+                        {videogamesId?.Genres.map((ele) => {
+                            return (
+                                <div key={ele.id} > 
+                                    <span>{ele.name}</span> 
+                                </div>
+                            );
+                        })}
+                    </div>
+                    
+                    <div className={styles.platforms}>
+                        <h3>Platforms:</h3>
+                        {videogamesId?.Platforms.map((ele) => {
+                            return (
+                                <div key={ele.id}> 
+                                    <span>{ele.name}</span> 
+                                </div>
+                            );
+                        })}
+                    </div>
+               </div>
            </div>
 
         </div>

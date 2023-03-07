@@ -4,16 +4,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 30px;
+    padding-bottom: 20px;
 }
 
 .containerDivsBoxShadow {
-    background-color: #2F4F4F;
+    /* background-color: #2F4F4F; */
+    background-color: #ffffff;
     width: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-bottom: 40px;
+    padding-bottom: 50px;
 }
 
 .containerDivs {
@@ -26,6 +29,8 @@
 }
 .title {
     color:  #FF8C00;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .imageName{
@@ -52,9 +57,36 @@
     padding: 30px;
     box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
 }
+.containerGenresPlatforms {
+    width: 80%;
+    display: flex;
+    padding-top: 30PX;
+}
 
-.genresPlatforms {
+.genres {
     background-color: #F5F5DC;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 80%;
+    height: auto;
+    padding: 30px;
+    box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
+} 
+
+.genres span {
+    font-size: 16px;
+    font-weight: 600;
+} 
+.platforms span {
+    font-size: 16px;
+    font-weight: 600;
+    color: #F5F5DC
+} 
+.platforms {
+    /* background-color: #F5F5DC; */
+    background-color: #2F4F4F;
     display: flex;
     flex-direction: column;
     align-items: center;
