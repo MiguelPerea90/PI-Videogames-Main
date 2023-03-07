@@ -60,6 +60,7 @@
 .containerGenresPlatforms {
     width: 80%;
     display: flex;
+    gap:  3rem;
     padding-top: 30PX;
 }
 

@@ -4,10 +4,10 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { getVideogameById } from "../../redux/actions";
 import styles from "./Detail.module.css"
-import Genres from "../../components/Genres/Genres";
+// import Genres from "../../components/Genres/Genres";
 import imagen from "../../img/default-Videogames.jpg"
 import { Link } from "react-router-dom";
-import Platforms from "../../components/Platforms/Platforms";
+// import Platforms from "../../components/Platforms/Platforms";
 
 
 const Detail = () => {
