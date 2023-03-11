@@ -1,14 +1,14 @@
 import { Detail, Form, Home, Landing } from "./views";
-import  NavBar from "./components/NavBar/NavBar";
-import { useLocation, Switch, Route} from "react-router-dom";
+// import  NavBar from "./components/NavBar/NavBar";
+import { Switch, Route} from "react-router-dom";
 
 function App() {
 
-  const pathName = useLocation();
+  // const pathName = useLocation();
 
   return (
     <div>
-      {pathName.pathname === "/home" && <NavBar />}
+      {/* {pathName.pathname === "/home" && <NavBar />} */}
       <Switch>
         <Route path="/" component={Landing} exact />
         <Route path="/home" component={Home} />

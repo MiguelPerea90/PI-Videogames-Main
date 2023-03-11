@@ -78,9 +78,11 @@ const getAllVideogames = async () => {
  // // ESTE CONTROLLER OBTIENE LA INFO DE LA API POR ID
 const getVideogameApiById = async (id) => {
 
-    const apiVideogameById = (await axios.get(`${API_URL}/${id}?key=${API_KEY}`)).data; 
+    const apiVideogameById = (
+        await axios.get(`${API_URL}/${id}?key=${API_KEY}`)
+    ).data; 
 
-        const videogameById = {
+    const videogameById = {
             id: apiVideogameById.id,
             name: apiVideogameById.name,
             description: apiVideogameById.description,

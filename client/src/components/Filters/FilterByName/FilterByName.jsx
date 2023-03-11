@@ -28,15 +28,15 @@ const FilterByName = () => {
 
    
     return (
-        <div className={styles.containerNavBar}>
+        <div className={styles.containerFilterByName}>
             <input type="text" 
             className={styles.searchBarInput}  
             onChange={handlerChange} 
-            placeholder="Search Videogame"/>
+            placeholder="Search"/>
 
             <button 
             className={styles.byNameButton} 
-            onClick={handlerFindByName}>Search Name
+            onClick={handlerFindByName}>Search
             </button>
 
             {/* <button 

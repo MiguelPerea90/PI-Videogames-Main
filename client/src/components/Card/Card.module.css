@@ -1,7 +1,7 @@
 .card {
     background-color: #FFFFFF;
-    width: 300px;
-    height: 500px;
+    width: 260px;
+    height: 440px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,22 +10,24 @@
     padding-bottom: 10px;
     box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
 }
-
-.containerDetail {
-    width: 280px;
-    height: 220px;
-    background-color:  #F5F5DC;
-    box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
-    padding-top: 20px;
-    padding-bottom: 10px;
+.card:hover {
+    transform: scale(1.1);
+    
 }
 .card img {
-    width: 300px;
-    height: 250px;
+    width: 100%;
+    height: 200px;
+}
+.containerDetail {
+    width: 95%;
+    height: 220px;
+    padding: .5rem;
+    background-color:  #F5F5DC;
+    box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
 }
 
 .naRa {
-    width: 280px;
+    width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -37,11 +39,15 @@
  }
 
  .containerGenre {
-    width: 280px;
+    width: 100%;
     height: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
+ }
+
+ .containerGenre span {
+    font-size: 14px;
  }
 
  .containerButtomSeeMore {

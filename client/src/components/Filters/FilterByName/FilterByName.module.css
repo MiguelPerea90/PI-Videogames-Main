@@ -1,23 +1,66 @@
-.containerNavBar {
+.containerFilterByName {
     display: flex;
-    flex-direction: column;
-    height: auto;
-    padding: 10px;
-    gap: 1rem;
+    justify-content: center;
+    gap: 2.5rem;
+    padding: 1rem;
 }
-
-.byNameButton{
-    background-color: #F5F5DC;
-    color: #FF8C00;
-    font-size: 20px;
-    font-weight: 600;
-    padding: 10px;
-    cursor: pointer;
+.searchBarInput {
+    width: 45%;
+    height: auto;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: .4rem;
     border: none;
-    height: 42px;
-    width: auto;
-    margin: 0 5px;
     box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
+}
+@media (min-width: 320px) {
+    .searchBarInput {
+        font-size: 16px;
+        padding: 6px 12px;
+    }
+}
+@media (min-width: 480px) {
+    .searchBarInput {
+        font-size: 18px;
+        padding: 7px 14px;
+    }
+}
+@media (min-width: 600px) {
+    .searchBarInput {
+        padding: 8px 16px;
+    }
+}
+@media (min-width: 780px) {
+    .searchBarInput {
+        padding: 10px 20px;
+    }
+}
+.byNameButton{
+    background-color: #FF8C00;
+    font-size: 14px;
+    border: none;
+    padding: 5px 10px;
+    border-radius: .4rem;
+    transition: all 800ms;
+    box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
+}
+@media (min-width: 320px) {
+    .byNameButton {
+        padding: 6px 12px;
+        font-size: 16px;
+    }
+}
+@media (min-width: 480px) {
+    .byNameButton {
+        padding: 8px 16px;
+        font-size: 18px;
+    }
+}
+@media (min-width: 480px) {
+    .byNameButton {
+        padding: 10px 20px;
+        font-size: 18px;
+    }
 }
 
 .byNameButton:hover,
@@ -27,9 +70,3 @@
     color: #ffffff;
 }
 
-.searchBarInput {
-    font-size: 20px;
-    padding: 8px 12px;
-    border: 1px solid silver;
-    box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
-}

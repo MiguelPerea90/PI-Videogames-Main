@@ -5,7 +5,7 @@ import { orderByAlfabetic } from "../../../redux/actions";
 import styles from "./OrderByAlfabetic.module.css"
 
 
-const OrederByAlfabetic = () => {
+const OrderByAlfabetic = () => {
 
     const dispatch = useDispatch()
 
@@ -29,7 +29,7 @@ const OrederByAlfabetic = () => {
             <Select className={styles.select}
                 options={myOptions} 
                 onChange={handlerChange} 
-                placeholder="Order Alfabetic">
+                placeholder="Order Alphabetically">
             </Select>
         </div>
     )
@@ -38,4 +38,4 @@ const OrederByAlfabetic = () => {
 
 };
 
-export default  OrederByAlfabetic;
+export default  OrderByAlfabetic;

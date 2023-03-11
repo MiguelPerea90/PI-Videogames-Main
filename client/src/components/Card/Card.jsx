@@ -9,13 +9,13 @@ const Card = (props) => {
 
             <Link to={{pathname: "/detail", state:{id: props.id}}} >
                 { 
-                props.image ? 
-                <img src={props.image} 
-                alt="img not found" 
-                />:
-                <img src={imagen} 
-                alt="img default not found"  
-                />
+                    props.image ? 
+                    <img src={props.image} 
+                        alt="img not found" 
+                        />:
+                        <img src={imagen} 
+                        alt="img default not found"  
+                    />
                  }
             </Link>
 
@@ -32,7 +32,9 @@ const Card = (props) => {
                     <div className={styles.containerGenre}>
                         {props.Genres?.map(element => {
                             return (
-                                <div key={element.id}> {element.name} </div>
+                                <div key={element.id}>
+                                     <span> {element.name}</span> 
+                                </div>
                             )
                         })} 
                     </div>

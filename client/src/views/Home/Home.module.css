@@ -1,0 +1,178 @@
+/* .containerHome {
+    background-color: blue; 
+} */
+.containerFiltersAndOrders {
+    width: 100%;
+    height: auto;  
+}
+@media (min-width: 320px) {
+    .containerFiltersAndOrders {
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 2rem;  
+        margin-bottom: 2rem; 
+    }
+}
+@media (min-width: 480px) {
+    .containerFiltersAndOrders {
+        width: 65%;
+    }
+}
+@media (min-width: 600px) {
+    .containerFiltersAndOrders {
+        width: 55%;
+    }
+}
+@media (min-width: 768px) { 
+    .containerFiltersAndOrders {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+@media (min-width: 1024px) { 
+    .containerFiltersAndOrders {
+        width: 75%;
+        
+    }
+}
+@media (min-width: 1200px) { 
+    .containerFiltersAndOrders {
+        width: 65%;
+        
+    }
+}
+.subContainer {
+    width: 100%;
+    display: flex;
+}
+.containerByNameReloadCreate {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+@media (min-width: 768px) {
+    .containerByNameReloadCreate{
+        gap: 5rem;
+        margin-bottom: 1rem;
+    }
+}
+@media (min-width: 1300px) {
+    .containerByNameReloadCreate{
+        gap: 2rem;
+    }
+}
+.containerReloadCreate{
+    width: 74%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+@media (min-width: 480px) {
+    .containerReloadCreate {
+        width: 83%;
+    }
+}
+@media (min-width: 768px) {
+    .containerReloadCreate {
+        width: 88%;
+    }
+}
+@media (min-width: 1300px) {
+    .containerReloadCreate {
+        width: 80%;
+    }
+}
+.create, .reload {
+    background-color: #FF8C00;
+    border: none;
+    border-radius: .4rem;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: all 800ms;
+    box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
+ }
+ @media (min-width: 480px) {
+    .create, .reload {
+        font-size: 1.8rem;
+        padding: 6px 12px;
+    }
+}
+@media (min-width: 600px) {
+    .create, .reload {
+        font-size: 2rem;
+        padding: 7px 14px;
+    }
+}
+ .create:hover {
+    transform: scale(1.1);
+    background-color: #2F4F4F; 
+    color: #FF8C00;    
+ }
+ .reload:hover {
+    transform: scale(1.1);
+    background-color: #2F4F4F;
+    color: #FF8C00;    
+ }
+ .containerRatingAlfabetic {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+ }
+ .rating {
+    width: 90%;
+    margin: 0 auto;
+    padding: 1rem;
+ }
+ @media (min-width: 1024px) { 
+    .rating {
+        width: 82%;
+        
+    }
+}
+ .Alpha {
+    width: 96%;
+    margin: 0 auto;
+ }
+ @media (min-width: 1024px) { 
+    .Alpha {
+        width: 90%;
+        
+    }
+}
+ .containerGenreCreated {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+ }
+ .genres {
+    width: 90%;
+    margin: 0 auto;
+ }
+ @media (min-width: 1024px) { 
+    .genres {
+        width: 82%;
+        
+    }
+}
+.creatediv {
+    width: 90%;
+    margin: 0 auto;
+ }
+ @media (min-width: 1024px) { 
+    .creatediv {
+        width: 82%;
+        
+    }
+}
