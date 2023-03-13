@@ -4,8 +4,9 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    height: auto;
     gap: 1rem; 
-    padding: 2rem;
+    padding: 1.5rem;
 }
 @media (min-width: 768px) { 
     .containerNavBar {
@@ -17,6 +18,7 @@
     }
  }
 .title {
+    width: 100%;
     font-size: 2rem;
     margin-top: 0;
     margin-bottom: 0;
@@ -31,7 +33,20 @@
         font-size: 2.4rem;
     }
 }
- .create, .reload {
+.containerContactAbout {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+@media (min-width: 768px) { 
+    .containerContactAbout {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+ }
+.contac, .about {
     background-color: #FF8C00;
     border: none;
     border-radius: .4rem;
@@ -41,23 +56,23 @@
     box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
  }
  @media (min-width: 480px) {
-    .create, .reload {
+    .contac, .about {
         font-size: 1.8rem;
         padding: 6px 12px;
     }
 }
 @media (min-width: 600px) {
-    .create, .reload {
+    .contac, .about {
         font-size: 2rem;
         padding: 7px 14px;
     }
 }
- .create:hover {
+.contac:hover {
     transform: scale(1.1);
     background-color: #2F4F4F; 
     color: #FF8C00;    
  }
- .reload:hover {
+ .about:hover {
     transform: scale(1.1);
     background-color: #2F4F4F;
     color: #FF8C00;    

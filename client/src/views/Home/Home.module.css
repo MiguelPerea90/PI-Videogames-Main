@@ -1,6 +1,9 @@
-/* .containerHome {
-    background-color: blue; 
-} */
+.containerHome {
+    background-image: url("../../img/backgroundHome.webp");
+    background-position: center;
+    margin-bottom: -50px;
+    background-attachment: fixed;
+}
 .containerFiltersAndOrders {
     width: 100%;
     height: auto;  
@@ -60,6 +63,7 @@
     .containerByNameReloadCreate{
         gap: 5rem;
         margin-bottom: 1rem;
+        gap: 2.2rem;
     }
 }
 @media (min-width: 1300px) {
@@ -68,36 +72,164 @@
     }
 }
 .containerReloadCreate{
-    width: 74%;
+    width: 100%;
     height: auto;
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 2rem;
+    justify-content: center;
+    margin-bottom: 2.6rem;
+    gap: 1rem;
 }
-@media (min-width: 480px) {
-    .containerReloadCreate {
-        width: 83%;
+@media (min-width: 400px) {
+    .containerReloadCreate{
+        padding: 8px;
     }
 }
-@media (min-width: 768px) {
-    .containerReloadCreate {
-        width: 88%;
+@media (min-width: 480px) {
+    .containerReloadCreate{
+        gap: 8.5rem;
+    }
+}
+@media (min-width: 600px) {
+    .containerReloadCreate{
+        width: 80%;
+        gap: 9.5rem;
+    }
+}
+@media (min-width: 650px) {
+    .containerReloadCreate{
+        width: 80%;
+        
+    }
+}
+@media (min-width: 700px) {
+    .containerReloadCreate{
+        gap: 10rem;
+    
+    }
+}
+
+@media (min-width: 800px) {
+    .containerReloadCreate{
+        gap: 6.8rem;
+        
+    }
+}
+@media (min-width: 900px) {
+    .containerReloadCreate{
+        gap: 8rem;
+        width: 90%;
     }
 }
 @media (min-width: 1300px) {
-    .containerReloadCreate {
-        width: 80%;
+    .containerReloadCreate{
+        justify-content: space-between;
+        width: 110%;
+
     }
 }
-.create, .reload {
+.reload {
     background-color: #FF8C00;
+    width: 100%;
     border: none;
     border-radius: .4rem;
-    padding: 5px 10px;
+    padding: 5px 50px;
     cursor: pointer;
     transition: all 800ms;
     box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
  }
+ @media (min-width: 480px) {
+    .reload {
+         width: 180%;
+    }
+} 
+@media (min-width: 600px) {
+    .reload {
+         width: 178%;
+    }
+} 
+@media (min-width: 768px) {
+    .reload {
+         width: 120%;
+    }
+}
+@media (min-width: 900px) {
+    .reload{
+        width: 155%;
+        position: relative;
+        right: 1rem;
+    }
+} 
+@media (min-width: 1024px) {
+    .reload{
+        width: 150%;
+    }
+}
+@media (min-width: 1300px) {
+    .reload {
+        width: 220%;
+        
+    }
+} 
+ .create {
+    background-color: #FF8C00;
+    width: 100%;
+    border: none;
+    border-radius: .4rem;
+    padding: 5px 16px;
+    cursor: pointer;
+    transition: all 800ms;
+    box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
+ }
+ @media (min-width: 480px) {
+    .create{
+        width: 92%;
+        margin-right: 2.5rem;
+    }
+}
+ @media (min-width: 600px) {
+    .create {
+        margin-right: 10px;
+        
+    }
+} 
+@media (min-width: 700px) {
+    .create {
+        position: relative;
+        right: .8rem;
+        width: 100%;
+        
+    }
+} 
+@media (min-width: 768px) {
+    .create {
+        width: 100%;
+        margin-right: 22px;
+        
+    }
+} 
+@media (min-width: 900px) {
+    .create {
+        width: 125%;
+        position: relative;
+        right: 1.6rem;
+        
+    }
+} 
+@media (min-width: 1024px) {
+    .create{
+        width: 125%;
+        position: relative;
+        right: 1.8rem;
+    }
+} 
+@media (min-width: 1300px) {
+    .create {
+        width: 110%;
+        position: relative;
+        right: 1.5rem;
+        
+    }
+} 
  @media (min-width: 480px) {
     .create, .reload {
         font-size: 1.8rem;
@@ -125,7 +257,7 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
  }
  .rating {
     width: 90%;
@@ -153,9 +285,9 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
  }
+
  .genres {
     width: 90%;
     margin: 0 auto;

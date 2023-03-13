@@ -20,59 +20,64 @@ const Detail = () => {
   }, [dispatch, location]);
 
   return (
-    <div className={styles.bigContainer}>
+    <div className={styles.container}>
 
         <div className={styles.containerDivs}>
 
-           <div className={styles.containerDivsBoxShadow}>
-                <li className={styles.info}>
-                    <span className={styles.Span}>
-                        <h1 className={styles.title}>{videogamesId?.name}</h1> 
-                    </span>
-                </li>
-                <div className={styles.imageName}>
-                    {videogamesId?.image ? (
-                        <img
+            <div className={styles.imageName}>
+                {videogamesId?.image ? (
+                    <img 
+                        className={styles.img}
                         src={videogamesId.image}
                         alt="img not found"
-                            />
+                    />
                     ) : (
-                        <img
+                    <img
+                        className={styles.img}
                         src={imagen}
                         alt="img default not found"
-                        />
-                    )}
-                </div>
+                    />
+                )}
 
-                <div className={styles.desRelRat}>
-                <li className={styles.info}>
+                <div className={styles.containerInfo}>
+                    <div>
+                        <h1 
+                            className={styles.title}
+                        >   
+                            {videogamesId?.name.slice(0,14)}
+                        </h1> 
+                    </div>
+
+                    <div className={styles.info}>
                         <h3>Rating:</h3> 
                         <span className={styles.Span}> 
-                            {videogamesId?.rating} 
+                            {videogamesId?.rating + "⭐"} 
                         </span>
-                    </li>
-                    <li className={styles.info}>
-                        <h3>Description:</h3> 
-                        <span className={styles.Span2}> 
+                    </div>
+                </div>
+            </div>
+
+            <div className={styles.desRelRat}>
+                <div className={styles.info}>
+                    <h3>Description:</h3> 
+                    <p className={styles.parrafoDescription}> 
                             {videogamesId?.description
-                            // .slice(0,601)
+                            .slice(0,401)
                             .replaceAll("<p>", " ")
                             .replaceAll("</p>", " ")
                             .replaceAll("<br />", " ")}
-                        </span>
-                    </li>
-
-                    <li className={styles.info}>
-                        <h3>Released:</h3> 
-                        <span className={styles.Span}> 
-                            {videogamesId?.released} 
-                        </span>
-                    </li>
-
-                    
+                    </p>
                 </div>
 
-               <div className={styles.containerGenresPlatforms}>
+                <div className={styles.info}>
+                    <h3>Released:</h3> 
+                    <span className={styles.Span}> 
+                        {videogamesId?.released} 
+                    </span>
+                </div>    
+            </div>
+
+            <div className={styles.containerGenresPlatforms}>
                     <div className={styles.genres}>
                         <h3>Genres:</h3>
                         {videogamesId?.Genres.map((ele) => {
@@ -94,8 +99,7 @@ const Detail = () => {
                             );
                         })}
                     </div>
-               </div>
-           </div>
+            </div>
 
         </div>
             

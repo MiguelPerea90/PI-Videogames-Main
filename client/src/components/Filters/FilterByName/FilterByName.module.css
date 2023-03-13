@@ -1,8 +1,58 @@
 .containerFilterByName {
+    width: 100%;
     display: flex;
     justify-content: center;
-    gap: 2.5rem;
+    gap: 1rem;
     padding: 1rem;
+}
+@media (min-width: 400px) {
+    .containerFilterByName{
+        width: 90%;
+    }
+}
+@media (min-width: 480px) {
+    .containerFilterByName{
+        width: 100%;
+        gap: 2rem;
+    }
+}
+@media (min-width: 600px) {
+    .containerFilterByName{
+        width: 100%;
+        gap: 2rem;
+    }
+}
+@media (min-width: 600px) {
+    .containerFilterByName{
+        gap: 2.5rem;
+    }
+}
+@media (min-width: 650px) {
+    .containerFilterByName {
+        width: 110%;
+    }
+}
+@media (min-width: 768px) {
+    .containerFilterByName{
+        gap: 4rem;
+    }
+}
+@media (min-width: 800px) {
+    .containerFilterByName{
+        gap: 3rem;
+    }
+}
+@media (min-width: 1180px) {
+    .containerFilterByName{
+        gap: 4.5rem;
+
+    }
+}
+@media (min-width: 1300px) {
+    .containerFilterByName {
+        gap: 2.5rem;
+        width: 110%;
+    }
 }
 .searchBarInput {
     width: 45%;
@@ -25,14 +75,36 @@
         padding: 7px 14px;
     }
 }
+@media (min-width: 540px) {
+    .searchBarInput {
+        position: relative;
+        right: .4rem;
+        width: 49%;
+    }
+}
 @media (min-width: 600px) {
     .searchBarInput {
         padding: 8px 16px;
+       position: relative;
+       right: .2rem;
+       width: 46%;
+    }
+}
+@media (min-width: 720px) {
+    .searchBarInput {
+        width: 49%;
     }
 }
 @media (min-width: 780px) {
     .searchBarInput {
         padding: 10px 20px;
+    }
+}
+@media (min-width: 1300px) {
+    .searchBarInput {
+       width: 110%;
+       position: relative;
+       right: 1rem;
     }
 }
 .byNameButton{
@@ -60,6 +132,25 @@
     .byNameButton {
         padding: 10px 20px;
         font-size: 18px;
+    }
+}
+@media (min-width: 700px) {
+    .byNameButton {
+        width: 30%;
+        position: relative;
+        right: .5rem;
+    }
+}
+@media (min-width: 768px) {
+    .byNameButton {
+        width: 45%;
+    }
+}
+@media (min-width: 1300px) {
+    .byNameButton {
+        width: 60%;
+        
+       
     }
 }
 

@@ -43,7 +43,7 @@ const FilterByGenres = () => {
             <Select className={styles.select}
                 options={infoTotal} 
                 onChange={handlerChange} 
-                placeholder="filter by Genres">
+                placeholder="Genres">
             </Select>
         </div>
     )

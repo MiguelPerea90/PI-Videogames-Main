@@ -21,23 +21,29 @@ const NavBar = () => {
             <div>
                 <h1 className={styles.title}>Henry Videogames</h1>
             </div>
-            {/* <div>
-                <button 
-                    className={styles.reload} 
-                    onClick={handlerReload}
-                >
-                    Reload 
-                </button>
-            </div> */}
-            <div>
-                <Link to="/create">
-                    <button 
-                    className={styles.create} 
-                    >
-                        Create
-                    </button>
-                </Link>
-            </div>
+
+           <div className={styles.containerContactAbout}>
+                <div>
+                    <Link to="#">
+                        <button 
+                            className={styles.contac} 
+                        >
+                            Contact
+                        </button>
+                    </Link>
+                </div>
+                
+                <div>
+                    <Link to="#">
+                        <button 
+                            className={styles.about} 
+                        >
+                            About
+                        </button>
+                    </Link>
+                </div>
+           </div>
+
         </div>
     )
 };

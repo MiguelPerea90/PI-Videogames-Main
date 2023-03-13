@@ -22,10 +22,10 @@ const Card = (props) => {
             <div className={styles.containerDetail}>
                     <div className={styles.naRa}>
                         <div>
-                            {props.name.slice(0, 30)}
+                            {props.name.slice(0, 22)}
                         </div>
                         <div className={styles.rating}>
-                            {props.rating}
+                            {props.rating + "⭐"}
                         </div>
                     </div>
 
