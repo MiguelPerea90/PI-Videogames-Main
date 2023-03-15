@@ -5,6 +5,12 @@
     gap: 1rem;
     padding: 1rem;
 }
+@media (min-width: 280px) {
+    .containerFilterByName{
+        width: 100%;
+        
+    }
+}
 @media (min-width: 400px) {
     .containerFilterByName{
         width: 90%;
@@ -115,6 +121,13 @@
     border-radius: .4rem;
     transition: all 800ms;
     box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
+}
+@media (min-width: 280px) {
+    .byNameButton {
+       position: relative;
+       left: 2rem;
+       width: 30%;
+    }
 }
 @media (min-width: 320px) {
     .byNameButton {
