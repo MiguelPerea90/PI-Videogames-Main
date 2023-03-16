@@ -35,9 +35,9 @@ const Home = () => {
     return (
         <div className={styles.containerHome}>
 
-            <section id="inicio">
+            <NavBar />
 
-                <NavBar />
+            <section id="inicio">
 
                 <div className={styles.containerFiltersAndOrders}>  
 
@@ -67,7 +67,7 @@ const Home = () => {
                         </div>
                 
                     </div>
-
+                    
                     <div className={styles.containerRatingAlfabetic}>
                         <div className={styles.rating}>
                             <OrderByRating /> 
@@ -76,7 +76,7 @@ const Home = () => {
                             <OrderByAlfabetic />
                         </div>
                     </div>
-                
+                    
                     <div className={styles.containerGenreCreated}>
                         <div className={styles.genres}>
                             <FilterByGenres />
@@ -92,7 +92,8 @@ const Home = () => {
 
             <CardsContainer />
 
-        </div>)
+        </div>
+        )
 };
 
 export default Home;

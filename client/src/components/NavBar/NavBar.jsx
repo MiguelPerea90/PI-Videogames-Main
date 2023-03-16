@@ -19,7 +19,7 @@ const NavBar = () => {
     return (
         <div className={styles.containerNavBar}>
             
-            <div>
+            <div className={styles.containerTitle}>
                 <h1 className={styles.title}>Henry Videogames</h1>
             </div>
 

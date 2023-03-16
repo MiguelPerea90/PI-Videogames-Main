@@ -1,7 +1,30 @@
 .containerCreated {
-    font-size: 18px;
-    padding: 10px;
+    background-color: red;
+    width: 90%;
+    max-width: 300px;
+    min-width: 250px;
+    height: auto;
+    margin: 0 auto;
+    padding: 1rem;
+    box-sizing: border-box;
 }
 .select {
     box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
+    font-size: 14px;
+}
+@media (min-width: 480px) {
+    .select {
+        font-size: 16px;
+    }
+}
+@media (min-width: 600px) {
+    .select {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 768px) {
+    .select {
+        font-size: 20px;
+    }
 }
