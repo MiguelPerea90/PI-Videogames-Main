@@ -23,26 +23,26 @@ const NavBar = () => {
                 <h1 className={styles.title}>Henry Videogames</h1>
             </div>
 
-           <div className={styles.containerContactAbout}>
+           <div className={styles.containerReloadCreate}>
+                
+                {/* <div>
+                    <button 
+                        className={styles.reload} 
+                        onClick={handlerReload}
+                    >
+                        Reload 
+                    </button>
+                </div>  */}
                 <div>
-                    <Link to="#">
+                    <Link to="create">
                         <button 
-                            className={styles.contac} 
+                            className={styles.create} 
                         >
-                            Contact
+                            Create
                         </button>
                     </Link>
                 </div>
                 
-                <div>
-                    <Link to="#">
-                        <button 
-                            className={styles.about} 
-                        >
-                            About
-                        </button>
-                    </Link>
-                </div>
            </div>
            
         </div>

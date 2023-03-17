@@ -10,7 +10,7 @@ import FilterByGenres from "../../components/Filters/FilterByGenres/FiltersByGen
 import FilterByCreated from "../../components/Filters/FilterByCreated/FilterByCreated";
 import NavBar from "../../components/NavBar/NavBar";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const Home = () => {
 
@@ -42,9 +42,9 @@ const Home = () => {
                 <div className={styles.containerFiltersAndOrders}>  
 
                     <div className={styles.containerByNameReloadCreate}>
-                        
-                        <FilterByName />  
 
+                        <FilterByName /> 
+                       
                         <div className={styles.containerReloadCreate}> 
                             <div>
                                 <button 
@@ -55,7 +55,7 @@ const Home = () => {
                                 </button>
                             </div> 
 
-                            <div>
+                            {/* <div>
                                 <Link to="/create">
                                     <button 
                                         className={styles.create} 
@@ -63,27 +63,19 @@ const Home = () => {
                                         Create
                                     </button>
                                 </Link> 
-                            </div>
+                            </div> */}
                         </div>
                 
                     </div>
-                    
+                   
                     <div className={styles.containerRatingAlfabetic}>
-                        <div className={styles.rating}>
-                            <OrderByRating /> 
-                        </div>
-                        <div className={styles.Alpha}>
-                            <OrderByAlfabetic />
-                        </div>
+                        <OrderByRating /> 
+                        <OrderByAlfabetic />
                     </div>
                     
                     <div className={styles.containerGenreCreated}>
-                        <div className={styles.genres}>
-                            <FilterByGenres />
-                        </div>
-                        <div className={styles.creatediv}>
-                            <FilterByCreated />
-                        </div>
+                        <FilterByGenres />
+                        <FilterByCreated />
                     </div>
 
                 </div>

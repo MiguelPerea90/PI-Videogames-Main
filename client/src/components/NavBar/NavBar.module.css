@@ -48,7 +48,7 @@
         font-size: 2.6rem;
     }
 }
-.containerContactAbout {
+.containerReloadCreate {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -56,14 +56,14 @@
     gap: 1rem;
 }
 @media (min-width: 768px) { 
-    .containerContactAbout {
+    .containerReloadCreate {
         width: 70%;
         flex-direction: row;
         justify-content: flex-end;
         gap: 1.5rem;
     }
  }
-.contac, .about {
+.reload, .create {
     background-color: #FF8C00;
     border: none;
     border-radius: .4rem;
@@ -74,26 +74,26 @@
     box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
  }
  @media (min-width: 480px) {
-    .contac, .about {
+    .reload, .create {
         font-size: 1.6rem;
     }
 }
 @media (min-width: 600px) {
-    .contac, .about {
+    .reload, .create {
         font-size: 1.8rem;
     }
 }
 @media (min-width: 768px) {
-    .contac, .about {
+    .reload, .create {
         font-size: 2rem;
     }
 }
-.contac:hover {
+.reload:hover {
     transform: scale(1.1);
     background-color: #2F4F4F; 
     color: #FF8C00;    
  }
- .about:hover {
+ .create:hover {
     transform: scale(1.1);
     background-color: #2F4F4F;
     color: #FF8C00;    

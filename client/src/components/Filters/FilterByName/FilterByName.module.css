@@ -1,16 +1,16 @@
 .containerFilterByName {
-    background-color: red;
-    width: 90%;
-    max-width: 300px;
+    width: 100%;
+    max-width: 500px;
     min-width: 250px;
     height: auto;
     padding: 1rem;
     box-sizing: border-box;
     display: flex;
+    justify-content: center;
     gap: 1rem;
 }
 .searchBarInput {
-    width: 70%;
+    width: 50%;
     height: auto;
     font-size: 14px;
     padding: 5px 10px;

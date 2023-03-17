@@ -30,9 +30,11 @@ const CardsContainer = () => {
 
   return (
       <div className={styles.cardsContainerHome}>
+
           <div className={styles.containerCurrent}>
             <span>Página {currentPage} </span>
           </div>
+          
           <div className={styles.cardsContainer}>
             {currentVideogames?.map((videogame) => {
               return (
@@ -50,11 +52,11 @@ const CardsContainer = () => {
           </div>
 
           <div  className={styles.containerPaginado}>
-          <Paginado
-            videogamesPerPage={videogamesPerPage}
-            allVideogames={allVideogames.length}
-            paginado={paginado}
-          />
+            <Paginado
+              videogamesPerPage={videogamesPerPage}
+              allVideogames={allVideogames.length}
+              paginado={paginado}
+            />
           </div>
       
       </div>
