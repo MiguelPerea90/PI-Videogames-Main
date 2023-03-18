@@ -45,7 +45,8 @@ const Home = () => {
 
                         <FilterByName /> 
                        
-                        <div className={styles.containerReloadCreate}> 
+                        <div className={styles.containerReloadCreate}>
+                            
                             <div>
                                 <button 
                                 className={styles.reload} 
@@ -55,15 +56,6 @@ const Home = () => {
                                 </button>
                             </div> 
 
-                            {/* <div>
-                                <Link to="/create">
-                                    <button 
-                                        className={styles.create} 
-                                    >
-                                        Create
-                                    </button>
-                                </Link> 
-                            </div> */}
                         </div>
                 
                     </div>

@@ -10,7 +10,7 @@ const Card = (props) => {
             <Link to={{pathname: "/detail", state:{id: props.id}}} >
                 { 
                     props.image ? 
-                    <img src={props.image} 
+                        <img src={props.image} 
                         alt="img not found" 
                         />:
                         <img src={imagen} 
@@ -21,7 +21,7 @@ const Card = (props) => {
 
             <div className={styles.containerDetail}>
                     <div className={styles.naRa}>
-                        <div>
+                        <div className={styles.name}>
                             {props.name.slice(0, 22)}
                         </div>
                         <div className={styles.rating}>
@@ -33,7 +33,7 @@ const Card = (props) => {
                         {props.Genres?.map(element => {
                             return (
                                 <div key={element.id}>
-                                     <span> {element.name}</span> 
+                                     <span> {element.name + "--"}</span> 
                                 </div>
                             )
                         })} 

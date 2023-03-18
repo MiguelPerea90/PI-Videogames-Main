@@ -1,117 +1,170 @@
 .container {
-    background-color: #000000;
+    background-image: url("../../img/bacgroundForm.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    margin-bottom: -50px;
+    color: #F5F5DC;
     display: flex;
     flex-direction: column;
-    width: 60%;
-    height: auto;
-    margin: 0 auto; 
-    padding: 20px;
-    color: #F5F5DC;
 }
 
 .headers{
+    width: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
-.headers p{
-  font-size: 1.8rem;
-  font-weight: 600;
-}
-
 .title {
     color: #FFA500;
-    font-size: 6rem;
-    margin-top: 0;
-    margin-bottom: 25px;
+    font-size: 2.8rem;
+    margin-top: 1rem;
+    margin-bottom: 0;
 }
-
+@media (min-width: 768px) {
+    .title {
+        font-size: 4rem;
+    }
+}
+.headers p{
+  font-size: 1.4rem;
+  text-align: center;
+  margin-top: 0;
+  padding: .5rem;
+  box-sizing: border-box;
+}
+@media (min-width: 768px) {
+    .headers p {
+        font-size: 1.6rem;
+    }
+}
 .containerForm {
-    width: 80%;
+    width: 90%;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 20px;
+    padding: 2rem;
     margin: 0 auto;
 }
-
+@media (min-width: 768px) {
+    .containerForm {
+        width: 50%;
+    }
+}
 .labelDiv {
     width: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    font-size: 2.6rem;
-    font-weight: 600;
+    margin-bottom: 1rem;
 }
-
-.labelGenPlat{
-    color: #FFA500;
-    text-align: center;
+.label {
+    font-size: 1.4rem;
     font-weight: 600;
+    margin-bottom: -.6rem;
 }
-
-.parragraf {
-    color: #FFA500;
-    font-weight: 600;
-}
-
-.input {
-    font-size: 1.8rem;
-    padding: 1rem;
-    font-weight: 600;
-}
-
+@media (min-width: 768px) {
+    .label {
+        font-size: 1.6rem;
+    }
+} 
 .select {
-    font-size: 1.8rem;
-    padding: 1rem;
-    color: #FFA500;
-    text-align: center;
-    font-weight: 600;
+    width: 100%;
+    height: auto;
 }
-
+.input {
+    font-size: 1.4rem;
+    padding: 5px 10px;
+}
+@media (min-width: 768px) {
+    .input {
+        font-size: 1.6rem;
+    }
+} 
+.inputUrl {
+    font-size: 1.4rem;
+    padding: 5px 10px;
+    margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+    .inputUrl {
+        font-size: 1.6rem;
+    }
+} 
 .labelDiv span {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     color: #FFA500;
 }
-
-.spanGenPlat {
+@media (min-width: 768px) {
+    .labelDiv span {
+        font-size: 1.6rem;
+    }
+} 
+.labelGenPlat {
+    background-color: #2F4F4F;
+    font-size: 1.6rem;
     text-align: center;
     font-weight: 600;
+    color: #FFA500;
 }
-
-.labelGenPlatP {
-    text-align: center;
+@media (min-width: 768px) {
+    .labelGenPlat {
+        font-size: 1.8rem;
+    }
 }
-
-
+.genresCheckBox {
+    font-size: 1.4rem;
+}
+@media (min-width: 768px) {
+    .genresCheckBox {
+        font-size: 1.6rem;
+    }
+}
+.submitHome {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+@media (min-width: 768px) {
+    .submitHome {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+}
 .homeButton button, 
 .submitButton {
     background-color: #ffffff;
     color: #FF8C00;
-    font-size: 28px;
+    font-size: 1.6rem;
     font-weight: 600;
+    padding: 5px 10px;
     text-transform: uppercase;
     cursor: pointer;
     border: none;
     border-radius: 6px;
-    height: 45px;
-    width: auto;
+    width: 100%;
+    height: auto;
+    transition: all 800ms;
 }
-
-.submitHome {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
+@media (min-width: 768px) { 
+    .submitButton  {
+        width: 70%;
+    }
 }
-
 .homeButton button:hover{
     transform: scale(1.1);
     background-color: #2F4F4F;     
     color: #ffffff;
 }
-
 .submitButton:hover{
     transform: scale(1.1);
     background-color: #2F4F4F;     

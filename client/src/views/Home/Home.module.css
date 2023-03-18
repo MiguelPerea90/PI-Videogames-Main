@@ -1,12 +1,9 @@
 .containerHome {
     background-image: url("../../img/backgroundHome.webp");
     background-position: center;
-    margin-bottom: -50px;
     background-attachment: fixed;
     width: 100%;
-    margin: 0 auto;
-    overflow: hidden;
-    min-width: 250px;
+    height: auto;
 }
 .containerFiltersAndOrders {
     background-color: #2F4F4F;
@@ -37,6 +34,7 @@
 @media (max-width: 768px) {
     .containerByNameReloadCreate {
        width: 100%;
+       gap: 0rem;
     }
 }
 .containerReloadCreate{
@@ -46,10 +44,9 @@
     height: auto;
     display: flex;
     justify-content: space-around;
-    padding: 1rem;
+    padding: 1.2rem;
     box-sizing: border-box;
 }
-
 .reload {
     background-color: #FF8C00;
     width: 100%;
@@ -77,38 +74,6 @@
         font-size: 20px;
     }
 }
- .create {
-    background-color: #FF8C00;
-    width: 100%;
-    height: auto;
-    border: none;
-    border-radius: .4rem;
-    padding: 5px 15px;
-    cursor: pointer;
-    transition: all 800ms;
-    box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
- }
- @media (min-width: 480px) {
-    .create {
-        font-size: 16px;
-    }
-}
-@media (min-width: 600px) {
-    .create {
-        font-size: 18px;
-    }
-}
-
-@media (min-width: 768px) {
-    .create {
-        font-size: 20px;
-    }
-}
- .create:hover {
-    transform: scale(1.1);
-    background-color: #2F4F4F; 
-    color: #FF8C00;    
- }
  .reload:hover {
     transform: scale(1.1);
     background-color: #2F4F4F;

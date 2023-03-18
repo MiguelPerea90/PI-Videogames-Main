@@ -111,9 +111,9 @@ const rootReducer = (state = initialState, action) => {
       };
     case FILTER_BY_CREATED:
      const allGames = state.allVideogames;
-      const createdFilter = action.payload === "createdInDb" 
-      ? allGames.filter(element => element.createdInDb)
-      : allGames.filter(game => !game.createdInDb) 
+      const createdFilter = action.payload === "created" 
+      ? allGames.filter(element => element.created)
+      : allGames.filter(game => !game.created) 
 
       if (createdFilter.length === 0) {
         alert(`NO VIDEOGAMES FOUND FOR ${action.payload.toUpperCase()}  CATEGORY`)

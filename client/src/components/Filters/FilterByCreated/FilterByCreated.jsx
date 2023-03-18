@@ -15,7 +15,7 @@ const FilterByCreated = () => {
             label: "Existent"
         },
         {
-            value: "createdInDb",
+            value: "created",
             label: "Created"
         },
         {

@@ -1,23 +1,29 @@
 .container {
-   width: fit-content;
-   height: 38px;
-   margin: 45px 0;
+   width: 100%;
+   height: auto;
+   display: flex;
+   justify-content: center;
 }
 
-.aPaginate {
+.Paginate {
    background-color: #FFFFFF;
    color: #FF8C00;
-   font-size: 28px;
+   font-size: 1.4rem;
    padding: 5px 10px;
    font-weight: 600;
-   margin: 5px;
+   margin: 0 .5rem;
    border: none;
    border-radius: 6px;
    cursor: pointer;
    text-decoration: none;
+   transition: all 800ms;
 }
-
-.aPaginate:hover {   
+@media (min-width: 768px) {
+   .Paginate {
+      font-size: 1.8rem;
+   }
+}
+.Paginate:hover {   
    color: #ffffff;
    background-color: #2F4F4F;
    transform: scale(1.1);

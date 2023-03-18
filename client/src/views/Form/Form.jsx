@@ -159,7 +159,7 @@ const Form = () => {
             <div className={styles.labelDiv}>
                 <label className={styles.label}>Image</label>
                 <input
-                    className={styles.input}
+                    className={styles.inputUrl}
                     onChange={(e) => handlerChangeInput(e)}
                     type="text"
                     placeholder="Url:"
@@ -169,7 +169,7 @@ const Form = () => {
 
             <div className={styles.labelDiv}>
                 <label className={styles.label}>Rating</label>
-                <Select
+                <Select 
                     placeholder="Rating"
                     className={styles.select}
                     options={optionsRating}
@@ -182,7 +182,8 @@ const Form = () => {
                   <label> <p className={styles.labelGenPlat}>Genres</p>
                     <p className={styles.labelGenPlatP}>
                         {allGenresForm.map((element) => (
-                          <label key={element}>
+                          <label className={styles.genresCheckBox} key={element}>
+                            { " " + element}
                             <input
                               type="checkbox"
                               name="genres"
@@ -191,7 +192,6 @@ const Form = () => {
                               onClick={(event) => handlerGenresCheck(event)}
                               key={element.id}
                             />
-                            {element + " "}
                           </label>
                         ))}
                       </p>
@@ -204,6 +204,7 @@ const Form = () => {
                     <p className={styles.labelGenPlatP}>
                       {allPlatforms.map((element) => (
                         <label key={element}>
+                          { " " + element}
                           <input
                             type="checkbox"
                             name="platforms"
@@ -212,7 +213,6 @@ const Form = () => {
                             onClick={(event) => handlerPlatformsCheck(event)}
                             key={element.id}
                           />
-                           {element + " "}
                         </label>
                       ))}
                     </p>
@@ -238,21 +238,3 @@ const Form = () => {
 };
 
 export default Form;
-
-
-
-
-
-// esto no debería ser
-// import * as React from "react";
-// export const ExampleComponent: React.FC = () => {
-//   return (
-//     <div>
-//       🛑 Invalid
-//       <div>{{ foo: 'bar' }} </div>
-//       <div>{new Date()} </div>
-//       <div>{['array']} </div>
-//     </div>
-//   )
-// }
-
