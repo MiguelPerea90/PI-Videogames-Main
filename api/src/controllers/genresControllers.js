@@ -10,7 +10,6 @@ const getAllGenres = async () => {
     const dbGenres = await Genre.bulkCreate(apiGenres);
 
     return dbGenres;
-
 };
 
 module.exports = { getAllGenres };

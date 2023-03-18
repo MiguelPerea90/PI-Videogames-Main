@@ -10,7 +10,6 @@ const getAllPlatforms = async () => {
     const dbPlatforms = await Platform.bulkCreate(apiPlatforms);
 
     return dbPlatforms;
-
 };
 
 module.exports = { getAllPlatforms };
