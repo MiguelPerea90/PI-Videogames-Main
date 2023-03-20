@@ -20,51 +20,53 @@
     padding-bottom: 4rem;
 }
 .containerCurrent span {
-    background-color: #FF8C00;
+    background-color: #2F4F4F;
+    color: #F5F5DC;
     width: 88%;
     height: auto;
+    max-width: 500px;
     text-align: center;
     font-size: 18px;
     font-weight: bold;
+    border-radius: .4rem;
 }
 @media (min-width: 320px) {
     .containerCurrent span {
-        width: 78%;
+        width: 76%;
+    }
+}
+@media (min-width: 400px) {
+    .containerCurrent span {
+        width: 58%;
     }
 }
 @media (min-width: 480px) {
     .containerCurrent span {
         font-size: 20px;
-        width: 85%;
+        width: 50%;
     }
 }
 @media (min-width: 540px) {
-    .containerCurrent span {
-        width: 88%;
+    .containerCurrent span { 
+        width: 55%;
     }
 }
 @media (min-width: 600px) {
     .containerCurrent span {
+        width: 60%;
         font-size: 22px;
     }
 }
  @media (min-width: 768px) {
     .containerCurrent span {
         font-size: 24px;
-        width: 91%;
+        width: 65%;
     }
 } 
 
 @media (min-width: 900px) {
     .containerCurrent span {
         font-size: 26px;
-        width: 95%;
-    }
-}
-@media (min-width: 1200px) {
-    .containerCurrent span {
-        font-size: 26px;
-        width: 90%;
     }
 }
 .cardsContainer {
