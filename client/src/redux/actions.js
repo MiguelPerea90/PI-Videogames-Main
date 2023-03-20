@@ -16,7 +16,7 @@ import {
 export const getVideogames = () => {
     return async function(dispatch) {
         const apiVideogames = await axios.get(
-            "pi-videogames-api-production.up.railway.app/videogames"
+            "https://pi-videogames-api-production.up.railway.app/videogames"
         );
         const allVideogames = apiVideogames.data;
 
@@ -30,7 +30,7 @@ export const getVideogames = () => {
 export const getGenres = () => {
     return async function(dispatch) {
         const apiGenres = await axios.get(
-            "pi-videogames-api-production.up.railway.app/genres"
+            "https://pi-videogames-api-production.up.railway.app/genres"
         );
         const allGenres = apiGenres.data;
 
@@ -44,7 +44,7 @@ export const getGenres = () => {
 export const getGenresForm = () => {
     return async function(dispatch) {
         const apiGenresForm = await axios.get(
-            "pi-videogames-api-production.up.railway.app/genres"
+            "https://pi-videogames-api-production.up.railway.app/genres"
         );
         const allGenresForm = apiGenresForm.data.map(element => element.name);
 
@@ -58,7 +58,7 @@ export const getGenresForm = () => {
 export const getPlatforms = () => {
     return async function(dispatch) {
         const apiPlatforms = await axios.get(
-            "pi-videogames-api-production.up.railway.app/platforms"
+            "https://pi-videogames-api-production.up.railway.app/platforms"
         );
         const allPlatforms = apiPlatforms.data.map(element => element.name);
 
@@ -72,7 +72,7 @@ export const getPlatforms = () => {
 export const videogamesByName = (name) => {
     return async function (dispatch) {
      const dataByName = await axios.get(
-         `pi-videogames-api-production.up.railway.app/videogames?name=${name}`
+         `https://pi-videogames-api-production.up.railway.app/videogames?name=${name}`
      )
      const videogamesByName = dataByName.data
      dispatch({
@@ -113,7 +113,7 @@ export const orderByAlfabetic = (payload) => {
 export const getVideogameById = (props) => {
     return async function(dispatch) {
         const videogameByIdInfo =  await axios.get(
-            `pi-videogames-api-production.up.railway.app/${props.id}`
+            `https://pi-videogames-api-production.up.railway.app/${props.id}`
         );
         const videogameById = videogameByIdInfo.data
         dispatch({

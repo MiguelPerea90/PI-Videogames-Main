@@ -12,7 +12,7 @@ const FilterByGenres = () => {
 
     const allGenres = useSelector(state => state.genres);
 
-    const infoGenres = allGenres.map(element => {
+    const infoGenres = allGenres?.map(element => {
         return {
             value: element.name,
             label: element.name,
