@@ -56,7 +56,7 @@ const Form = () => {
     if (Object.values(error).length > 0) {
       alert("MISSING DATA").toUpperCase();
     } else {
-      axios.post("http://localhost:3001/videogames", form);
+      axios.post("https://pi-videogames-api-production.up.railway.app/videogames", form);
       history.push("/home");
       alert("VIDEOGAME CREATED");
     }
