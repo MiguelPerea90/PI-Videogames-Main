@@ -113,7 +113,7 @@ export const orderByAlfabetic = (payload) => {
 export const getVideogameById = (props) => {
     return async function(dispatch) {
         const videogameByIdInfo =  await axios.get(
-            `https://pi-videogames-api-production.up.railway.app/${props.id}`
+            `https://pi-videogames-api-production.up.railway.app/videogames/${props.id}`
         );
         const videogameById = videogameByIdInfo.data
         dispatch({
