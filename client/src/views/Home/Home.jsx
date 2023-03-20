@@ -10,7 +10,6 @@ import FilterByGenres from "../../components/Filters/FilterByGenres/FiltersByGen
 import FilterByCreated from "../../components/Filters/FilterByCreated/FilterByCreated";
 import NavBar from "../../components/NavBar/NavBar";
 import { useState } from "react";
-// import { Link } from "react-router-dom";
 
 const Home = () => {
 

@@ -1,15 +1,16 @@
 .card {
     background-color: #FFFFFF;
-    width: 190px;
+    width: 230px;
     height: 370px;
     display: flex;
     flex-direction: column;
     align-items: center;
     box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
+    box-sizing: border-box;
 }
 @media (min-width: 768px) {
     .card {
-        width: 240px;
+        width: 250px;
         height: 440px;
     }
 }
@@ -70,7 +71,6 @@ img {
     height: 80px;
     display: flex;
     flex-wrap: wrap;
-    /* flex-direction: column; */
     align-items: center;
     justify-content: center;
  }

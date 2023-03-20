@@ -1,21 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from './NavBar.module.css'; 
-// import { useState } from "react";
-// import { useDispatch } from "react-redux";
-// import { getVideogames } from "../../redux/actions";
 
 const NavBar = () => {
-
-    // const [ , setNameFilter] = useState()
-
-    // const dispatch = useDispatch()
-
-    // const handlerReload = () => {
-    //     dispatch(getVideogames())
-    //     setNameFilter("")
-    // }
-
     return (
         <div className={styles.containerNavBar}>
             
@@ -23,16 +10,18 @@ const NavBar = () => {
                 <h1 className={styles.title}>Henry Videogames</h1>
             </div>
 
-           <div className={styles.containerReloadCreate}>
-                
-                {/* <div>
-                    <button 
-                        className={styles.reload} 
-                        onClick={handlerReload}
-                    >
-                        Reload 
-                    </button>
-                </div>  */}
+           <div className={styles.containerReloadStart}>
+
+                <div>
+                    <Link to="/">
+                        <button 
+                            className={styles.start} 
+                        >
+                            Start
+                        </button>
+                    </Link>
+                </div>
+
                 <div>
                     <Link to="create">
                         <button 
@@ -42,9 +31,9 @@ const NavBar = () => {
                         </button>
                     </Link>
                 </div>
-                
+
            </div>
-           
+
         </div>
     )
 };

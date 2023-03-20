@@ -20,15 +20,10 @@ const FilterByName = () => {
         setNameFilter("")
     }
 
-    // const handlerFindAll = () => {
-    //     dispatch(getVideogames())
-    //     setNameFilter("")
-    // }
 
-
-   
     return (
         <div className={styles.containerFilterByName}>
+
             <input type="text" 
             className={styles.searchBarInput}  
             onChange={handlerChange} 
@@ -39,10 +34,6 @@ const FilterByName = () => {
             onClick={handlerFindByName}>Search
             </button>
 
-            {/* <button 
-            className={styles.byNameButton} 
-            onClick={handlerFindAll}>Reload Videogames
-            </button> */}
         </div>
     )
 };

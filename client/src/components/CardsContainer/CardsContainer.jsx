@@ -13,9 +13,9 @@ const CardsContainer = () => {
   // // PAGINADO
   const [currentPage, setCurrentPage] = useState(1);
 
-  const [videogamesPerPage] = useState(15); // setVideogamesPerPage INCLUIR
+  const [videogamesPerPage] = useState(12); // setVideogamesPerPage INCLUIR
 
-  const indexOfLastVideogame = currentPage * videogamesPerPage; // 15
+  const indexOfLastVideogame = currentPage * videogamesPerPage; // 12
 
   const indexOfFirstVideogame = indexOfLastVideogame - videogamesPerPage; //0
 

@@ -10,15 +10,49 @@
 }
 .containerH1 {
     background-color: #2F4F4F;
-    width: 55%;
+    width: 80%;
     height: auto;
     margin: 0 auto;
     margin-top: -3rem;
 }
+@media (min-width: 320px) {
+    .containerH1 {
+        width: 72%;
+    }
+}
+@media (min-width: 400px) {
+    .containerH1 {
+        width: 70%;
+    }
+}
+@media (min-width: 480px) {
+    .containerH1 {
+        width: 63%;
+    }
+}
+@media (min-width: 540px) {
+    .containerH1 {
+        width: 60%;
+    }
+}
+@media (min-width: 600px) {
+    .containerH1 {
+        width: 55%;
+    }
+}
+@media (min-width: 650px) {
+    .containerH1 {
+        width: 51%;
+    }
+}
 @media (min-width: 768px) {
     .containerH1 {
-        width: 38%;
-        margin-top: -3rem;
+        width: 48%;
+    }
+}
+@media (min-width: 800px) {
+    .containerH1 {
+        width: 45%;
     }
 }
 .titleDetail {
@@ -32,7 +66,7 @@
     }
 }
 .containerDivs {
-    width: 80%;
+    width: 100%;
     height: auto;
     margin: 0 auto;
     display: flex;
@@ -41,14 +75,49 @@
     gap: 1rem;
     padding: 2rem;
 }
+@media (min-width: 320px) {
+    .containerDivs {
+        width: 90%;
+    }
+}
+@media (min-width: 400px) {
+    .containerDivs {
+        width: 85%;
+    }
+}
+@media (min-width: 480px) {
+    .containerDivs {
+        width: 75%;
+    }
+}
+@media (min-width: 540px) {
+    .containerDivs {
+        width: 70%;
+    }
+}
+@media (min-width: 600px) {
+    .containerDivs {
+        width: 65%;
+    }
+}
+@media (min-width: 650px) {
+    .containerDivs {
+        width: 60%;
+    }
+}
 @media (min-width: 768px) {
     .containerDivs {
         gap: 2rem;
+        width: 55%;
+    }
+}
+@media (min-width: 800px) {
+    .containerDivs {
         width: 50%;
     }
 }
 .containerImageTitleRatin {
-    width: 80%;
+    width: 95%;
     height: auto;
     box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
 }
@@ -69,6 +138,7 @@
     width: 100%;
     height: auto;
     max-width: 600px;
+    box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
 }
 .containerTitleRatin {
     background-color: #F5F5DC;
@@ -85,9 +155,20 @@
     text-align: center;
     width: 100%;
     height: auto;
+    box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
 }
 .title {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+}
+@media (min-width: 480px) {
+    .title {
+        font-size: 1.8rem;
+    }
+}
+@media (min-width: 600px) {
+    .title {
+        font-size: 2rem;
+    }
 }
 @media (min-width: 768px) {
     .title {
@@ -96,21 +177,42 @@
 }
 .containerRatin {
     background-color: #F5F5DC;
-    width: 95%;
+    width: 100%;
     height: auto;
     text-align: center;
     margin-bottom: 1rem;
+    box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
 }
 .titleRating {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 480px) {
+    .titleRating {
+        font-size: 1.6rem;
+    }
+}
+@media (min-width: 600px) {
     .titleRating {
         font-size: 1.8rem;
     }
 }
+@media (min-width: 768px) {
+    .titleRating {
+        font-size: 2rem;
+    }
+}
 .rating {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+}
+@media (min-width: 480px) {
+    .rating {
+        font-size: 1.4rem;
+    }
+}
+@media (min-width: 600px) {
+    .rating {
+        font-size: 1.6rem;
+    }
 }
 @media (min-width: 768px) {
     .rating {
@@ -119,7 +221,7 @@
 }
 .containerDesRelRat{
     background-color: #F5F5DC;
-    width: 80%;
+    width: 95%;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -141,16 +243,36 @@
     text-align: justify;
 }
 .titleDescription {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     text-align: center;
 }
-@media (min-width: 768px) {
+@media (min-width: 480px) {
+    .titleDescription {
+        font-size: 1.6rem;
+    }
+}
+@media (min-width: 600px) {
     .titleDescription {
         font-size: 1.8rem;
     }
 }
+@media (min-width: 768px) {
+    .titleDescription {
+        font-size: 2rem;
+    }
+}
 .parrafoDescription {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+}
+@media (min-width: 480px) {
+    .parrafoDescription {
+        font-size: 1.4rem;
+    }
+}
+@media (min-width: 600px) {
+    .parrafoDescription {
+        font-size: 1.5rem;
+    }
 }
 @media (min-width: 768px) {
     .parrafoDescription {
@@ -164,19 +286,40 @@
     padding: 1rem;
     box-sizing: border-box;
     text-align: center;
+    box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
 }
 .titleReleased {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     color: #FF8C00;
 }
-@media (min-width: 768px) {
+@media (min-width: 480px) {
+    .titleReleased {
+        font-size: 1.6rem;
+    }
+}
+@media (min-width: 600px) {
     .titleReleased {
         font-size: 1.8rem;
     }
 }
+@media (min-width: 768px) {
+    .titleReleased {
+        font-size: 2rem;
+    }
+}
 .released {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: #F5F5DC;
+}
+@media (min-width: 480px) {
+    .released {
+        font-size: 1.4rem;
+    }
+}
+@media (min-width: 600px) {
+    .released {
+        font-size: 1.5rem;
+    }
 }
 @media (min-width: 768px) {
     .released {
@@ -185,7 +328,7 @@
 }
 .containerGenresPlatforms {
     background-color: #F5F5DC;
-    width: 80%;
+    width: 95%;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -209,20 +352,42 @@
     align-items: center;
     width: 100%;
     height: auto;
+    box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
 } 
 .titleGenres {
     width: 90;
     color: #F5F5DC;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 480px) {
+    .titleGenres {
+        font-size: 1.6rem;
+    }
+}
+@media (min-width: 600px) {
     .titleGenres {
         font-size: 1.8rem;
     }
 }
+@media (min-width: 768px) {
+    .titleGenres {
+        font-size: 2rem;
+    }
+}
 .genres {
-    font-size: 14px;
+    font-size: 1.2rem;
 } 
+
+@media (min-width: 480px) {
+    .genres {
+        font-size: 1.4rem;
+    }
+}
+@media (min-width: 600px) {
+    .genres {
+        font-size: 1.5rem;
+    }
+}
 @media (min-width: 768px) {
     .genres {
         font-size: 1.6rem;
@@ -236,19 +401,40 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
 }
 .titlePlatform {
     color: #FF8C00;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 480px) {
+    .titlePlatform {
+        font-size: 1.6rem;
+    }
+}
+@media (min-width: 600px) {
     .titlePlatform {
         font-size: 1.8rem;
     }
 }
+@media (min-width: 768px) {
+    .titlePlatform {
+        font-size: 2rem;
+    }
+}
 .platforms {
     color: #F5F5DC;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+}
+@media (min-width: 480px) {
+    .platforms {
+        font-size: 1.4rem;
+    }
+}
+@media (min-width: 600px) {
+    .platforms {
+        font-size: 1.5rem;
+    }
 }
 @media (min-width: 768px) {
     .platforms {
@@ -263,15 +449,61 @@
  .homeButton button{
     background-color: #ffffff;
     color: #FF8C00;
-    font-size: 28px;
+    font-size: 1.6rem;
+    padding: 5px 10px;
     font-weight: 600;
     text-transform: uppercase;
     cursor: pointer;
     border: none;
     border-radius: 6px;
-    height: 45px;
-    width: auto;
+    width: 100%;
+    height: auto;
     transition: all 800ms;
+}
+@media (min-width: 320px) {
+    .homeButton button {
+        font-size: 1.8rem;
+        width: 90%;
+    }
+}
+@media (min-width: 400px) {
+    .homeButton button {
+        width: 80%;
+    }
+}
+@media (min-width: 480px) {
+    .homeButton button {
+        font-size: 2rem;
+        width: 70%;
+    }
+}
+@media (min-width: 540px) {
+    .homeButton button {
+        width: 65%;
+    }
+}
+@media (min-width: 600px) {
+    .homeButton button {
+        font-size: 2.2rem;
+        width: 60%;
+    }
+}
+@media (min-width: 650px) {
+    .homeButton button {
+        width: 55%;
+    }
+}
+@media (min-width: 768px) {
+    .homeButton button {
+        font-size: 2.4rem;
+        width: 50%;
+    }
+}
+@media (min-width: 800px) {
+    .homeButton button {
+    font-size: 2.6rem;
+    width: 45%;
+    }
 }
 .homeButton button:hover{
     transform: scale(1.1);

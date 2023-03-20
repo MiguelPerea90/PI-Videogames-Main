@@ -4,10 +4,8 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { getVideogameById } from "../../redux/actions";
 import styles from "./Detail.module.css"
-// import Genres from "../../components/Genres/Genres";
 import imagen from "../../img/default-Videogames.jpg"
 import { Link } from "react-router-dom";
-// import Platforms from "../../components/Platforms/Platforms";
 
 
 const Detail = () => {
@@ -21,11 +19,13 @@ const Detail = () => {
 
   return (
     <div className={styles.container}>
+
         <section id="buttomHome">
             <div className={styles.containerH1}>
                 <h1 className={styles.titleDetail}>Game Details</h1>
             </div>
         </section>
+
         <div className={styles.containerDivs}>
 
             <div className={styles.containerImageTitleRatin}>

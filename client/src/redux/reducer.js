@@ -127,7 +127,7 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         videogames: action.payload === "All" ? allGames :  createdFilter,
       };
-      default:
+    default:
       return {
         ...state,
       };

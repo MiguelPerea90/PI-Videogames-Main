@@ -1,7 +1,6 @@
 .containerNavBar {
-    background-color: #FFFFFF;
+    background-color: #F5F5DC;
     width: 100%;
-    min-width: 250px;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -20,6 +19,9 @@
  }
  .containerTitle {
     width: 100%;
+    height: auto;
+    padding: 1rem;
+    box-sizing: border-box;
     text-align: center;
  }
  @media (min-width: 768px) { 
@@ -31,7 +33,7 @@
     font-size: 2rem;
     margin-top: 0;
     margin-bottom: 0;
-    /* box-shadow: 10px 10px 10px 0px rgba(209, 116, 3, 0.75); */
+    box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
 }
 @media (min-width: 480px) {
     .title {
@@ -48,22 +50,23 @@
         font-size: 2.6rem;
     }
 }
-.containerReloadCreate {
+.containerReloadStart {
     width: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
 }
 @media (min-width: 768px) { 
-    .containerReloadCreate {
+    .containerReloadStart {
         width: 70%;
         flex-direction: row;
         justify-content: flex-end;
         gap: 1.5rem;
     }
  }
-.reload, .create {
+.start, .create {
     background-color: #FF8C00;
     border: none;
     border-radius: .4rem;
@@ -74,21 +77,21 @@
     box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
  }
  @media (min-width: 480px) {
-    .reload, .create {
+    .start, .create {
         font-size: 1.6rem;
     }
 }
 @media (min-width: 600px) {
-    .reload, .create {
+    .start, .create {
         font-size: 1.8rem;
     }
 }
 @media (min-width: 768px) {
-    .reload, .create {
+    .start, .create {
         font-size: 2rem;
     }
 }
-.reload:hover {
+.start:hover {
     transform: scale(1.1);
     background-color: #2F4F4F; 
     color: #FF8C00;    

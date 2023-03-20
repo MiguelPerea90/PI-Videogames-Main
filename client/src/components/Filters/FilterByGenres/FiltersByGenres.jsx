@@ -19,7 +19,6 @@ const FilterByGenres = () => {
         }
     });
 
-
     const myOptions = [
         {
             value: "All",
@@ -37,13 +36,12 @@ const FilterByGenres = () => {
     }
 
 
-
     return (
         <div className={styles.containerGenre}>
             <Select className={styles.select}
                 options={infoTotal} 
                 onChange={handlerChange} 
-                placeholder="Genres">
+                placeholder="Filter by Gender">
             </Select>
         </div>
     )

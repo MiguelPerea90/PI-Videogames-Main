@@ -33,7 +33,7 @@ const FilterByCreated = () => {
              <Select className={styles.select}
                 options={myOptions} 
                 onChange={handlerChange} 
-                placeholder="Created">
+                placeholder="Created or Existing">
              </Select>
         </div>
     )

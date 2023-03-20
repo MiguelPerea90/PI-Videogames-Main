@@ -29,7 +29,7 @@ const OrderByAlfabetic = () => {
             <Select className={styles.select}
                 options={myOptions} 
                 onChange={handlerChange} 
-                placeholder="Alphabetically">
+                placeholder="Order alphabetically">
             </Select>
         </div>
     )

@@ -24,8 +24,6 @@ const OrderByRating = () => {
         dispatch(orderByRating(event.value))
     }
 
-
-
     return (
         <div className={styles.containerRating}>
             <Select className={styles.select}
