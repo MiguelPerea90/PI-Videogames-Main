@@ -53,17 +53,17 @@ const rootReducer = (state = initialState, action) => {
       });
 
       if (genresFiltered.length === 0) {
-            alert(`NO VIDEOGAMES FOUND FOR ${action.payload.toUpperCase()}  GENRE`)
+            alert(`NO VIDEOGAMES FOUND FOR ${action.payload.toUpperCase()} GENRE`)
              
               return {
                 ...state
               }
       }
-      console.log("genresFiltered", genresFiltered)       
+
       return {
           ...state,
           videogames: genresFiltered
-        };     
+      };     
     case GET_VIDEOGAME_BY_NAME:
       return {
         ...state,
@@ -116,14 +116,13 @@ const rootReducer = (state = initialState, action) => {
       : allGames.filter(game => !game.created) 
 
       if (createdFilter.length === 0) {
-        alert(`NO VIDEOGAMES FOUND FOR ${action.payload.toUpperCase()}  CATEGORY`)
+        alert(`NO VIDEOGAMES FOUND FOR ${action.payload.toUpperCase()} CATEGORY`)
          
           return {
             ...state
           }
       }
-
-
+      
       return {
         ...state,
         videogames: action.payload === "All" ? allGames :  createdFilter,
