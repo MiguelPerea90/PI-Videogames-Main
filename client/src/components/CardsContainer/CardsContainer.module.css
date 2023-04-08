@@ -74,15 +74,9 @@
     height: auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    justify-content: space-around;
     gap: 3rem;
-}
-@media (min-width: 768px) {
-    .cardsContainer {
-        gap: 4rem;
-    }
+    margin-top: 3rem;
 }
 .containerPaginado {
     width: 100%;
