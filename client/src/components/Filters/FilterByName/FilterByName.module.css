@@ -43,6 +43,7 @@
     border-radius: .4rem;
     transition: all 800ms;
     box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
+    cursor: pointer;
 }
 @media (min-width: 480px) {
     .byNameButton {

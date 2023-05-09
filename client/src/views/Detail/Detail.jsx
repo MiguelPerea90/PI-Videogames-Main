@@ -65,26 +65,6 @@ const Detail = () => {
 
             </div>
 
-            <div className={styles.containerDesRelRat}>
-                <div className={styles.containerDescription}>
-                    <h3 className={styles.titleDescription}>Description</h3> 
-                    <p className={styles.parrafoDescription}> 
-                            {videogamesId?.description
-                            .slice(0,501)
-                            .replaceAll("<p>", " ")
-                            .replaceAll("</p>", " ")
-                            .replaceAll("<br />", " ")}
-                    </p>
-                </div>
-
-                <div className={styles.containeReleased}>
-                    <h3 className={styles.titleReleased}>Released</h3> 
-                    <span className={styles.released}> 
-                        {videogamesId?.released} 
-                    </span>
-                </div>    
-            </div>
-
             <div className={styles.containerGenresPlatforms}>
                 <div className={styles.containerGenres}>
                     <h3 className={styles.titleGenres}>Genres:</h3>
@@ -109,6 +89,26 @@ const Detail = () => {
                             );
                         })}
                 </div>
+            </div>
+
+            <div className={styles.containerDesRelRat}>
+                <div className={styles.containerDescription}>
+                    <h3 className={styles.titleDescription}>Description</h3> 
+                    <p className={styles.parrafoDescription}> 
+                            {videogamesId?.description
+                            .slice(0,401)
+                            .replaceAll("<p>", " ")
+                            .replaceAll("</p>", " ")
+                            .replaceAll("<br />", " ")}
+                    </p>
+                </div>
+
+                <div className={styles.containeReleased}>
+                    <h3 className={styles.titleReleased}>Released</h3> 
+                    <span className={styles.released}> 
+                        {videogamesId?.released} 
+                    </span>
+                </div>    
             </div>
 
         </div>

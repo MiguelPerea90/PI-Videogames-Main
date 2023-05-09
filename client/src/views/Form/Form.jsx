@@ -54,7 +54,7 @@ const Form = () => {
 
   const handlerSubmit = () => {
     if (Object.values(error).length > 0) {
-      alert("MISSING DATA").toUpperCase();
+      alert("MISSING DATA");
     } else {
       axios.post("/videogames", form);
       history.push("/home");
