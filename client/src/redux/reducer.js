@@ -13,7 +13,7 @@ import {
 
 const initialState = {
   videogames: [], //estado que se va a ir modif en base al FILTRADO
-  allVideogames: [], // Estado que siempre va a tener todos los estados
+  allVideogames: [], // Estado que siempre va a tener todos los videogames
   genres: [],
   genresForm: [],
   platforms: []
@@ -116,7 +116,7 @@ const rootReducer = (state = initialState, action) => {
       : allGames.filter(game => !game.created) 
 
       if (createdFilter.length === 0) {
-        alert(`NO VIDEOGAMES FOUND FOR ${action.payload.toUpperCase()} CATEGORY`)
+        alert(`NO VIDEOGAMES FOUND FOR ${action.payload} CATEGORY`)
          
           return {
             ...state

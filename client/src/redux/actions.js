@@ -113,7 +113,7 @@ export const orderByAlfabetic = (payload) => {
 export const getVideogameById = (props) => {
     return async function(dispatch) {
         const videogameByIdInfo =  await axios.get(
-            `http://localhost:3001/videogames/${props.id}`
+            `/videogames/${props.id}`
         );
         const videogameById = videogameByIdInfo.data
         dispatch({

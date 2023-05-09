@@ -17,11 +17,12 @@ const Home = () => {
 
     useEffect(() => {
         dispatch(getVideogames());
-    },[dispatch]);
-
-    useEffect(() => {
         dispatch(getGenres());
     },[dispatch]);
+
+    // useEffect(() => {
+    //     dispatch(getGenres());
+    // },[dispatch]);
 
 
     const [ , setNameFilter] = useState()
