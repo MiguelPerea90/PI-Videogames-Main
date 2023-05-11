@@ -72,7 +72,7 @@ import React from "react";
 import Card from "../Card/Card";
 import Paginado from "../Paginado/Paginado";
 import styles from "./CardsContainer.module.css";
-import Loader from "../Loader/Loader";
+import Loader from "../../Loader/Loader";
 
 const CardsContainer = ({ isLoading }) => {
   // Hace una función similar a la de mapStateToProps, en la constatnte
