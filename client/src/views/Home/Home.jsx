@@ -84,7 +84,7 @@
 
 
 
-
+// new code 
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getVideogames, getGenres} from "../../redux/actions";
