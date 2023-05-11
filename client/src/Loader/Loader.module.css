@@ -1,0 +1,53 @@
+.Loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+.titleLoader{
+    color: #FF8C00;
+    font-size: 50px;
+    font-weight: 900;
+}
+
+.spinner {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 5px solid #F5F5DC;
+  border-top-color: #FF8C00;
+  animation: spin 1s infinite ease-in-out;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (max-width: 900px) {
+  .titleLoader {
+    font-size: 38px;
+  }
+  .spinner {
+    width: 200px;
+    height: 200px;
+  }
+}
+@media (max-width: 600px) {
+  .titleLoader {
+    font-size: 32px;
+  }
+  .spinner {
+    width: 150px;
+    height: 150px;
+  }
+}
+@media (max-width: 480px) {
+  .titleLoader {
+    font-size: 26px;
+  }
+  .spinner {
+    width: 100px;
+    height: 100px;
+  }
+}
